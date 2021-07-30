@@ -45,7 +45,7 @@ $args = top_store_product_query($term_id,$prdct_optn);
                         $saving_price = wc_price( $regular_price - $sale_price );
                         echo $sale = '<span class="onsale">-'.$saving_price.'</span>';
                     }?>
-                  <?php echo get_the_post_thumbnail( $pid, 'large' );
+                  <?php echo get_the_post_thumbnail( $pid, 'woocommerce_thumbnail' );
                       $hover_style = get_theme_mod( 'top_store_woo_product_animation' );
                          // the_post_thumbnail();
                         if ( 'swap' === $hover_style ){
@@ -143,7 +143,7 @@ function top_store_product_filter_loop($args){
                         echo $sale = '<span class="onsale">-'.$saving_price.'</span>';
                     }?>
                  <?php 
-                      echo get_the_post_thumbnail( $pid, 'large' );
+                      echo get_the_post_thumbnail( $pid, 'woocommerce_thumbnail' );
                       $hover_style = get_theme_mod( 'top_store_woo_product_animation' );
                          // the_post_thumbnail();
                         if ( 'swap' === $hover_style ){
@@ -230,7 +230,7 @@ function top_store_product_list_filter_loop($args){
           <div class="thunk-list">
                <div class="thunk-product-image">
                 <a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                 <?php echo get_the_post_thumbnail( $pid, 'medium' ); ?>
+                 <?php echo get_the_post_thumbnail( $pid, 'woocommerce_thumbnail' ); ?>
                   </a>
                </div>
                <div class="thunk-product-content">
@@ -266,6 +266,7 @@ $th_cat_slug = $cat_slug;
             'hide_empty' => 1,
             'posts_per_page' => $count,        
             'post_type' => 'product',
+            'post_status' => 'publish',
             'orderby' => 'date',
             'order' => 'DESC',
         );
@@ -328,6 +329,7 @@ function top_store_post_query($query){
             'order' => 'DESC',
             'ignore_sticky_posts' => $query['sticky'],
             'post_type' => 'post',
+            'post_status' => 'publish',
             'posts_per_page' => $query['count'], 
             'cat' => $query['cate'],
             'meta_key'     => '_thumbnail_id',
@@ -440,7 +442,7 @@ function top_store_product_slide_list_loop($term_id,$prdct_optn){
           <div class="thunk-list">
                <div class="thunk-product-image">
                 <a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                 <?php echo get_the_post_thumbnail( $pid, 'medium' ); ?>
+                 <?php echo get_the_post_thumbnail( $pid, 'woocommerce_thumbnail' ); ?>
                   </a>
                </div>
                <div class="thunk-product-content">
