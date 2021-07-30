@@ -60,8 +60,9 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 == Changelog ==
 
 = 1.5 =
-* Image croping issue fixed.
-* Post draft issue fixed.
+* Almaira shop, open shop, open mart and top store Image croping issue fixed.
+* Almaira shop, open shop, open mart and top store Post draft issue fixed.
+* Notification slider image removed.
 
 = 1.4.19 =
 * Issue Fixed.
