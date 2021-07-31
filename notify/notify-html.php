@@ -1,6 +1,6 @@
 
   <div class="notice th-notice-slide-wrapper" style="display:<?php echo $display; ?>;">
- <div class="th-notice-slide-wrap owl-carousel">
+ <div class="th-notice-slide-wrap">
     <?php 
     if($theme !== 'm-shop'){ ?>
 
@@ -15,10 +15,6 @@
                     <div class="thunk-notice-text">
                         <h3>M Shop - Best Free WooCommerce Theme</h3>  
                         <a href="?notice-disable=1"  class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon">
-                        <i class="e-notice__dismiss" role="button" aria-label="Dismiss" tabindex="0"></i>
-                            </a>
-                        <p>M Shop is an eCommerce WordPress theme specially made for shopping websites. You can create any type of online store website using it. Theme is best suited for Fashion & Clothing store, furniture, grocery, clothing, electronic, gadget store and decorative gifts stores.
-                        </p>
                         <ul class="thunk-review-ul">
                             <li class="show-mor-message">
                                 <a href="https://themehunk.com/product/m-shop/#themedemo/"
@@ -35,6 +31,9 @@
                                 </a>
                             </li>
                         </ul>
+                        <p>M Shop is an eCommerce WordPress theme specially made for shopping websites. You can create any type of online store website using it. Theme is best suited for Fashion & Clothing store, furniture, grocery, clothing, electronic, gadget store and decorative gifts stores.
+                        </p>
+                       
                     </div>
                 </div>  <!--end-->
 
