@@ -32,6 +32,7 @@ $taxquery = array(
                       
                       'tax_query' => $taxquery,
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby' => 'rand'
     );
 }elseif($prdct_optn=='featured'){
@@ -39,6 +40,7 @@ $taxquery = array(
                       
                       'tax_query' => $taxquery,
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'post__in'  => wc_get_featured_product_ids(),
     );
 }else{
@@ -46,6 +48,7 @@ $taxquery = array(
                       
                       'tax_query' => $taxquery,
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby' => 'title'
     );
 }           $i = 0; // This is to make owl in 3 
@@ -62,7 +65,7 @@ $taxquery = array(
           <div class="thunk-list">
                <div class="thunk-product-image">
                 <a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                 <?php the_post_thumbnail(); ?>
+                 <?php the_post_thumbnail('woocommerce_thumbnail'); ?>
                   </a>
                </div>
                <div class="thunk-product-content">
@@ -338,6 +341,7 @@ $taxquery = array(
                       
                       'tax_query' => $taxquery,
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby' => 'rand'
     );
 }elseif($prdct_optn=='featured'){
@@ -345,6 +349,7 @@ $taxquery = array(
                       
                       'tax_query' => $taxquery,
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'post__in'  => wc_get_featured_product_ids(),
     );
 }else{
@@ -352,6 +357,7 @@ $taxquery = array(
                       
                       'tax_query' => $taxquery,
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby' => 'title',
     );
 }
@@ -375,7 +381,7 @@ $taxquery = array(
                         echo $sale = '<span class="onsale">-'.$saving_price.'</span>';
                     }?>
                  <?php 
-                      the_post_thumbnail(); 
+                      the_post_thumbnail('woocommerce_thumbnail'); 
                       $hover_style = get_theme_mod( 'open_mart_woo_product_animation' );
                          // the_post_thumbnail();
                         if ( 'swap' === $hover_style ){
@@ -453,7 +459,7 @@ function open_mart_product_filter_loop($args){
                         echo $sale = '<span class="onsale">-'.$saving_price.'</span>';
                     }?>
                  <?php 
-                      the_post_thumbnail(); 
+                      the_post_thumbnail('woocommerce_thumbnail'); 
                       $hover_style = get_theme_mod( 'open_mart_woo_product_animation' );
                          // the_post_thumbnail();
                         if ( 'swap' === $hover_style ){
@@ -526,7 +532,7 @@ function open_mart_product_list_filter_loop($args){
           <div class="thunk-list">
                <div class="thunk-product-image">
                 <a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                 <?php the_post_thumbnail(); ?>
+                 <?php the_post_thumbnail('woocommerce_thumbnail'); ?>
                   </a>
                </div>
                <div class="thunk-product-content">
@@ -582,6 +588,7 @@ $args = array(
                       
                       'tax_query' => $taxquery,
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'post__in'  => wc_get_featured_product_ids(),
                       'posts_per_page' => 1,
 
@@ -605,7 +612,7 @@ $args = array(
                         $saving_price = wc_price( $regular_price - $sale_price );
                         echo $sale = '<span class="onsale">-'.$saving_price.'</span>';
                     }?>
-                 <?php the_post_thumbnail(); ?>
+                 <?php the_post_thumbnail('woocommerce_thumbnail'); ?>
                  <?php 
                         $rat_product = wc_get_product($pid);
                         $rating_count =  $rat_product->get_rating_count();
@@ -656,6 +663,7 @@ $th_cat_slug = $cat_slug;
             'hide_empty' => 1,
             'posts_per_page' => $count,        
             'post_type' => 'product',
+            'post_status' => 'publish',
             'orderby' => 'date',
             'order' => 'DESC',
         );
@@ -671,6 +679,7 @@ $th_cat_slug = $cat_slug;
                       
                       'tax_query' => $taxquery,
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'post__in'  => wc_get_featured_product_ids(),
               );
         } 
@@ -720,6 +729,7 @@ function open_mart_post_query($query){
             'order' => 'DESC',
             'ignore_sticky_posts' => $query['sticky'],
             'post_type' => 'post',
+            'post_status' => 'publish',
             'posts_per_page' => $query['count'], 
             'cat' => $query['cate'],
             'meta_key'     => '_thumbnail_id',

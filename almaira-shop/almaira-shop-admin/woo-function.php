@@ -79,7 +79,7 @@ function almaira_shop_category_product_loop($category_product,$args){
                   $category_product['sale'] = $sale;
 
           if (has_post_thumbnail( $pid ) ):
-              $thumbnail = get_the_post_thumbnail( $pid, 'shop_single' );
+            $thumbnail = get_the_post_thumbnail( $pid, 'woocommerce_single' );
               else:
               $thumbnail = '<img src="' . wc_placeholder_img_src() . '" alt="product" class="image-hover wp-post-image"  />';
          endif;
@@ -149,6 +149,7 @@ function almaira_shop_product_section_filter_product_show(){
                           )
                       ),
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby' => 'date',
                   );
        $cate_product .= almaira_shop_category_product_loop($category_product,$args);
@@ -204,6 +205,7 @@ function almaira_shop_product_loadmore_prd_section(){
     }
     $args = array(
       'post_type' => 'product',
+      'post_status' => 'publish',
       'posts_per_page' => $posts_per_page,
     );
     $product = new WP_Query( $args );
@@ -262,6 +264,7 @@ function almaira_shop_sort_filter_product_show(){
      $posts_per_page = get_theme_mod('almaira_shop_prd_shw','10');
      $args = array(
       'post_type' => 'product',
+      'post_status' => 'publish',
       'posts_per_page' => $posts_per_page,
       
       );
@@ -285,6 +288,7 @@ function almaira_shop_product_loadmore(){
     }
     $args = array(
       'post_type' => 'product',
+      'post_status' => 'publish',
       'posts_per_page' => $posts_per_page,
       );
     $product = new WP_Query( $args );
@@ -341,6 +345,7 @@ function almaira_shop_sort_filter_ajax(){
     if($radio=='low-to-high'){
     $args = array(
       'post_type' => 'product',
+      'post_status' => 'publish',
       'posts_per_page' => $posts_per_page,
       'tax_query' => $tax_query,
       'orderby'   => 'meta_value_num',
@@ -352,6 +357,7 @@ function almaira_shop_sort_filter_ajax(){
     elseif($radio=='high-to-low'){
     $args = array(
       'post_type' => 'product',
+      'post_status' => 'publish',
       'posts_per_page' => $posts_per_page,
       'tax_query' => $tax_query,
       'orderby'   => 'meta_value_num',
@@ -362,6 +368,7 @@ function almaira_shop_sort_filter_ajax(){
     }elseif($radio=='onsale'){
       $args = array(
       'post_type' => 'product',
+      'post_status' => 'publish',
       'posts_per_page' => $posts_per_page,
       'tax_query' => $tax_query,
       'meta_query'=> $meta_query,
@@ -371,6 +378,7 @@ function almaira_shop_sort_filter_ajax(){
     }elseif($radio=='featured'){
       $args = array(
       'post_type' => 'product',
+      'post_status' => 'publish',
       'posts_per_page' => $posts_per_page,
       'tax_query' => $tax_query,
       'post__in'   => wc_get_featured_product_ids(),
@@ -379,6 +387,7 @@ function almaira_shop_sort_filter_ajax(){
     }else{
        $args = array(
       'post_type' => 'product',
+      'post_status' => 'publish',
       'posts_per_page' => $posts_per_page,
       'tax_query' => $tax_query,
       'paged'     => $paged, 
@@ -428,6 +437,7 @@ function almaira_shop_product_section_filter_product_ajax(){
                           )
                       ),
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby'   => 'date',
                       'paged'     => $paged, 
                   );

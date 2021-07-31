@@ -2,8 +2,8 @@
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, gogo, Testimonial, Team, service
-Tested up to: 5.7.1
-Stable tag: 1.4.19
+Tested up to: 5.8
+Stable tag: 1.5
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
@@ -58,6 +58,11 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
+
+= 1.5 =
+* Almaira shop, open shop, open mart and top store Image croping issue fixed.
+* Almaira shop, open shop, open mart and top store Post draft issue fixed.
+* Notification slider image removed.
 
 = 1.4.19 =
 * Issue Fixed.

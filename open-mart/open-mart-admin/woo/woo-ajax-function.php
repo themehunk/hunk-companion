@@ -19,6 +19,7 @@ $prdct_optn = get_theme_mod('open_mart_category_optn','recent');
                           )
                       ),
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby'   => 'menu_order',
                   );
 
@@ -34,6 +35,7 @@ $prdct_optn = get_theme_mod('open_mart_category_optn','recent');
                           )
                       ),
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby' => 'rand'
     );
 }elseif($prdct_optn=='featured'){
@@ -47,6 +49,7 @@ $prdct_optn = get_theme_mod('open_mart_category_optn','recent');
                           )
                       ),
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'post__in'  => wc_get_featured_product_ids(),
     );
 
@@ -61,6 +64,7 @@ $prdct_optn = get_theme_mod('open_mart_category_optn','recent');
                           )
                       ),
                       'post_type' => 'product',
+                      'post_status' => 'publish',
                       'orderby' => 'menu_order'
     );
 }
