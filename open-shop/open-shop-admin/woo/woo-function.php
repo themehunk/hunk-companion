@@ -33,7 +33,7 @@ $args = open_shop_product_query($term_id,$prdct_optn);
     foreach ($products as $product) {
       $pid =  $product->get_id();
       ?>
-        <div <?php post_class('product'); ?>>
+        <div <?php post_class('product',$pid); ?>>
           <div class="thunk-list">
                <div class="thunk-product-image">
                 <a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
@@ -149,82 +149,8 @@ if( $iPod || $iPhone ){
 //product cat filter loop
 /********************************/
 function open_shop_product_cat_filter_default_loop($term_id,$prdct_optn){
+global $product;    
 $args = open_shop_product_query($term_id,$prdct_optn);
-    $products = wc_get_products( $args );
-    if (!empty($products)) {
-    foreach ($products as $product) {
-      $pid =  $product->get_id();
-      ?>
-        <div <?php post_class('product'); ?>>
-          <div class="thunk-product-wrap">
-          <div class="thunk-product">
-               <div class="thunk-product-image">
-                <a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                <?php $sale = get_post_meta( $pid, '_sale_price', true);
-                    if( $sale) {
-                      // Get product prices
-                        $regular_price = (float) $product->get_regular_price(); // Regular price
-                        $sale_price = (float) $product->get_price(); // Sale price
-                        $saving_price = wc_price( $regular_price - $sale_price );
-                        echo $sale = '<span class="onsale">-'.$saving_price.'</span>';
-                    }?>
-                 <?php 
-                      echo get_the_post_thumbnail( $pid, 'woocommerce_thumbnail' );
-                      $hover_style = get_theme_mod( 'open_shop_woo_product_animation' );
-                         // the_post_thumbnail();
-                        if ( 'swap' === $hover_style ){
-                                $attachment_ids = $product->get_gallery_image_ids($pid);
-                               foreach( $attachment_ids as $attachment_id ) 
-                             {
-                                 $glr = wp_get_attachment_image($attachment_id, 'shop_catalog', false, array( 'class' => 'show-on-hover' ));
-                                echo $category_product['glr'] = $glr;
-                               }
-                           }
-                  ?>
-                  </a>
-                  <?php 
-                    if(get_theme_mod( 'open_shop_woo_quickview_enable', true )){
-
-                  ?>
-                   <div class="thunk-quickview">
-                               <span class="quik-view">
-                                   <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
-                                      <span><?php _e('Quick View','open-shop');?></span>
-                                   </a>
-                                </span>
-                    </div>
-                  <?php } ?>
-               </div>
-               <div class="thunk-product-content">
-               
-                  <h2 class="woocommerce-loop-product__title"><a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><?php echo $product->get_title(); ?></a></h2>
-                  <div class="price"><?php echo $product->get_price_html(); ?></div>
-                  <?php 
-                        $rat_product = wc_get_product($pid);
-                        $rating_count =  $rat_product->get_rating_count();
-                        $average =  $rat_product->get_average_rating();
-                        echo $rating_count = wc_get_rating_html( $average, $rating_count );
-                       ?>
-               </div>
-           
-            <div class="thunk-product-hover">     
-                    <?php 
-                      echo open_shop_add_to_cart_url($product);
-                      echo open_shop_whish_list($pid);
-                      echo open_shop_add_to_compare_fltr($pid);
-                    ?>
-            </div>
-          </div>
-        </div>
-        </div>
-   <?php }
-    } else {
-      echo __( 'No products found','open-shop' );
-    }
-    wp_reset_query();
-}
-
-function open_shop_product_filter_loop($args){  
     $products = wc_get_products( $args );
     if (!empty($products)) {
     foreach ($products as $product) {
@@ -271,6 +197,89 @@ function open_shop_product_filter_loop($args){
                   <?php } ?>
                </div>
                <div class="thunk-product-content">
+                <?php 
+                if (class_exists('TH_Variation_Swatches')) {
+                thvs_loop_available_attributes($product);
+                 } ?>
+                  <h2 class="woocommerce-loop-product__title"><a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><?php echo $product->get_title(); ?></a></h2>
+                  <div class="price"><?php echo $product->get_price_html(); ?></div>
+                  <?php 
+                        $rat_product = wc_get_product($pid);
+                        $rating_count =  $rat_product->get_rating_count();
+                        $average =  $rat_product->get_average_rating();
+                        echo $rating_count = wc_get_rating_html( $average, $rating_count );
+                       ?>
+               </div>
+           
+            <div class="thunk-product-hover">     
+                    <?php 
+                      echo open_shop_add_to_cart_url($product);
+                      echo open_shop_whish_list($pid);
+                      echo open_shop_add_to_compare_fltr($pid);
+                    ?>
+            </div>
+          </div>
+        </div>
+        </div>
+   <?php }
+    } else {
+      echo __( 'No products found','open-shop' );
+    }
+    wp_reset_query();
+}
+
+function open_shop_product_filter_loop($args){  
+    global $product;
+    $products = wc_get_products( $args );
+    if (!empty($products)) {
+    foreach ($products as $product) {
+      $pid =  $product->get_id();
+      ?>
+        <div <?php post_class('product',$pid); ?>>
+          <div class="thunk-product-wrap">
+          <div class="thunk-product">
+               <div class="thunk-product-image">
+                <a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                <?php $sale = get_post_meta( $pid, '_sale_price', true);
+                    if( $sale) {
+                      // Get product prices
+                        $regular_price = (float) $product->get_regular_price(); // Regular price
+                        $sale_price = (float) $product->get_price(); // Sale price
+                        $saving_price = wc_price( $regular_price - $sale_price );
+                        echo $sale = '<span class="onsale">-'.$saving_price.'</span>';
+                    }?>
+                 <?php 
+                      echo get_the_post_thumbnail( $pid, 'woocommerce_thumbnail' );
+                      $hover_style = get_theme_mod( 'open_shop_woo_product_animation' );
+                         // the_post_thumbnail();
+                        if ( 'swap' === $hover_style ){
+                                $attachment_ids = $product->get_gallery_image_ids($pid);
+                               foreach( $attachment_ids as $attachment_id ) 
+                             {
+                                 $glr = wp_get_attachment_image($attachment_id, 'shop_catalog', false, array( 'class' => 'show-on-hover' ));
+                                echo $category_product['glr'] = $glr;
+                               }
+                           }
+                  ?>
+                  </a>
+                  <?php 
+                    if(get_theme_mod( 'open_shop_woo_quickview_enable', true )){
+
+                  ?>
+                   <div class="thunk-quickview">
+                               <span class="quik-view">
+                                   <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
+                                      <span><?php _e('Quick View','open-shop');?></span>
+                                   </a>
+                                </span>
+                    </div>
+                  <?php } ?>
+               </div>
+               <div class="thunk-product-content">
+
+                <?php if (class_exists('TH_Variation_Swatches')) {
+                        thvs_loop_available_attributes($product);
+                      } ?>
                
                   <h2 class="woocommerce-loop-product__title"><a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><?php echo $product->get_title(); ?></a></h2>
                   <div class="price"><?php echo $product->get_price_html(); ?></div>

@@ -59,6 +59,10 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 == Changelog ==
 
+= 1.5.1 =
+* Make top-store theme compatible with th-variation-swatches-pro.
+* Make open-shop theme compatible with th-variation-swatches-pro.
+
 = 1.5 =
 * Almaira shop, open shop, open mart and top store Image croping issue fixed.
 * Almaira shop, open shop, open mart and top store Post draft issue fixed.
