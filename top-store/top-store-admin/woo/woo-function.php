@@ -107,7 +107,7 @@ $args = top_store_product_query($term_id,$prdct_optn);
                    </div>
                 
             <div class="thunk-product-content">
-                <?php  if (class_exists('TH_Variation_Swatches')) {
+                <?php  if (class_exists('TH_Variation_Swatches_Pro')) {
                         thvs_loop_available_attributes($product);
                       } ?>   
               <h2 class="woocommerce-loop-product__title">
@@ -213,7 +213,7 @@ function top_store_product_filter_loop($args){
              </div>
                 
               <div class="thunk-product-content">
-                <?php  if (class_exists('TH_Variation_Swatches')) {
+                <?php  if (class_exists('TH_Variation_Swatches_Pro')) {
                         thvs_loop_available_attributes($product);
                       } ?>
               <h2 class="woocommerce-loop-product__title">

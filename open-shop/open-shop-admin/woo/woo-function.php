@@ -198,7 +198,7 @@ $args = open_shop_product_query($term_id,$prdct_optn);
                </div>
                <div class="thunk-product-content">
                 <?php 
-                if (class_exists('TH_Variation_Swatches')) {
+                if (class_exists('TH_Variation_Swatches_Pro')) {
                 thvs_loop_available_attributes($product);
                  } ?>
                   <h2 class="woocommerce-loop-product__title"><a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><?php echo $product->get_title(); ?></a></h2>
@@ -277,7 +277,7 @@ function open_shop_product_filter_loop($args){
                </div>
                <div class="thunk-product-content">
 
-                <?php if (class_exists('TH_Variation_Swatches')) {
+                <?php if (class_exists('TH_Variation_Swatches_Pro')) {
                         thvs_loop_available_attributes($product);
                       } ?>
                
