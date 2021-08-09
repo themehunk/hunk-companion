@@ -122,6 +122,12 @@
                                 $('.thunk-slide .owl-stage-outer').css("padding", "0"); 
                                 $('.thunk-slide .owl-nav').css("top", "-58px");
                              }); 
+                              
+                              $('li.thvs_loop-available-attributes__value').hover(function () {
+                               var src = $(this).attr('data-o-src');
+                               var id = $(this).attr('data-product-id');
+                            $('li.thvs_loop-available-attributes__value').closest('.post-'+ id ).find('img.attachment-woocommerce_thumbnail').attr("srcset", src );
+                            });
              
                             } 
                           } );

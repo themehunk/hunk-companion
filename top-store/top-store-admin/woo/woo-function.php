@@ -21,18 +21,21 @@ if(!function_exists('top_store_product_query')){
     }
     return $args;
     }
+
 }
 /********************************/
 //product cat filter loop
 /********************************/
 function top_store_product_cat_filter_default_loop($term_id,$prdct_optn){
+    global $product;
 $args = top_store_product_query($term_id,$prdct_optn);
     $products = wc_get_products( $args );
     if (!empty($products)) {
     foreach ($products as $product) {
       $pid =  $product->get_id();
+
       ?>
-        <div <?php post_class('product'); ?>>
+        <div <?php post_class('product',$pid); ?>>
           <div class="thunk-product-wrap">
           <div class="thunk-product">
                <div class="thunk-product-image">
@@ -97,10 +100,16 @@ $args = top_store_product_query($term_id,$prdct_optn);
   if( ( class_exists( 'WPCleverWooscp' )) && function_exists( 'top_store_wpc_add_to_compare_fltr' )){
       echo top_store_wpc_add_to_compare_fltr($pid);
     }
+
+
                        ?>
                    </div>
                    </div>
+                
             <div class="thunk-product-content">
+                <?php  if (class_exists('TH_Variation_Swatches')) {
+                        thvs_loop_available_attributes($product);
+                      } ?>   
               <h2 class="woocommerce-loop-product__title">
                 <a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><?php echo $product->get_title(); ?></a>
               </h2>
@@ -124,6 +133,7 @@ $args = top_store_product_query($term_id,$prdct_optn);
 }
 
 function top_store_product_filter_loop($args){  
+     global $product;
     $products = wc_get_products( $args );
     if (!empty($products)) {
     foreach ($products as $product) {
@@ -194,10 +204,18 @@ function top_store_product_filter_loop($args){
   if( ( class_exists( 'WPCleverWooscp' )) && function_exists( 'top_store_wpc_add_to_compare_fltr' )){
       echo top_store_wpc_add_to_compare_fltr($pid);
     }
+
+
                 ?>
+
+
                </div> 
              </div>
+                
               <div class="thunk-product-content">
+                <?php  if (class_exists('TH_Variation_Swatches')) {
+                        thvs_loop_available_attributes($product);
+                      } ?>
               <h2 class="woocommerce-loop-product__title">
                 <a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><?php echo $product->get_title(); ?></a>
               </h2>
@@ -261,6 +279,7 @@ $productType = $query['prd-orderby'];
 $count = $query['count'];
 $cat_slug = $query['cate'];
 global $th_cat_slug;
+
 $th_cat_slug = $cat_slug;
         $args = array(
             'hide_empty' => 1,
@@ -324,6 +343,8 @@ return $return;
 /****************************/
 function top_store_post_query($query){
 
+
+
        $args = array(
             'orderby' => $query['orderby'],
             'order' => 'DESC',
@@ -336,9 +357,13 @@ function top_store_post_query($query){
            
         );
 
+
+
        if($query['thumbnail']){
           $args['meta_key'] = '_thumbnail_id';
        }
+
+       
 
             $return = new WP_Query($args);
 
@@ -438,7 +463,7 @@ function top_store_product_slide_list_loop($term_id,$prdct_optn){
     foreach ($products as $product) {
       $pid =  $product->get_id();
       ?>
-        <div <?php post_class('product'); ?>>
+        <div <?php post_class('product',$pid); ?>>
           <div class="thunk-list">
                <div class="thunk-product-image">
                 <a href="<?php echo get_permalink($pid); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
