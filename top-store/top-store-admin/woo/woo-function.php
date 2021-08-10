@@ -23,6 +23,27 @@ if(!function_exists('top_store_product_query')){
     }
 
 }
+
+if(!function_exists('top_store_whishlist_check')){
+
+function top_store_whishlist_check($pid){
+      if( class_exists( 'YITH_WCWL' ) ){
+        echo top_store_whish_list($pid);
+        }elseif( class_exists( 'WPCleverWoosw' )){
+        echo top_store_wpc_whish_list($pid);          
+    }
+
+     if( class_exists( 'YITH_Woocompare' ) ){
+        echo top_store_add_to_compare_fltr($pid);
+        }elseif( class_exists( 'WPCleverWooscp' )){
+        echo top_store_wpc_add_to_compare_fltr($pid);          
+    }
+
+}
+
+}
+
+
 /********************************/
 //product cat filter loop
 /********************************/
@@ -85,22 +106,8 @@ $args = top_store_product_query($term_id,$prdct_optn);
                       </div>
                       <?php }
 
-  if( class_exists( 'YITH_WCWL' ) && (! class_exists( 'WPCleverWoosw' ))){
-    echo top_store_whish_list($pid);
-    }
 
-  if( ( class_exists( 'WPCleverWoosw' )) && function_exists( 'top_store_wpc_whish_list' )){
-     echo top_store_wpc_whish_list($pid);          
-    }
-
-  if( ( class_exists( 'YITH_Woocompare' )) && (! class_exists( 'WPCleverWooscp' ))){
-     echo top_store_add_to_compare_fltr($pid);
-    }
-
-  if( ( class_exists( 'WPCleverWooscp' )) && function_exists( 'top_store_wpc_add_to_compare_fltr' )){
-      echo top_store_wpc_add_to_compare_fltr($pid);
-    }
-
+            top_store_whishlist_check($pid);
 
                        ?>
                    </div>
@@ -189,22 +196,7 @@ function top_store_product_filter_loop($args){
                         </div>
                       </div> 
                       <?php } 
-  if( class_exists( 'YITH_WCWL' ) && (! class_exists( 'WPCleverWoosw' ))){
-    echo top_store_whish_list($pid);
-    }
-
-  if( ( class_exists( 'WPCleverWoosw' )) && function_exists( 'top_store_wpc_whish_list' )){
-     echo top_store_wpc_whish_list($pid);          
-    }
-
-  if( ( class_exists( 'YITH_Woocompare' )) && (! class_exists( 'WPCleverWooscp' ))){
-     echo top_store_add_to_compare_fltr($pid);
-    }
-
-  if( ( class_exists( 'WPCleverWooscp' )) && function_exists( 'top_store_wpc_add_to_compare_fltr' )){
-      echo top_store_wpc_add_to_compare_fltr($pid);
-    }
-
+             top_store_whishlist_check($pid);
 
                 ?>
 
