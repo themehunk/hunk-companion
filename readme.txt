@@ -3,7 +3,7 @@ Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, gogo, Testimonial, Team, service
 Tested up to: 5.8
-Stable tag: 1.5
+Stable tag: 1.5.2
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
@@ -59,12 +59,13 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 == Changelog ==
 
-= 1.5.1 =
-* Make top-store theme compatible with th-variation-swatches-pro.
-* Make open-shop theme compatible with th-variation-swatches-pro.
+= 1.5.2 =
 * Yith plugin added in top-store theme.
 * Yith plugin added in open-shop theme.
 
+= 1.5.1 =
+* Make top-store theme compatible with th-variation-swatches-pro.
+* Make open-shop theme compatible with th-variation-swatches-pro.
 
 = 1.5 =
 * Almaira shop, open shop, open mart and top store Image croping issue fixed.
