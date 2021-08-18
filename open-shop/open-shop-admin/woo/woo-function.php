@@ -5,7 +5,7 @@ if(!function_exists('open_shop_product_query')){
     function open_shop_product_query($term_id,$prdct_optn){
     $limit_product = get_theme_mod('open_shop_prd_shw_no','20');
     // product filter
-    $args = array('limit' => $limit_product, 'visibility' => 'catalog');
+    $args = array('limit' => $limit_product, 'visibility' => 'catalog', 'status' => 'publish');
     if($term_id){
         $term_args = array('hide_empty' => 1,'slug'    => $term_id);
         $product_categories = get_terms( 'product_cat', $term_args);
