@@ -4,7 +4,7 @@ if(!function_exists('top_store_product_query')){
     function top_store_product_query($term_id,$prdct_optn){
     $limit_product = get_theme_mod('top_store_prd_shw_no','20');
     // product filter
-    $args = array('limit' => $limit_product, 'visibility' => 'catalog');
+    $args = array('limit' => $limit_product, 'visibility' => 'catalog', 'post_status' => 'publish');
     if($term_id){
         $term_args = array('hide_empty' => 1,'slug'    => $term_id);
         $product_categories = get_terms( 'product_cat', $term_args);

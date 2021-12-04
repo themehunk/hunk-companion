@@ -64,6 +64,10 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 = 1.5.3 =
 * Jot Shop Banner Change
 
+= 1.5.3 =
+* Open-shop draft post publish issue fixed.
+* Top-store draft post publish issue fixed.
+
 = 1.5.2 =
 * Yith plugin added in top-store theme.
 * Yith plugin added in open-shop theme.
