@@ -3,7 +3,7 @@ Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, gogo, Testimonial, Team, service
 Tested up to: 5.8.1
-Stable tag: 1.5.4
+Stable tag: 1.5.5
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
@@ -60,7 +60,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 == Changelog ==
 
 = 1.5.5 =
-* Gogolite The magic method Hunk_Companion_Singleton issue fixed.
+* Open Mart - pro plugin issue fixed.
 
 = 1.5.4 =
 * Almaira Shop Import demo file changed.

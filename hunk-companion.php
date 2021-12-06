@@ -59,7 +59,7 @@ $theme = hunk_companion_text_domain();
       add_action( 'wp_enqueue_scripts', 'hunk_companion_portfoliolite_scripts' );
       add_action('customize_controls_enqueue_scripts', 'hunk_companion_portfoliolite_customizer_scripts' );
 	}
-	elseif(in_array("open-mart", $theme)){
+	elseif(in_array("open-mart", $theme) && !function_exists( 'open_mart_load_plugin' )){
      require_once HUNK_COMPANION_DIR_PATH . 'open-mart/open-mart-admin/init.php';
      require_once HUNK_COMPANION_DIR_PATH .'open-mart/demo/import-data.php';
       add_action( 'wp_enqueue_scripts', 'hunk_companion_open_mart_scripts' );
