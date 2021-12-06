@@ -58,6 +58,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
+
 = 1.5.5 =
 * Open Mart - pro plugin issue fixed.
 
