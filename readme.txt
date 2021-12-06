@@ -59,6 +59,9 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 == Changelog ==
 
+= 1.5.6 =
+* Gogo Lite - The magic method Hunk_Companion_Singleton issue fixed.
+
 = 1.5.5 =
 * Open Mart - pro plugin issue fixed.
 
