@@ -58,6 +58,10 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
+
+= 1.5.5 =
+* Gogolite The magic method Hunk_Companion_Singleton issue fixed.
+
 = 1.5.4 =
 * Almaira Shop Import demo file changed.
 
