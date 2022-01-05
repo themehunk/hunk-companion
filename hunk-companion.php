@@ -3,7 +3,7 @@
  Plugin Name: Hunk Companion
  Plugin URI: https://themehunk.com/hunk-companion/
  Description: Hunk companion plugin is an essential plugin to add features of Front page sections in your site. An easy to use plugin with ThemeHunk WordPress themes.
- Version: 1.5.8
+ Version: 1.5.9
  Author: ThemeHunk
  Text Domain: hunk-companion
  Author URI: https://themehunk.com/
@@ -54,7 +54,6 @@ $theme = hunk_companion_text_domain();
       add_action( 'wp_enqueue_scripts', 'hunk_companion_top_store_scripts' );
 	}
 	elseif(in_array("portfoliolite", $theme)){
-
      require_once HUNK_COMPANION_DIR_PATH . 'portfoliolite/admin/init.php';
       add_action( 'wp_enqueue_scripts', 'hunk_companion_portfoliolite_scripts' );
       add_action('customize_controls_enqueue_scripts', 'hunk_companion_portfoliolite_customizer_scripts' );
@@ -63,6 +62,9 @@ $theme = hunk_companion_text_domain();
      require_once HUNK_COMPANION_DIR_PATH . 'open-mart/open-mart-admin/init.php';
      require_once HUNK_COMPANION_DIR_PATH .'open-mart/demo/import-data.php';
       add_action( 'wp_enqueue_scripts', 'hunk_companion_open_mart_scripts' );
+	}
+	elseif(in_array("th-shop-mania", $theme)){
+     require_once HUNK_COMPANION_DIR_PATH . 'th-shop-mania/init.php';
 	}
 }
 add_action('after_setup_theme', 'hunk_companion_load_plugin');
