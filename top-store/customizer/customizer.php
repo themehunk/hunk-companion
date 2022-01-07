@@ -33,5 +33,23 @@ $wp_customize->add_setting('top_store_prd_shw_no', array(
             ),
         )
     ); 
+
+/*************************/
+/* Footer Section for Pro*/
+/*************************/
+
+$wp_customize->add_setting('topstore-footer-pro-link', array(
+    'sanitize_callback' => 'topstore_store_sanitize_text',
+    ));
+$wp_customize->add_control(new Top_Store_Misc_Control( $wp_customize, 'topstore-footer-pro-link',
+            array(
+        'section'     => 'top-store-bottom-footer',
+        'type'        => 'pro-link',
+        'url'         => 'https://themehunk.com/product/top-store-pro/',
+        'label' => esc_html__( 'Get Pro', 'top-store' ),
+        'priority'   =>100,
+    )));
+
+
 }
 add_action('customize_register','top_store_front_customize_register');

@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @param  
  * @return mixed|string
  */
-function almaira_shop_front_customize_register( $wp_customize ){
+function open_shop_front_customize_register( $wp_customize ){
 //Front Page
 require HUNK_COMPANION_DIR_PATH . '/open-shop/customizer/frontpage/top-slider.php';
 require HUNK_COMPANION_DIR_PATH . '/open-shop/customizer/frontpage/category-tab.php';
@@ -33,6 +33,26 @@ require HUNK_COMPANION_DIR_PATH . '/open-shop/customizer/frontpage/higlight.php'
                 'max'  => 1000,
             ),
         )
-    ); 
+    );
+
+
+/*************************/
+/* Footer Section for Pro*/
+/*************************/
+
+$wp_customize->add_setting('openshop-footer-pro-link', array(
+    'sanitize_callback' => 'openshop_store_sanitize_text',
+    ));
+$wp_customize->add_control(new Open_Shop_Misc_Control( $wp_customize, 'openshop-footer-pro-link',
+            array(
+        'section'     => 'open-shop-bottom-footer',
+        'type'        => 'pro-link',
+        'url'         => 'https://themehunk.com/product/open-shop-pro/',
+        'label' => esc_html__( 'Get Pro', 'open-shop' ),
+        'priority'   =>100,
+    )));
+
+
+
 }
-add_action('customize_register','almaira_shop_front_customize_register');
+add_action('customize_register','open_shop_front_customize_register');
