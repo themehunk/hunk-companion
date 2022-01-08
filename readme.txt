@@ -60,6 +60,8 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 == Changelog ==
 
 = 1.6.0 =
+* TH Shop Menia elemento updated.
+
 * Open shop theme get pro button added.
 * Top store theme get pro button added.
 
