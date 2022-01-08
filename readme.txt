@@ -2,8 +2,8 @@
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, gogo, Testimonial, Team, service
-Tested up to: 5.8.2
-Stable tag: 1.6.0
+Tested up to: 5.8.3
+Stable tag: 1.6.1
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
@@ -59,11 +59,12 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 == Changelog ==
 
-= 1.6.0 =
-* TH Shop Menia elemento updated.
-
+= 1.6.1 =
 * Open shop theme get pro button added.
 * Top store theme get pro button added.
+
+= 1.6.0 =
+* TH Shop Menia elemento updated.
 
 = 1.5.9 =
 * TH Shop Menia added.
