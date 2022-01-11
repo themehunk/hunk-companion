@@ -36,7 +36,9 @@ class elementoProductSimple extends Widget_Base
         $this->titleStyle();
         $this->priceStyle();
         $this->product_sale_style();
-        $this->product_quick_view_style();
+        if (function_exists('th_elemento_addon_quickView_enable')) {
+            $this->product_quick_view_style();
+        }
         $this->ratingStyle();
         $this->cartButton();
     }
@@ -92,7 +94,7 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Normal', 'elemento-addons'),
             ]
         );
-        
+
         $this->add_control(
             'quickview_btn',
             [
@@ -113,7 +115,7 @@ class elementoProductSimple extends Widget_Base
             [
                 'label'     => __('Background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
-                "default"   => "#2d59f7",
+                "default"   => "#20C9AE",
                 'scheme'    => [
                     'type'  => Scheme_Color::get_type(),
                     'value' => Scheme_Color::COLOR_1,
@@ -150,7 +152,7 @@ class elementoProductSimple extends Widget_Base
             [
                 'label'     => __('background Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
-                "default"   => "#2d59f7",
+                "default"   => "#20C9AE",
                 'scheme'    => [
                     'type'  => Scheme_Color::get_type(),
                     'value' => Scheme_Color::COLOR_1,
@@ -424,11 +426,33 @@ class elementoProductSimple extends Widget_Base
                 ],
                 'selectors'  => [
                     '{{WRAPPER}} .ea-simple-product-slider .item' => 'padding : 0 {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .ea-simple-product-slider .elemento-product-outer-wrap + .elemento-product-outer-wrap' => 'margin-top :{{SIZE}}{{UNIT}};',
                 ]
             ]
         );
-
+        $this->add_responsive_control(
+            'container_margin_slide_row',
+            [
+                'label'     => __('Row Spacing', 'elemento-addons'),
+                'type'      => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range'     => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 10,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .ea-simple-product-slider .elemento-product-outer-wrap + .elemento-product-outer-wrap' => 'margin-top :calc({{SIZE}}{{UNIT}} * 2);',
+                ],
+                'condition' => [
+                    'number_of_row' => '2'
+                ]
+            ]
+        );
         // section_layout
         $this->add_control(
             'container_padding',
@@ -523,7 +547,7 @@ class elementoProductSimple extends Widget_Base
             [
                 'label'     => __('Box Shadow Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
-                'default'   => "#4b58ff40",
+                'default'   => "#4B58FF00",
                 'scheme'    => [
                     'type'  => Scheme_Color::get_type(),
                     'value' => Scheme_Color::COLOR_1,
@@ -542,23 +566,12 @@ class elementoProductSimple extends Widget_Base
                 'label'     => __('Hover', 'elemento-addons'),
             ]
         );
-
-        // $this->add_group_control(
-        //     \Elementor\Group_Control_Box_Shadow::get_type(),
-        //     [
-        //         'name' => 'box_shadow_box_hover',
-        //         'label' => __('Box Shadow', 'elemento-addons'),
-        //         'selector' => '{{WRAPPER}} .elemento-product-simple-inner-wrap',
-        //         'separator' => "before",
-        //     ]
-        // );
-
         $this->add_control(
             'box_shadow_box_hover',
             [
                 'label'     => __('Box Shadow Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
-                'default'   => "#4b58ff40",
+                'default'   => "#B0ADAD40",
                 'scheme'    => [
                     'type'  => Scheme_Color::get_type(),
                     'value' => Scheme_Color::COLOR_1,
@@ -737,7 +750,7 @@ class elementoProductSimple extends Widget_Base
             [
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
-                "default"   => "#2d59f7",
+                "default"   => "#20C9AE",
                 'scheme'    => [
                     'type'  => Scheme_Color::get_type(),
                     'value' => Scheme_Color::COLOR_1,
@@ -799,7 +812,7 @@ class elementoProductSimple extends Widget_Base
                 'label_on'     => __('Yes', 'elemento-addons'),
                 'label_off'    => __('No', 'elemento-addons'),
                 'return_value' => 'on',
-                'default'      => 'on',
+                'default'      => '',
             ]
         );
         $this->add_control(
@@ -920,7 +933,7 @@ class elementoProductSimple extends Widget_Base
                         ],
                     ],
                     'color' => [
-                        'default' => '#2d59f7',
+                        'default' => '#20C9AE',
                     ],
                 ],
             ]
@@ -957,7 +970,7 @@ class elementoProductSimple extends Widget_Base
             [
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
-                "default"   => "#2d59f7",
+                "default"   => "#20C9AE",
                 'scheme'    => [
                     'type'  => Scheme_Color::get_type(),
                     'value' => Scheme_Color::COLOR_1,
@@ -995,7 +1008,7 @@ class elementoProductSimple extends Widget_Base
             [
                 'label'     => __('Color', 'elemento-addons'),
                 'type'      => Controls_Manager::COLOR,
-                "default"   => "#2d59f7",
+                "default"   => "#20C9AE",
                 'scheme'    => [
                     'type'  => Scheme_Color::get_type(),
                     'value' => Scheme_Color::COLOR_1,
