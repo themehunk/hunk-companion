@@ -58,13 +58,11 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
-
-= 1.6.2 =
-* th shop mania changes default value and row spacing  
-
 = 1.6.1 =
 * Open shop theme get pro button added.
 * Top store theme get pro button added.
+* Th Shop Mania changes default value and row spacing 
+* Th Shop Mania Import added.
 
 = 1.6.0 =
 * TH Shop Menia elemento updated.
