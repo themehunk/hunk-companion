@@ -45,14 +45,6 @@
     margin: -15px 0px -100px;
     padding: 15px 0px 100px;
   }
-
-  // testing
-  // .owl-stage-outer {
-  //   margin: 0px 0px -100px;
-  //   padding: 0px 0px 100px;
-  // }
-  // testing
-
   .item {
     padding: 0 12px;
   }
@@ -120,23 +112,6 @@
         /* color: transparent; */
       }
     }
-    // testing
-    // .elemento-product-simple-inner-bottom {
-    //   transform: translateY(0);
-    //   opacity: 1;
-    //   visibility: visible;
-    //   border-top: none !important;
-    //   padding-top: 0 !important;
-    //   border-top-left-radius: 0 !important;
-    //   border-top-right-radius: 0 !important;
-    // }
-    // .elemento-product-simple-inner-wrap {
-    //   border-bottom-left-radius: 0 !important;
-    //   border-bottom-right-radius: 0 !important;
-    //   border-bottom-width: 0px !important;
-    // }
-    // testing
-
     .elemento-addons-quickview-simple {
       position: absolute;
       top: 34%;
@@ -153,6 +128,8 @@
       letter-spacing: 0.5px;
       opacity: 0;
       transition: 0.3s all linear;
+      width:fit-content;
+      text-align: center;
     }
     .buttons_ {
       display: flex;
@@ -273,6 +250,7 @@
       line-height: 1;
       position: relative;
       z-index: 1000;
+      text-align: center;
       del {
         margin-right: 0.5rem;
         color: #878787;

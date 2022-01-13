@@ -120,6 +120,8 @@
   letter-spacing: 0.5px;
   opacity: 0;
   transition: 0.3s all linear;
+  width: fit-content;
+  text-align: center;
 }
 .ea-simple-product-slider .elemento-product-outer-wrap .buttons_ {
   display: flex;
@@ -234,6 +236,7 @@
   line-height: 1;
   position: relative;
   z-index: 1000;
+  text-align: center;
 }
 .ea-simple-product-slider .elemento-product-outer-wrap .elemento-addons-price del {
   margin-right: 0.5rem;

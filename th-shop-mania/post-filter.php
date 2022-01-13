@@ -121,6 +121,7 @@ class Th_Simple_Post_filter
             if (isset($options['number_of_row']) && $options['number_of_row'] == '2') {
                 $countRow = 1;
                 $countTotal = count($query->posts);
+                $itemOpen = true;
                 $productHtml .= '<div class="item">';
                 while ($query->have_posts()) {
                     $query->the_post();
@@ -128,11 +129,17 @@ class Th_Simple_Post_filter
                     $productHtml .= $this->product_html1($productId, $options);
                     if ($countRow % 2 === 0) {
                         $productHtml .= '</div>';
-                        if ($countTotal != $countRow) $productHtml .= '<div class="item">';
+                        $itemOpen = false;
+                        if ($countTotal != $countRow) {
+                            $itemOpen = true;
+                            $productHtml .= '<div class="item">';
+                        }
                     }
                     $countRow++;
                 }
-                $productHtml .= '</div>';
+                if ($itemOpen) {
+                    $productHtml .= '</div>';
+                }
             } else {
                 while ($query->have_posts()) {
                     $query->the_post();
@@ -202,9 +209,9 @@ class Th_Simple_Post_filter
         $productHtml .= $ratingHtml ? '<div class="elemento-addons-rating">' . $ratingHtml . '</div>' : '';
         // add to cart 
         $productHtml .=  $price;
-        $productHtml .=  '</div>';
+        $productHtml .=  '</div>'; //inner rap
 
-        $productHtml .=  "<div class='elemento-product-simple-inner-bottom'>";
+        $productHtml .=  "<div class='elemento-product-simple-inner-bottom'>"; //button wrap
         $productHtml .=  $addToCart;
         if ($wishlist_ || $compare_) {
             // buttons icon 
@@ -214,9 +221,7 @@ class Th_Simple_Post_filter
             $productHtml .=  "</div>";
             // buttons icon 
         }
-        $productHtml .=  "</div>";
-
-
+        $productHtml .=  "</div>"; //button wrap
         return $productHtml;
     }
     function  elemento_add_tocart($product,  $text, $icon)
