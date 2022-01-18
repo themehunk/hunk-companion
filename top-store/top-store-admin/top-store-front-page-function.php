@@ -228,10 +228,7 @@ function top_store_mobile_navbar(){?>
  
        </li>
     <li><?php top_store_account();?></li>
-    <li><?php 
-           do_action( 'top_store_cart_count' ); 
-        ?> 
-    </li>
+    
     
   </ul>
 </div>
