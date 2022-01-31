@@ -12,7 +12,7 @@ function th_shop_mania_import_files(){
         'import_customizer_file_url'=> esc_url($file_url.'fashion-store/customizer.dat'),
         'import_widget_file_url'=> '',
         'import_preview_image_url'=> esc_url($file_url.'fashion-store/thumb.png'),
-        'preview_url'=> esc_url('https://themehunk.com/product/th-shop-mania/'),
+        'preview_url'=> esc_url('https://wpthemes.themehunk.com/fashion-store/'),
         'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'th-shop-mania' ),
        ),
     array(
@@ -21,7 +21,7 @@ function th_shop_mania_import_files(){
         'import_customizer_file_url'=> esc_url($file_url.'fashion-shop/customizer.dat'),
         'import_widget_file_url'=> '',
         'import_preview_image_url'=> esc_url($file_url.'fashion-shop/thumb.png'),
-        'preview_url'=> esc_url('https://themehunk.com/product/th-shop-mania/'),
+        'preview_url'=> esc_url('https://wpthemes.themehunk.com/fashion-shop/'),
         'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'th-shop-mania' ),
        ),
     array(
@@ -30,7 +30,7 @@ function th_shop_mania_import_files(){
         'import_customizer_file_url'=> esc_url($file_url.'mania-electro/customizer.dat'),
         'import_widget_file_url'=> '',
         'import_preview_image_url'=> esc_url($file_url.'mania-electro/thumb.png'),
-        'preview_url'=> esc_url('https://themehunk.com/product/th-shop-mania/'),
+        'preview_url'=> esc_url('https://wpthemes.themehunk.com/electro-mania/'),
         'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'th-shop-mania' ),
        ),
     array(
@@ -39,7 +39,7 @@ function th_shop_mania_import_files(){
         'import_customizer_file_url'=> esc_url($file_url.'mania-grocery/customizer.dat'),
         'import_widget_file_url'=> '',
         'import_preview_image_url'=> esc_url($file_url.'mania-grocery/thumb.png'),
-        'preview_url'=> esc_url('https://themehunk.com/product/th-shop-mania/'),
+        'preview_url'=> esc_url('https://wpthemes.themehunk.com/mania-grocery/'),
         'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'th-shop-mania' ),
        )
    
