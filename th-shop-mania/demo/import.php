@@ -23,6 +23,24 @@ function th_shop_mania_import_files(){
         'import_preview_image_url'=> esc_url($file_url.'fashion-shop/thumb.png'),
         'preview_url'=> esc_url('https://themehunk.com/product/th-shop-mania/'),
         'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'th-shop-mania' ),
+       ),
+    array(
+        'import_file_name' => esc_html__('Electro','th-shop-mania'),
+        'import_file_url'=> esc_url($file_url.'mania-electro/blog.xml'),
+        'import_customizer_file_url'=> esc_url($file_url.'mania-electro/customizer.dat'),
+        'import_widget_file_url'=> '',
+        'import_preview_image_url'=> esc_url($file_url.'mania-electro/thumb.png'),
+        'preview_url'=> esc_url('https://themehunk.com/product/th-shop-mania/'),
+        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'th-shop-mania' ),
+       ),
+    array(
+        'import_file_name' => esc_html__('Grocery','th-shop-mania'),
+        'import_file_url'=> esc_url($file_url.'mania-grocery/blog.xml'),
+        'import_customizer_file_url'=> esc_url($file_url.'mania-grocery/customizer.dat'),
+        'import_widget_file_url'=> '',
+        'import_preview_image_url'=> esc_url($file_url.'mania-grocery/thumb.png'),
+        'preview_url'=> esc_url('https://themehunk.com/product/th-shop-mania/'),
+        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'th-shop-mania' ),
        )
    
      )
