@@ -2,7 +2,7 @@
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, gogo, Testimonial, Team, service
-Tested up to: 5.8.3
+Tested up to: 5.9
 Stable tag: 1.6.4
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
