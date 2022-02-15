@@ -305,6 +305,18 @@ div#themehunk-site-library-category {
   color:#db3157;
 }
 
+.builder-brizy span{
+  background-image: url(../image/brizy.svg);
+  background-size: 62px !important;
+  background-position: left 3px;
+  background-repeat: no-repeat;
+  color: #db3157;
+  margin-left: 22px !important;
+  padding-bottom: 34%!important;
+  background-position: 0.5em 20% !important;
+  font-size: 0;
+}
+
 .install-theme-info .theme-screenshot {
   box-shadow: 0 3px 12px #c3c3c33b, 0 3px 12px #c3c3c33b;
   border-radius: 5px;

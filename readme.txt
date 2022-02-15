@@ -61,6 +61,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 1.6.6 =
 * Th Shop Mania - New Import Feature Added.
+* TH shop mania - Brizy builder added.
 
 = 1.6.5 =
 * Th Shop Mania - Notify border issue resolved.

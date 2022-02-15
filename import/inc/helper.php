@@ -116,7 +116,7 @@ if ( ! class_exists( 'Themehunk_Library_Helper' ) ) :
 			if ( ! empty( $file ) ) {
 
 				// Set variables for storage, fix file filename for query strings.
-				preg_match( '/[^\?]+\.(jpe?g|jpe|svg|gif|png)\b/i', $file, $matches );
+				preg_match( '/[^\?]+\.(jpe?g|jpe|svg|gif|png|mp4)\b/i', $file, $matches );
 				$file_array         = array();
 				$file_array['name'] = basename( $matches[0] );
 
@@ -160,7 +160,7 @@ if ( ! class_exists( 'Themehunk_Library_Helper' ) ) :
 		static public function _is_image_url( $string = '' ) {
 			if ( is_string( $string ) ) {
 
-				if ( preg_match( '/\.(jpg|jpeg|png|gif)/i', $string ) ) {
+				if ( preg_match( '/\.(jpg|jpeg|png|gif|mp4)/i', $string ) ) {
 					return true;
 				}
 			}
@@ -182,7 +182,6 @@ if ( ! class_exists( 'Themehunk_Library_Helper' ) ) :
 		if ( isset( $options['themehunk-settings'] ) ) {
 			self::_import_settings($options['themehunk-settings']);
 		}
-
 		// Add Custom CSS.
 		if ( isset( $options['custom-css'] ) ) {
 			wp_update_custom_css_post( $options['custom-css'] );
@@ -200,6 +199,22 @@ if ( ! class_exists( 'Themehunk_Library_Helper' ) ) :
 	 * @param  array $options Themehunk Customizer setting array.
 	 * @return void
 	 */
+
+static public function _import_multi_array($val){
+			$jsond = json_decode($val);
+					foreach($jsond as $jkey => $jval){
+						foreach($jval as $stkey => $stval){
+							if ( self::_is_image_url( $stval ) ) {
+								$imageData = self::_sideload_image($stval);
+								 if ( ! is_wp_error( $imageData ) ) {
+				 					$jsond[$jkey]->$stkey =  $imageData->url;
+								}
+							}
+						}
+					}
+
+					return $jsond;
+}
 static public function _import_settings( $options = array() ) {
 		if(defined('THEMEHUNK_THEME_SETTINGS')){
 
@@ -208,15 +223,18 @@ static public function _import_settings( $options = array() ) {
 				if(empty(get_option('themehunk-settings'))){
 				update_option( 'themehunk-settings', get_option($theme_mods) );
 				}
-
-
 			foreach ( $options as $key => $val ) {
-				if ( self::_is_image_url( $val ) ) {
-					$data = self::_sideload_image( $val );
 
-					if ( ! is_wp_error( $data ) ) {
-						$options[ $key ] = $data->url;
-					}
+				if ( self::_is_image_url( $val ) ) {
+
+						if(is_array(json_decode($val))){
+							$options[ $key ] = json_encode(self::_import_multi_array($val));
+						}else{
+							$data = self::_sideload_image( $val );
+							if ( ! is_wp_error( $data ) ) {
+								$options[ $key ] = $data->url;
+							}
+						}					
 				}
 			}
 		update_option( $theme_mods, $options );

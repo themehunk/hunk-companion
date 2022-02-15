@@ -24,8 +24,6 @@ function hunk_companion_text_domain(){
 	$themeArr[] = $theme->get( 'Template' );
 	return $themeArr;
 }
-require_once( HUNK_COMPANION_DIR_PATH . '/import/themehunk.php' );
-
 function hunk_companion_gogolite_body_classes($classes){
          $classes[] = 'gogolite';
          return $classes;
@@ -67,7 +65,9 @@ $theme = hunk_companion_text_domain();
 	elseif(in_array("th-shop-mania", $theme)){
 
      require_once HUNK_COMPANION_DIR_PATH . 'th-shop-mania/init.php';
-     require_once HUNK_COMPANION_DIR_PATH .'th-shop-mania/demo/import.php';
+	 require_once( HUNK_COMPANION_DIR_PATH . '/import/themehunk.php' );
+
+    // require_once HUNK_COMPANION_DIR_PATH .'th-shop-mania/demo/import.php';
 	}
 }
 add_action('after_setup_theme', 'hunk_companion_load_plugin');

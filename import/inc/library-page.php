@@ -40,7 +40,7 @@ if ( ! class_exists( 'Themehunk_Library_Page' ) ) {
 static public function add_admin_menu() {
 
 			$parent_page    = 'themes.php';
-			$page_title     = __('Themehunk Sites','themehunk-site-library');
+			$page_title     = __('TH Import Demo Sites','themehunk-site-library');
 			$capability     = 'manage_options';
 			$page_menu_slug = self::$plugin_slug;
 			$page_menu_func = __CLASS__ . '::menu_callback';
