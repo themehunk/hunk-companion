@@ -73,8 +73,8 @@
 	<# for ( key in data.list ) { #>
 		<option value="{{key}}" data-class="builder-{{key}}">{{{data.list[key]}}}</option>
 			<# } #>	
+			<option value="pagelayer" data-class="builder-pagelayer">Pagelayer</option>
 			<option value="brizy" data-class="builder-brizy">Brizy</option>
-	
  				</select>
 </script>
 
