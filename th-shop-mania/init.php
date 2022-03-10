@@ -109,8 +109,8 @@ if (!function_exists('elemento_addons_compare')) {
     {
         if (intval($productId) && shortcode_exists('th_compare')) {
             $html = '<button class="th-product-compare-btn button" data-th-product-id="' . $productId . '">';
-            $html .= '<i class="fa fa-exchange"></i>';
-            $html .= '<span>' . __('Compare', 'th-elemento') . '</span>';
+            $html .= '<span class="th-icon th-icon-repeat"></span>';
+            $html .= '<span class="text">' . __('Compare', 'th-elemento') . '</span>';
             $html .= '</button>';
             return $html;
         }
