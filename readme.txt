@@ -61,6 +61,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 1.6.8 =
 * Th Shop Mania - Compare icon changed.
+* TH Shop Mania - Gutenberg builder and icon added.
 
 = 1.6.7 =
 * Th Shop Mania - Pagelayer Builder adedd.

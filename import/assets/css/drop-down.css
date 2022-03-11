@@ -186,6 +186,8 @@ div.cs-skin-elastic {
 	transition: none;
 	-webkit-animation: expand 0.6s ease-out;
   	animation: expand 0.6s ease-out;
+	  padding-bottom: 26px;
+	  background: #ffffff;
 }
 
 .cs-skin-elastic .cs-options ul li {

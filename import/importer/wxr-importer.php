@@ -149,7 +149,7 @@ class Themehunk_Library_WXR_Importer {
 
 		// Allow SVG files.
 		$mimes['svg']  = 'image/svg+xml';
-		$mimes['svgz'] = 'image/svg+xml';
+		//$mimes['svgz'] = 'image/svg+xml';
 
 		// Allow XML files.
 		$mimes['xml'] = 'application/xml';
