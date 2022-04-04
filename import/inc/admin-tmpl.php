@@ -85,8 +85,15 @@
 <script type="text/template" id="tmpl-themehunk-template">
 	<ul class="">
 	<# for ( key in data.themehunk ) { #>
-	<li  style="width:300px;" class="themehunkdemo themes demo_{{{data.themehunk[key].type}}}" slug="{{{data.themehunk[key].slug}}}" demo_type ="{{{data.themehunk[key].type}}}" themehunk_template ="{{{data.themehunk[key].template}}}" api ="{{{data.themehunk[key].demo_api}}}" themehunk_import="{{{data.themehunk[key].import_url}}}" themehunk_demo="{{{data.themehunk[key].demo_url}}}" cate="{{{data.themehunk[key].category}}}" thumb="{{{data.themehunk[key].thumb}}}" plugins='<# for( keys in data.themehunk[key].plugins) { #>{"slug":"{{{data.themehunk[key].plugins[keys].slug}}}", "init":"{{{data.themehunk[key].plugins[keys].init}}}","name":"{{{data.themehunk[key].plugins[keys].name}}}"},<# } #>'>
-		<a><img style="width:300px;" src="{{{data.themehunk[key].thumb}}}"></a>
+        <?php if ( is_plugin_active( 'th-shop-mania-pro/th-shop-mania-pro.php' ) ) { ?>
+
+    <li  style="width:300px;" class="themehunkdemo themes demo_{{{data.themehunk[key].type}}}" slug="{{{data.themehunk[key].slug}}}" demo_type ="free" themehunk_template ="{{{data.themehunk[key].template}}}" api ="{{{data.themehunk[key].demo_api}}}" themehunk_import="{{{data.themehunk[key].import_url}}}" themehunk_demo="{{{data.themehunk[key].demo_url}}}" cate="{{{data.themehunk[key].category}}}" thumb="{{{data.themehunk[key].thumb}}}" plugins='<# for( keys in data.themehunk[key].plugins) { #>{"slug":"{{{data.themehunk[key].plugins[keys].slug}}}", "init":"{{{data.themehunk[key].plugins[keys].init}}}","name":"{{{data.themehunk[key].plugins[keys].name}}}"},<# } #>'>
+        
+    <?php } else{ ?>
+            <li  style="width:300px;" class="themehunkdemo themes demo_{{{data.themehunk[key].type}}}" slug="{{{data.themehunk[key].slug}}}" demo_type ="{{{data.themehunk[key].type}}}" themehunk_template ="{{{data.themehunk[key].template}}}" api ="{{{data.themehunk[key].demo_api}}}" themehunk_import="{{{data.themehunk[key].import_url}}}" themehunk_demo="{{{data.themehunk[key].demo_url}}}" cate="{{{data.themehunk[key].category}}}" thumb="{{{data.themehunk[key].thumb}}}" plugins='<# for( keys in data.themehunk[key].plugins) { #>{"slug":"{{{data.themehunk[key].plugins[keys].slug}}}", "init":"{{{data.themehunk[key].plugins[keys].init}}}","name":"{{{data.themehunk[key].plugins[keys].name}}}"},<# } #>'>
+
+        <?php } ?>
+	<a><img style="width:300px;" src="{{{data.themehunk[key].thumb}}}"></a>
 		<div class="themehunk-site-library-container">
 			<h3 class="theme-name" id="themehunk-theme-name"> {{{data.themehunk[key].template}}} </h3>
 			<div class="theme-actions">

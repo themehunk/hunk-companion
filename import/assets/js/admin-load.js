@@ -381,15 +381,25 @@ var ThemehunkSSEImport = {
 					break;
 
 				case 'upgrade':
-						var all_buttons = parseInt( jQuery( '.plugin-card .button' ).length ) || 0,
-							disabled_buttons = parseInt( jQuery( '.plugin-card .button.disabled' ).length ) || 0;
-							if( all_buttons === disabled_buttons ) {
-								jQuery('.themehunk-demo-import')
-									.removeAttr('data-import')
-									.removeClass('installing updating-message')
-									.addClass('button-primary')
-									.text( themehunkAdmin.unique.importDemo );
-							}
+
+					var demo_slug = jQuery('.wp-full-overlay-header').attr('data-demo-slug');
+					jQuery('.themehunk-demo-import')
+							.addClass('go-pro button-primary')
+							.removeClass('themehunk-demo-import')
+							.attr('target', '_blank')
+							.attr('href', themehunkAdmin.getProURL+demo_slug )
+							.text( themehunkAdmin.getProText )
+							.append('<i class="dashicons dashicons-external"></i>');
+							
+						// var all_buttons = parseInt( jQuery( '.plugin-card .button' ).length ) || 0,
+						// 	disabled_buttons = parseInt( jQuery( '.plugin-card .button.disabled' ).length ) || 0;
+						// 	if( all_buttons === disabled_buttons ) {
+						// 		jQuery('.themehunk-demo-import')
+						// 			.removeAttr('data-import')
+						// 			.removeClass('installing updating-message')
+						// 			.addClass('button-primary')
+						// 			.text( themehunkAdmin.unique.importDemo );
+						// 	}
 							// var demo_slug = jQuery('.wp-full-overlay-header').attr('data-demo-slug');
 							// jQuery('.themehunk-demo-import')
 							// 		.addClass('go-pro button-primary')

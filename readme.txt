@@ -2,7 +2,7 @@
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, gogo, Testimonial, Team, service
-Tested up to: 5.9.2
+Tested up to: 5.9
 Stable tag: 1.6.9
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -61,6 +61,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 1.6.9 =
 * Th icon change in top-store.
+* TH Shop Mania - Pro demo diabled.
 
 = 1.6.8 =
 * Th Shop Mania - Compare icon changed.
