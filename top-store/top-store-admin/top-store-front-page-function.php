@@ -216,13 +216,17 @@ function top_store_mobile_navbar(){?>
   <ul>
      <?php 
     if( class_exists( 'YITH_WCWL' )) { ?>
-    <li><a class="gethome" href="<?php echo esc_url( get_home_url() ); ?>"><i class="icon below fa fa-home" aria-hidden="true"></i></a></li>
-    <li><a class="whishlist" href="<?php echo esc_url( top_store_whishlist_url() ); ?>"><i  class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+    <li><a class="gethome" href="<?php echo esc_url( get_home_url() ); ?>"><i class="th-icon below th-icon-home" aria-hidden="true"></i></a></li>
+    <li><a class="whishlist" href="<?php echo esc_url( top_store_whishlist_url() ); ?>"><i  class="th-icon th-icon-heartline" aria-hidden="true"></i></a></li>
     <?php } ?>
     <li>
             <a href="#" class="menu-btn" id="mob-menu-btn">
               
-                <i class="icon fa fa-bars" aria-hidden="true"></i>
+                <div class="btn">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </div>
                 
             </a>
  
