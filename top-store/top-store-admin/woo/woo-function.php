@@ -96,7 +96,7 @@ $args = top_store_product_query($term_id,$prdct_optn);
                                <span class="quik-view">
                                    <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
                                       <span>
-                                      <i class="fa fa-eye" aria-hidden="true"></i>
+                                      <i class="th-icon th-icon-search" aria-hidden="true"></i>
                                       </span>
                                    </a>
                                 </span>
@@ -187,7 +187,7 @@ function top_store_product_filter_loop($args){
                                <span class="quik-view">
                                    <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($pid); ?>">
                                       <span>
-                                      <i class="fa fa-eye" aria-hidden="true"></i>
+                                      <i class="th-icon th-icon-search" aria-hidden="true"></i>
                                       </span>
                                    </a>
                                 </span>

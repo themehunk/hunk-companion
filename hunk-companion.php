@@ -4,15 +4,15 @@
  Plugin Name: Hunk Companion
  Plugin URI: https://themehunk.com/hunk-companion/
  Description: Hunk companion plugin is an essential plugin to add features of Front page sections in your site. An easy to use plugin with ThemeHunk WordPress themes.
- Version: 1.6.7
+ Version: 1.6.9
  Author: ThemeHunk
  Text Domain: hunk-companion
  Author URI: https://themehunk.com/
  */
 if (!defined('ABSPATH')) exit;
 // Version constant for easy CSS refreshes
-define('HUNK_COMPANION', '1.6.6');
-define('HUNK_COMPANION_EXT_FILE', __FILE__);
+define('HUNK_COMPANION', '1.6.9');
+define('HUNK_COMPANION_EXT_FILE', __FILE__ );
 define('HUNK_COMPANION_PLUGIN_DIR_URL', plugin_dir_url(HUNK_COMPANION_EXT_FILE));
 define('HUNK_COMPANION_BASENAME', plugin_basename(HUNK_COMPANION_EXT_FILE));
 define('HUNK_COMPANION_DIR_PATH', plugin_dir_path(HUNK_COMPANION_EXT_FILE));
@@ -26,46 +26,51 @@ function hunk_companion_text_domain()
 	$themeArr[] = $theme->get('Template');
 	return $themeArr;
 }
-require_once(HUNK_COMPANION_DIR_PATH . '/import/themehunk.php');
 
-function hunk_companion_gogolite_body_classes($classes)
-{
-	$classes[] = 'gogolite';
-	return $classes;
+function hunk_companion_gogolite_body_classes($classes){
+         $classes[] = 'gogolite';
+         return $classes;
 }
 
-function hunk_companion_load_plugin()
-{
-	$theme = hunk_companion_text_domain();
-	if (in_array("almaira-shop", $theme)) {
-		require_once HUNK_COMPANION_DIR_PATH . 'almaira-shop/almaira-shop-admin/init.php';
-		require_once HUNK_COMPANION_DIR_PATH . 'almaira-shop/demo/import-data.php';
-		add_action('wp_enqueue_scripts', 'hunk_companion_almaira_shop_scripts');
-	} elseif (in_array("gogo", $theme)) {
-		require_once HUNK_COMPANION_DIR_PATH . 'gogolite/admin/gogo-function.php';
-		require_once HUNK_COMPANION_DIR_PATH . 'gogolite/admin/init.php';
-		add_filter('body_class', 'hunk_companion_gogolite_body_classes');
-		add_action('wp_enqueue_scripts', 'hunk_companion_gogolite_scripts');
-	} elseif (in_array("open-shop", $theme)) {
-		require_once HUNK_COMPANION_DIR_PATH . 'open-shop/open-shop-admin/init.php';
-		require_once HUNK_COMPANION_DIR_PATH . 'open-shop/demo/import-data.php';
-		add_action('wp_enqueue_scripts', 'hunk_companion_open_shop_scripts');
-	} elseif (in_array("top-store", $theme)) {
-		require_once HUNK_COMPANION_DIR_PATH . 'top-store/top-store-admin/init.php';
-		require_once HUNK_COMPANION_DIR_PATH . 'top-store/demo/import-data.php';
-		add_action('wp_enqueue_scripts', 'hunk_companion_top_store_scripts');
-	} elseif (in_array("portfoliolite", $theme)) {
-		require_once HUNK_COMPANION_DIR_PATH . 'portfoliolite/admin/init.php';
-		add_action('wp_enqueue_scripts', 'hunk_companion_portfoliolite_scripts');
-		add_action('customize_controls_enqueue_scripts', 'hunk_companion_portfoliolite_customizer_scripts');
-	} elseif (in_array("open-mart", $theme) && !function_exists('open_mart_load_plugin')) {
-		require_once HUNK_COMPANION_DIR_PATH . 'open-mart/open-mart-admin/init.php';
-		require_once HUNK_COMPANION_DIR_PATH . 'open-mart/demo/import-data.php';
-		add_action('wp_enqueue_scripts', 'hunk_companion_open_mart_scripts');
-	} elseif (in_array("th-shop-mania", $theme)) {
+function hunk_companion_load_plugin(){
+$theme = hunk_companion_text_domain(); 
+	if(in_array("almaira-shop", $theme)){
+	require_once HUNK_COMPANION_DIR_PATH .'almaira-shop/almaira-shop-admin/init.php';
+	require_once HUNK_COMPANION_DIR_PATH .'almaira-shop/demo/import-data.php';
+	add_action( 'wp_enqueue_scripts', 'hunk_companion_almaira_shop_scripts' );
+	}
+	elseif(in_array("gogo", $theme)){
+    require_once HUNK_COMPANION_DIR_PATH . 'gogolite/admin/gogo-function.php';
+    require_once HUNK_COMPANION_DIR_PATH . 'gogolite/admin/init.php';
+    add_filter('body_class', 'hunk_companion_gogolite_body_classes');
+    add_action( 'wp_enqueue_scripts', 'hunk_companion_gogolite_scripts' );
+	}
+	elseif(in_array("open-shop", $theme)){
+     require_once HUNK_COMPANION_DIR_PATH . 'open-shop/open-shop-admin/init.php';
+     require_once HUNK_COMPANION_DIR_PATH .'open-shop/demo/import-data.php';
+      add_action( 'wp_enqueue_scripts', 'hunk_companion_open_shop_scripts' );
+	}
+	elseif(in_array("top-store", $theme)){
+     require_once HUNK_COMPANION_DIR_PATH . 'top-store/top-store-admin/init.php';
+     require_once HUNK_COMPANION_DIR_PATH .'top-store/demo/import-data.php';
+      add_action( 'wp_enqueue_scripts', 'hunk_companion_top_store_scripts' );
+	}
+	elseif(in_array("portfoliolite", $theme)){
+     require_once HUNK_COMPANION_DIR_PATH . 'portfoliolite/admin/init.php';
+      add_action( 'wp_enqueue_scripts', 'hunk_companion_portfoliolite_scripts' );
+      add_action('customize_controls_enqueue_scripts', 'hunk_companion_portfoliolite_customizer_scripts' );
+	}
+	elseif(in_array("open-mart", $theme) && !function_exists( 'open_mart_load_plugin' )){
+     require_once HUNK_COMPANION_DIR_PATH . 'open-mart/open-mart-admin/init.php';
+     require_once HUNK_COMPANION_DIR_PATH .'open-mart/demo/import-data.php';
+      add_action( 'wp_enqueue_scripts', 'hunk_companion_open_mart_scripts' );
+	}
+	elseif(in_array("th-shop-mania", $theme)){
 
-		require_once HUNK_COMPANION_DIR_PATH . 'th-shop-mania/init.php';
-		require_once HUNK_COMPANION_DIR_PATH . 'th-shop-mania/demo/import.php';
+     require_once HUNK_COMPANION_DIR_PATH . 'th-shop-mania/init.php';
+	 require_once( HUNK_COMPANION_DIR_PATH . '/import/themehunk.php' );
+
+    // require_once HUNK_COMPANION_DIR_PATH .'th-shop-mania/demo/import.php';
 	}
 }
 add_action('after_setup_theme', 'hunk_companion_load_plugin');

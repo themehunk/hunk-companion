@@ -3,7 +3,7 @@ Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, gogo, Testimonial, Team, service
 Tested up to: 5.9
-Stable tag: 1.6.7
+Stable tag: 1.6.9
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
@@ -59,12 +59,21 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 == Changelog ==
 
-= 1.6.7 =
-
+= 1.6.9 =
+* Th icon change in top-store.
+* TH Shop Mania - Pro demo diabled.
 * shop mania elemento block wishlist added
+
+= 1.6.8 =
+* Th Shop Mania - Compare icon changed.
+* TH Shop Mania - Gutenberg builder and icon added.
+
+= 1.6.7 =
+* Th Shop Mania - Pagelayer Builder adedd.
 
 = 1.6.6 =
 * Th Shop Mania - New Import Feature Added.
+* TH shop mania - Brizy builder added.
 
 = 1.6.5 =
 * Th Shop Mania - Notify border issue resolved.
