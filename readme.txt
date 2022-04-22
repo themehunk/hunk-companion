@@ -62,6 +62,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 = 1.6.9 =
 * Th icon change in top-store.
 * TH Shop Mania - Pro demo diabled.
+* shop mania elemento block wishlist added
 
 = 1.6.8 =
 * Th Shop Mania - Compare icon changed.
