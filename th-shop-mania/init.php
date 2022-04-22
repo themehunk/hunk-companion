@@ -57,6 +57,7 @@ if (!class_exists('ElementoSimpleAddon')) {
         }
         public function simple_elemento_addons_script()
         {
+            wp_enqueue_style('th-icon', SIMPLE_ADDON_URL . 'assets/th-icon/style.css', '');
             wp_enqueue_script('simple-addon-secript', SIMPLE_ADDON_URL . 'assets/custom.js', ['jquery'], '', true);
             wp_localize_script('simple-addon-secript', 'elemento_simple_url', array('admin_ajax' => admin_url('admin-ajax.php')));
         }
@@ -96,9 +97,10 @@ if (!function_exists('elemento_addons_simple_addons')) {
 if (!function_exists('elemento_addons_wishlist_wpc')) {
     function elemento_addons_wishlist_wpc($productId)
     {
-        if (intval($productId) && shortcode_exists('woosw')) {
-            $html = '';
-            $html .= do_shortcode('[woosw id="' . $productId . '"]');
+        if (intval($productId) && shortcode_exists('yith_wcwl_add_to_wishlist')) {
+            $html = '<div class="elemento-wishlist">';
+            $html .= do_shortcode('[yith_wcwl_add_to_wishlist product_id="' . $productId . '" already_in_wishslist_text="<span>already added</span>"]');
+            $html .= '</div>';
             return $html;
         }
     }
@@ -107,9 +109,9 @@ if (!function_exists('elemento_addons_wishlist_wpc')) {
 if (!function_exists('elemento_addons_compare')) {
     function elemento_addons_compare($productId)
     {
-        if (intval($productId) && shortcode_exists('th_compare')) {
+        if (intval($productId) && (shortcode_exists('th_compare') || shortcode_exists('tpcp_compare'))) {
             $html = '<button class="th-product-compare-btn button" data-th-product-id="' . $productId . '">';
-            $html .= '<i class="fa fa-exchange"></i>';
+            $html .= '<i class="th-icon th-icon-repeat"></i>';
             $html .= '<span>' . __('Compare', 'th-elemento') . '</span>';
             $html .= '</button>';
             return $html;

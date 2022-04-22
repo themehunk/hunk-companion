@@ -28,7 +28,7 @@ class elementoProductSimple extends Widget_Base
     {
         return ['elemento-addon-simple-cate', 'prodect-shop-category'];
     }
-    protected function _register_controls()
+    protected function register_controls()
     {
         $this->productSetting();
         $this->SliderControlls();
