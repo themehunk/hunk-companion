@@ -1,6 +1,6 @@
 <?php
 /** 
- * Class Themehunk WXR Importer
+ * Class ThemeHunk  WXR Importer
  *
  * @since  1.0.0
  */
@@ -51,6 +51,7 @@ class Themehunk_Library_WXR_Importer {
 			require_once THEMEHUNK_SITE_LIBRARY_DIR . 'importer/class-wp-importer-logger-serversentevents.php';
 		}
 
+		$this->elementor_competibilty();
 		if ( ! class_exists( 'WXR_Importer' ) ) {
 			require_once THEMEHUNK_SITE_LIBRARY_DIR . 'importer/class-wxr-importer.php';
 		}
@@ -60,7 +61,7 @@ class Themehunk_Library_WXR_Importer {
 		}
 
 		add_filter( 'upload_mimes', array( $this, 'custom_upload_mimes' ) );
-		add_action( 'wp_ajax_themehunk-wxr-import', array( $this, 'xml_data_import' ) );
+		add_action( 'wp_ajax_zita-wxr-import', array( $this, 'xml_data_import' ) );
 		add_filter( 'wxr_importer.pre_process.user', '__return_null' );
 	}
 
@@ -149,7 +150,7 @@ class Themehunk_Library_WXR_Importer {
 
 		// Allow SVG files.
 		$mimes['svg']  = 'image/svg+xml';
-		//$mimes['svgz'] = 'image/svg+xml';
+		$mimes['svgz'] = 'image/svg+xml';
 
 		// Allow XML files.
 		$mimes['xml'] = 'application/xml';
@@ -167,7 +168,7 @@ class Themehunk_Library_WXR_Importer {
 	public function get_xml_data( $path ) {
 
 		$args = array(
-			'action'  => 'themehunk-wxr-import',
+			'action'  => 'zita-wxr-import',
 			'id'      => '1',
 			'xml_url' => $path,
 		);
@@ -186,7 +187,7 @@ class Themehunk_Library_WXR_Importer {
 			),
 			'url'     => $url,
 			'strings' => array(
-				'complete' => __( 'Import complete!', 'themehunk-site-library' ),
+				'complete' => __( 'Import complete!', 'zita-templates' ),
 			),
 		);
 	}
@@ -215,7 +216,7 @@ class Themehunk_Library_WXR_Importer {
 	 */
 	public function get_importer() {
 		$options  = apply_filters(
-			'themehunk_library_xml_import_options', array(
+			'zita_site_library_xml_import_options', array(
 				'fetch_attachments' => true,
 				'default_author'    => get_current_user_id(),
 			)
@@ -320,6 +321,59 @@ class Themehunk_Library_WXR_Importer {
 
 		flush();
 	}
+
+
+
+
+public function elementor_competibilty() {
+
+			/**
+			 * Add Slashes
+			 *
+			 * @todo    Elementor already have below code which works on defining the constant `WP_LOAD_IMPORTERS`.
+			 *          After defining the constant `WP_LOAD_IMPORTERS` in WP CLI it was not works.
+			 *          Try to remove below duplicate code in future.
+			 */
+			if ( defined( 'WP_CLI' ) || ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '3.0.0', '>=' ) ) ) {
+				remove_filter( 'wp_import_post_meta', array( 'Elementor\Compatibility', 'wp_import_post_meta' ) );
+				remove_filter( 'wxr_importer.pre_process.post_meta', array( 'Elementor\Compatibility', 'wxr_importer_process_post_meta' ) );
+
+				add_filter( 'wp_import_post_meta', array( $this, 'wp_import_post_meta' ) );
+				add_filter( 'wxr_importer.pre_process.post_meta', array( $this, 'wxr_importer_process_post_meta' ) );
+			}
+		}
+
+		/**
+		 * Process post meta before WP importer.
+		 *
+		 * Normalize Elementor post meta on import, We need the `wp_slash` in order
+		 * to avoid the unslashing during the `add_post_meta`.
+		 */
+		public function wp_import_post_meta( $post_meta ) {
+			foreach ( $post_meta as &$meta ) {
+				if ( '_elementor_data' === $meta['key'] ) {
+					$meta['value'] = wp_slash( $meta['value'] );
+					break;
+				}
+			}
+
+			return $post_meta;
+		}
+
+		/**
+		 * Process post meta before WXR importer.
+		 *
+		 */
+		public function wxr_importer_process_post_meta( $post_meta ) {
+			if ( '_elementor_data' === $post_meta['key'] ) {
+				$post_meta['value'] = wp_slash( $post_meta['value'] );
+			}
+
+			return $post_meta;
+		}
+
+
+
 
 }
 
