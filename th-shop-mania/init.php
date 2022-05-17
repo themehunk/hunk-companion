@@ -86,7 +86,9 @@ if (!function_exists('elemento_addons_simple_addons')) {
 
     function elemento_addons_simple_addons()
     {
+        if (class_exists('WooCommerce')) {
         include_once 'product-simple-addon/product-simple-addon.php';
+        }
         include_once 'elemento-simple-post/elemento-post.php';
     }
     add_action('elementor/widgets/widgets_registered', 'elemento_addons_simple_addons');
