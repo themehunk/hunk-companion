@@ -1,12 +1,11 @@
 <?php
 /** 
- * Class ThemeHunk  WXR Importer
+ * Class Themhunk  WXR Importer
  *
  * @since  1.0.0
  */
 
 defined( 'ABSPATH' ) or exit;
-if ( ! class_exists( 'Themehunk_Library_WXR_Importer' ) ) {
 
 class Themehunk_Library_WXR_Importer {
 
@@ -378,5 +377,5 @@ public function elementor_competibilty() {
 
 }
 
+
 Themehunk_Library_WXR_Importer::instance();
-}
