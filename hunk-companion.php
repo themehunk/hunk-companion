@@ -68,8 +68,9 @@ $theme = hunk_companion_text_domain();
 	elseif(in_array("th-shop-mania", $theme)){
 	if ( !function_exists('th_shop_mania_pro_load_plugin' )) {
      require_once HUNK_COMPANION_DIR_PATH . 'th-shop-mania/init.php';
+ 	}
 	 require_once( HUNK_COMPANION_DIR_PATH . '/import/themehunk.php' );
-	}
+	
 
     // require_once HUNK_COMPANION_DIR_PATH .'th-shop-mania/demo/import.php';
 	}
