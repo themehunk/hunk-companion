@@ -61,6 +61,8 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 1.6.12 =
 * Shop Mania - Demo Import issue fixd.
+* Th Shop Mania - Valid Header issue resolved.
+* Th Shop Mania - Condition added for execution of addon from pro plugin.
 
 = 1.6.11 =
 * fatal error issue resolved.

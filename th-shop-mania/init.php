@@ -1,25 +1,10 @@
 <?php
-/*
-* Plugin Name: A TH simple addon
-* Author: ThemeHunk
-*/
-// file path and url 
-// define('SIMPLE_ADDON_URL', TH_WISHLIST_URL.'elemento-simple-addons');
-// define('SIMPLE_ADDON_PATH', TH_WISHLIST_PATH.'elemento-simple-addons);
 if (!defined('SIMPLE_ADDON_URL')) {
     define('SIMPLE_ADDON_URL', plugin_dir_url(__FILE__));
 }
 if (!defined('SIMPLE_ADDON_PATH')) {
     define('SIMPLE_ADDON_PATH', plugin_dir_path(__FILE__));
 }
-// enable quick view btn 
-// if (!function_exists('th_elemento_addon_quickView_enable')) {
-//     function th_elemento_addon_quickView_enable()
-//     {
-//         return true;
-//     }
-// }
-// enable quick view btn 
 if (!class_exists('ElementoSimpleAddon')) {
     class ElementoSimpleAddon
     {
@@ -47,12 +32,8 @@ if (!class_exists('ElementoSimpleAddon')) {
         {
             wp_register_script('owl-carousel', SIMPLE_ADDON_URL . 'assets/owl-slider/owl.carousel.min.js', array('jquery'), '', true);
             wp_register_script('owl-carousel-script-simple', SIMPLE_ADDON_URL . 'assets/owl-slider/owl-slider-script.js', [], '', true);
-            // wp_register_script('simple-addon-secript', SIMPLE_ADDON_URL . 'assets/custom.js', [], '', true);
             wp_enqueue_script('owl-carousel');
             wp_enqueue_script('owl-carousel-script-simple');
-            // wp_enqueue_script('simple-addon-secript');
-            // wp_localize_script('simple-addon-secript', 'elemento_simple_url', array('admin_ajax' => admin_url('admin-ajax.php')));
-
             // elite addons 
         }
         public function simple_elemento_addons_script()
@@ -93,8 +74,6 @@ if (!function_exists('elemento_addons_simple_addons')) {
     }
     add_action('elementor/widgets/widgets_registered', 'elemento_addons_simple_addons');
 }
-// ajx fn 
-
 // wishlist 
 if (!function_exists('elemento_addons_wishlist_wpc')) {
     function elemento_addons_wishlist_wpc($productId)
