@@ -360,7 +360,9 @@ div#themehunk-site-library-category {
   margin-top: -20px;
   letter-spacing: 1px;
 }
-
+.themehunk-site-library-theme-preview .theme-install-overlay iframe{
+  max-width: 100%;
+}
 @media only screen and (min-width: 2000px) {
   .themehunkdemo.themes {
     width: 17.6% !important;
