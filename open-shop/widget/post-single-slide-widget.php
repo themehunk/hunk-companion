@@ -29,7 +29,7 @@ class open_shop_slide_post extends WP_Widget {
 ?>
 <div class="post-slide-widget <?php echo esc_attr($widget_id); ?>"> 
 <input id="rtlval" type="text" hidden value="<?php echo esc_attr(get_theme_mod('open_shop_rtl')); ?>">
-<h2 class="widget-title slide-widget-title "><?php echo $title; ?></h2>       
+<h4 class="widget-title slide-widget-title "><?php echo $title; ?></h4>       
 <div id="<?php echo $widget_id; ?>" class="slide-post owl-carousel">   
           <?php if ( $latest_posts->have_posts() ) { ?>
              <?php  while($latest_posts->have_posts()): $latest_posts->the_post(); 
