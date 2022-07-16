@@ -42,9 +42,9 @@ class THunk_aboutme extends WP_Widget {
         $linkicon4 = isset($instance['linkicon4'])?$instance['linkicon4']:'http://';
 ?>
 <div class="th-aboutme">
-<h2 class="widget-title">
+<h4 class="widget-title">
     <?php echo apply_filters('widget_title',$title); ?>
-</h2>
+</h4>
 <?php if($author_img_uri!=''): ?>
  <a href="<?php echo esc_url($readlink); ?>"><img src="<?php echo esc_url($author_img_uri); ?>" /></a>
 <?php endif; ?>
