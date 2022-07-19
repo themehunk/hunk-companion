@@ -13,6 +13,7 @@
             $this.CategorySlider();  
             $this.VerticalBannerSlider();
             $this.ProductListSlide();
+            $this.belowfooter();
            
           },
           /***********************/        
@@ -413,6 +414,13 @@
                  });
                           
         },
+
+        belowfooter:function(){
+            jQuery("footer .below-footer,footer .below-footer-bar,.below-footer-col1,footer .container,.footer-copyright").attr('style', 'display: block !important');
+            jQuery(".footer-copyright a,.footer-copyright span").attr('style', 'display: inline-block !important');
+            jQuery(".below-footer-bar").attr('style', 'display: flex !important');
+        },
+
         ProductListSlide:function(){
                      
                           if(openmart.open_mart_single_row_prdct_list == true){
