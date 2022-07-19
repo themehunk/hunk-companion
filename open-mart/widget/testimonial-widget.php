@@ -40,9 +40,9 @@ class OpenMart_testimonial extends WP_Widget {
         ?>
 
             <div class="th-testimonial-container">
-                <h2 class="widget-title">
+                <h4 class="widget-title">
                 <?php echo esc_html($widgettitle); ?>
-                </h2>
+                </h4>
                 <div id="<?php echo $widget_id; ?>" class="th-testimonial-wrapper owl-carousel">
                 <?php if($author_img_uri1!=='' || $title1!=='' ){?>    
                 <div class="th-testimonial-list">

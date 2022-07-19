@@ -61,6 +61,9 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 1.6.15 =
 * Open Mart : Null property error resolved.
+* Top Store : Seo Optimization.
+* Open Mart : Seo Optimization.
+* Almaira Shop : Escaping in Sale Word.
 
 = 1.6.14 =
 * Open Shop - Seo Optimization.

@@ -73,7 +73,7 @@ function almaira_shop_category_product_loop($category_product,$args){
                        $category_product['rating'] = $rating_count;
                        $sale = get_post_meta( $pid, '_sale_price', true);
                     if( $sale) {
-                        $sale = '<span class="onsale">Sale</span>';
+                        $sale = '<span class="onsale">'._e('Sale','hunk-companion').'</span>';
                     }
                
                   $category_product['sale'] = $sale;

@@ -28,7 +28,7 @@ class open_mart_slide_post extends WP_Widget {
         $catelink = get_category_link( $query['cate'] ); 
 ?>
 <div class="post-slide-widget <?php echo $widget_id; ?>"> 
-<h2 class="widget-title slide-widget-title "><?php echo $title; ?></h2>       
+<h4 class="widget-title slide-widget-title "><?php echo $title; ?></h4>       
 <div id="<?php echo $widget_id; ?>" class="slide-post owl-carousel">   
           <?php if ( $latest_posts->have_posts() ) { ?>
              <?php  while($latest_posts->have_posts()): $latest_posts->the_post(); 
