@@ -315,9 +315,7 @@ $return .= '</div></div>';
 function open_mart_product_cat_filter_default_loop($term_id,$prdct_optn){
 // product filter 
 // if($term_id['0']=='' || $term_id['0']=='0'){  
-  if(empty($term_id[0])){
-$taxquery='';
-}else{
+ if(!empty($term_id[0])){
  // category filter  
       $args1 = array(
             'orderby'    => 'menu_order',
@@ -325,8 +323,14 @@ $taxquery='';
             'hide_empty' => 1,
             'slug'    => $term_id
         );
+
 $product_categories = get_terms( 'product_cat', $args1);
+
+if(!empty($product_categories)){
+
 $product_cat_slug =  $product_categories[0]->slug;
+
+
 $taxquery = array(
                           array(
                               'taxonomy' => 'product_cat',
@@ -334,6 +338,15 @@ $taxquery = array(
                               'terms' =>  $product_cat_slug
                           )
 );
+}else{
+
+  $taxquery ='';
+}
+
+}else{
+
+  $taxquery ='';
+
 }
 
   if($prdct_optn=='random'){  

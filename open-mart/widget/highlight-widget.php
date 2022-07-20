@@ -46,9 +46,9 @@ class open_mart_highlights_column extends WP_Widget {
         $fontaws5 = isset($instance['fontaws5'])?$instance['fontaws5']:'fa fa-plane';
 ?>
         <div class="th-hlight-wrapper">
-          <h2 class="widget-title">
+          <h4 class="widget-title">
           <?php  echo esc_html($widgettitle); ?>
-        </h2>
+        </h4>
         <div class="th-hlight-box">
         <div class="th-hlight">
             <div class="th-hlight-icon">        
