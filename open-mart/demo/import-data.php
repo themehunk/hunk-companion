@@ -23,15 +23,6 @@ function open_mart_import_files(){
         'preview_url'=> esc_url('https://wpthemes.themehunk.com/grocerymart/'),
         'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'open-mart' ),
        ),
-    array(
-        'import_file_name' => esc_html__('Kids Collection','open-mart'),
-        'import_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/kidscollection/blogs.xml'),
-        'import_customizer_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/kidscollection/customizer.dat'),
-        'import_widget_file_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/kidscollection/widgets.wie'),
-        'import_preview_image_url'=> esc_url('https://themehunk.com/wp-content/uploads/sites-demo/openmart-lite/kidscollection/thumb.png'),
-        'preview_url'=> esc_url('https://wpthemes.themehunk.com/kids-collection/'),
-        'import_notice' => __( 'Before importing the demo data, Install & Activate the recommended plugins.', 'open-mart' ),
-       ),
      )
   );
 }
