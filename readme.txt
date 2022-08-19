@@ -59,7 +59,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 == Changelog ==
 
-= 1.7.0 =
+= 1.7.1 =
 * Open Mart : Kids Demo Removed.
 
 = 1.7.0 =
