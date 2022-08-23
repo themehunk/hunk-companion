@@ -202,11 +202,11 @@ if (!class_exists('Th_Simple_Post_filter')) {
                 $productHtml .= '<a href="#" data-product="' . $productId . '" class="elemento-addons-quickview-simple">' . __('Quick View') . '</a>';
             }
             $productHtml .= $ps_sale;
-            $productHtml .= '<a class="img_" href="' . get_permalink($productId) . '" target="_blank">
+            $productHtml .= '<a class="img_" href="' . get_permalink($productId) . '">
                                     ' . $product->get_image() . '
                                     </a>';
 
-            $productHtml .= '<a class="elemento-addons-product-title" href="' . get_permalink($productId) . '" target="_blank">' . $product->get_name() . '</a>';
+            $productHtml .= '<a class="elemento-addons-product-title" href="' . get_permalink($productId) . '">' . $product->get_name() . '</a>';
             $productHtml .= $ratingHtml ? '<div class="elemento-addons-rating">' . $ratingHtml . '</div>' : '';
             // add to cart 
             $productHtml .=  $price;
