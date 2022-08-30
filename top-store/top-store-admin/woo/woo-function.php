@@ -31,11 +31,8 @@ function top_store_whishlist_check($pid){
         echo top_store_whish_list($pid);
         }elseif( class_exists( 'WPCleverWoosw' )){
         echo top_store_wpc_whish_list($pid);          
-    }
-
-     if( class_exists( 'YITH_Woocompare' ) ){
+    }    
         echo top_store_add_to_compare_fltr($pid);
-        }
 
 }
 
