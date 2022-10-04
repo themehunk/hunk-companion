@@ -100,6 +100,45 @@ class Themehunk_Library_Ajax{
 					);
 	}
 
+	public function pro_plugin_check($slug){
+		$proarr= array(
+					'lead-form-builder' =>  array(
+								"slug" => "lead-form-builder-pro",
+								"init" => "lead-form-builder-pro/init.php",
+								"name" => "Lead Form Builder Pro"
+							),
+						
+					'th-advance-product-search' => array(
+								"slug" => "th-advance-product-search-pro",
+								"init" => 'th-advance-product-search-pro/th-advance-product-search-pro.php',
+								"name" => "Product Search Pro"
+							),
+					'th-all-in-one-woo-cart' => array(
+								"slug" => "th-all-in-one-woo-cart-pro",
+								"init" => 'th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php',
+								"name" => "Woo Cart Pro"
+							),
+					'th-product-compare' => array(
+								"slug" => "th-product-compare-pro",
+								"init" => 'th-product-compare-pro/th-product-compare-pro.php',
+								"name" => "TH Compare Pro"
+					),
+					'th-variation-swatches' => array(
+							"slug" => "th-variation-swatches-pro",
+							"init"=>'th-variation-swatches-pro/th-variation-swatches-pro.php',
+							"name" => "Variation Swatches Pro"
+					),
+					'wp-popup-builder' => array(
+							"slug" => "wp-popup-builder-pro",
+							"init"=>'th-variation-swatches-pro/th-variation-swatches-pro.php',
+							"name" => "PoPuP Builder Pro"
+							)
+					);
+
+		return 	$proarr[$slug];							
+	}
+
+
 		/**
 		 * Required Plugin
 		 *
@@ -107,9 +146,10 @@ class Themehunk_Library_Ajax{
 		 * @return void
 		 */
 		public function required_plugin() {
-
 			// Verify Nonce.
 			check_ajax_referer( 'themehunk-site-nonce', '_ajax_nonce' );
+			$checkplugins = array('lead-form-builder','th-advance-product-search','th-all-in-one-woo-cart','wp-popup-builder','th-product-compare','th-variation-swatches' );
+
 
 			$response = array(
 				'active'       => array(),
@@ -123,23 +163,41 @@ class Themehunk_Library_Ajax{
 
 			$required_plugins = ( isset( $_POST['required_plugins'] ) ) ? $_POST['required_plugins']: array();
 			if ( count( $required_plugins ) > 0 ) {
+
 				foreach ( $required_plugins as $key => $plugin ) {
+					     $proPlugin =array('init'=>'','slug'=>'','name'=>'',);
 
-					 	// Lite - Installed but Inactive.
-					 	if ( file_exists( WP_PLUGIN_DIR . '/' . $plugin['init'] ) && is_plugin_inactive( $plugin['init'] ) ) {
+						 	// pro plugin check 
+							if(in_array( $plugin['slug'], $checkplugins)){
+								$pro = $this->pro_plugin_check($plugin['slug']);
+								$proPlugin['init'] = $pro['init'];
+								$proPlugin['slug'] = $pro['slug'];
+								$proPlugin['name'] = $pro['name'];
+							}
+							if( $proPlugin['init'] !='' && file_exists( WP_PLUGIN_DIR . '/' . $proPlugin['init'] )){
 
-					 		$response['inactive'][] = $plugin;
+								$newPlugins = $proPlugin;
 
-					 		// Lite - Not Installed.
-					 	} elseif ( ! file_exists( WP_PLUGIN_DIR . '/' . $plugin['init'] ) ) {
+							}else{
+								$newPlugins = $plugin;
+							}
 
-							$response['notinstalled'][] = $plugin;
+							if ( file_exists( WP_PLUGIN_DIR . '/' . $newPlugins['init'] ) && is_plugin_inactive( $newPlugins['init'] ) ) {
 
-					 		// Lite - Active.
-					 	} else {
-					 		$response['active'][] = $plugin;
-						}
+								$response['inactive'][] = $newPlugins;
+					
+								// Lite - Not Installed.
+							} elseif ( ! file_exists( WP_PLUGIN_DIR . '/' . $newPlugins['init'] ) ) {
+					
+								$response['notinstalled'][] = $newPlugins;
+					
+								 // Lite - Active.
+							 } else {
+								 $response['active'][] = $newPlugins;
+							}
+							
 				}
+
 			}
 
 			// Send response.
