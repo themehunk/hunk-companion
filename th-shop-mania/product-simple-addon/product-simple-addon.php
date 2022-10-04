@@ -905,9 +905,9 @@ class elementoProductSimple extends Widget_Base
                 ],
                 'default' => [
                     'top' => 6,
-                    'right' => 60,
+                    'right' => 6,
                     'bottom' => 6,
-                    'left' => 60,
+                    'left' => 6,
                     'unit' => 'px',
                     'isLinked' => true,
                 ]
