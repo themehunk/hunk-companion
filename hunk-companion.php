@@ -245,3 +245,27 @@ function hunk_companion_open_mart_scripts()
 
 	wp_localize_script('thunk-open-mart-woo-js', 'openmart',  $localize);
 }
+
+if (is_admin()) {
+/**
+ * Deactivate plugin example class.
+ */
+class Hunk_Companion_Deactivate_Plugin{
+    /**
+     * Constructor.
+     */
+    public function __construct(){
+        register_activation_hook( __FILE__, array( $this , 'deactivate' ) );
+    }
+ 
+    /**
+     * Attempts to activate the plugin if at least PHP 5.4.
+     */
+    public function deactivate() {
+       require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+       deactivate_plugins( plugin_basename('mania-companion/mania-companion.php' ) );
+       
+    }
+}
+new Hunk_Companion_Deactivate_Plugin();
+}
