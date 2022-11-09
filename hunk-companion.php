@@ -4,14 +4,14 @@
  Plugin Name: Hunk Companion
  Plugin URI: https://themehunk.com/hunk-companion/
  Description: Hunk companion plugin is an essential plugin to add features of Front page sections in your site. An easy to use plugin with ThemeHunk WordPress themes.
- Version: 1.7.3
+ Version: 1.7.4
  Author: ThemeHunk
  Text Domain: hunk-companion
  Author URI: https://themehunk.com/
  */
 if (!defined('ABSPATH')) exit;
 // Version constant for easy CSS refreshes
-define('HUNK_COMPANION', '1.7.3');
+define('HUNK_COMPANION', '1.7.4');
 define('HUNK_COMPANION_EXT_FILE', __FILE__ );
 define('HUNK_COMPANION_PLUGIN_DIR_URL', plugin_dir_url(HUNK_COMPANION_EXT_FILE));
 define('HUNK_COMPANION_BASENAME', plugin_basename(HUNK_COMPANION_EXT_FILE));
@@ -66,9 +66,10 @@ $theme = hunk_companion_text_domain();
       add_action( 'wp_enqueue_scripts', 'hunk_companion_open_mart_scripts' );
 	}
 	elseif(in_array("th-shop-mania", $theme)){
-	if ( !function_exists('th_shop_mania_pro_load_plugin' )) {
+	if ( !function_exists('th_shop_mania_pro_load_plugin' ) && !function_exists('mania_companion_load_plugin' ) ) {
      require_once HUNK_COMPANION_DIR_PATH . 'th-shop-mania/init.php';
 	 require_once( HUNK_COMPANION_DIR_PATH . '/import/themehunk.php' );
+	 add_action('admin_enqueue_scripts', 'hunk_companion_thsm_admin_scripts');
 	}
 	
 
@@ -246,26 +247,11 @@ function hunk_companion_open_mart_scripts()
 	wp_localize_script('thunk-open-mart-woo-js', 'openmart',  $localize);
 }
 
-if (is_admin()) {
-/**
- * Deactivate plugin example class.
- */
-class Hunk_Companion_Deactivate_Plugin{
-    /**
-     * Constructor.
-     */
-    public function __construct(){
-        register_activation_hook( __FILE__, array( $this , 'deactivate' ) );
+function hunk_companion_thsm_admin_scripts(){
+        wp_localize_script('th-shop-mania-admin-load', 'hunk_companion_import',  
+            array(
+            'plugin'                   => 'hunk-companion'
+            
+           )
+         );
     }
- 
-    /**
-     * Attempts to activate the plugin if at least PHP 5.4.
-     */
-    public function deactivate() {
-       require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-       deactivate_plugins( plugin_basename('mania-companion/mania-companion.php' ) );
-       
-    }
-}
-new Hunk_Companion_Deactivate_Plugin();
-}
