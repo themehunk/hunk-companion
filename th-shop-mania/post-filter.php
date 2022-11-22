@@ -239,7 +239,7 @@ if (!class_exists('Th_Simple_Post_filter')) {
                     $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
                     $product->is_purchasable() && $product->is_in_stock() && $product->supports('ajax_add_to_cart') ? 'ajax_add_to_cart' : '',
                     $icon_,
-                    esc_html($product->add_to_cart_text()),
+                    esc_html($product->add_to_cart_text())
                 ),
                 $product
             );
