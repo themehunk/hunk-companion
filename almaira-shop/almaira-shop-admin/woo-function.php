@@ -73,7 +73,7 @@ function almaira_shop_category_product_loop($category_product,$args){
                        $category_product['rating'] = $rating_count;
                        $sale = get_post_meta( $pid, '_sale_price', true);
                     if( $sale) {
-                        $sale = '<span class="onsale">'._e('Sale','hunk-companion').'</span>';
+                        $sale = '<span class="onsale">'.__('Sale','hunk-companion').'</span>';
                     }
                
                   $category_product['sale'] = $sale;
@@ -103,7 +103,7 @@ function almaira_shop_category_product_loop($category_product,$args){
                 wp_reset_postdata();
               return $cate_product;
                 else:
-              echo '<p class="not_found">'.__('Sorry, The post you are looking is unavailable!','almaira-shop').'</p>';
+              echo '<p class="not_found">'.__('Sorry, The post you are looking is unavailable!','hunk-companion').'</p>';
               endif;
               wp_reset_query();
 }
@@ -212,7 +212,7 @@ function almaira_shop_product_loadmore_prd_section(){
     if ( $product->have_posts() ){
      if($posts_per_page < $product->found_posts){
     echo'<div class="thunk-load-more-wrap">
-           <button id="prd-sect-loadmore" class="thunk-pr-ldmore thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'almaira-shop' ).'</span></button>
+           <button id="prd-sect-loadmore" class="thunk-pr-ldmore thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'hunk-companion' ).'</span></button>
          </div>';
         }
     }
@@ -274,7 +274,7 @@ function almaira_shop_sort_filter_product_show(){
         wc_get_template_part( 'content', 'product' );
       endwhile;
     } else {
-      echo __( 'No products found','almaira-shop' );
+      echo __( 'No products found','hunk-companion' );
     }
     wp_reset_postdata();
   }
@@ -295,7 +295,7 @@ function almaira_shop_product_loadmore(){
     if ( $product->have_posts() ){
      if($posts_per_page < $product->found_posts){
     echo'<div class="thunk-load-more-wrap">
-           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'almaira-shop' ).'</span></button>
+           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'hunk-companion' ).'</span></button>
          </div>';
         }
     }
@@ -402,11 +402,11 @@ function almaira_shop_sort_filter_ajax(){
     endwhile;
     if($posts_per_page < $product->found_posts){
     echo'<div class="thunk-load-more-wrap">
-           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'almaira-shop' ).'</span></button>
+           <button id="sortby-load-more" class="thunk-load-more thunk-button" data-paged="'.esc_attr($paged).'" data-max-pages="'. esc_attr($product->max_num_pages).'"><span>'.esc_html__( 'Load More', 'hunk-companion' ).'</span></button>
          </div>';
        }
     }else{
-      echo __( 'No products found','almaira-shop' );
+      echo __( 'No products found','hunk-companion' );
     }
     exit;
     wp_reset_postdata();
