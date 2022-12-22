@@ -11,7 +11,7 @@
  */
 if (!defined('ABSPATH')) exit;
 // Version constant for easy CSS refreshes
-define('HUNK_COMPANION', '1.7.5');
+define('HUNK_COMPANION', '1.7.6');
 define('HUNK_COMPANION_EXT_FILE', __FILE__ );
 define('HUNK_COMPANION_PLUGIN_DIR_URL', plugin_dir_url(HUNK_COMPANION_EXT_FILE));
 define('HUNK_COMPANION_BASENAME', plugin_basename(HUNK_COMPANION_EXT_FILE));

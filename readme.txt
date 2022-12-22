@@ -58,8 +58,11 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
+
 = 1.7.5 =
 * TH Shop Mania - , removed from last element.
+* Almaira Shop: Sale issue resolved.
+* Open Mart - Category not showing modification.
 
 = 1.7.4 =
 * TH Shop Mania: Compatibility with Mania Companion added.
