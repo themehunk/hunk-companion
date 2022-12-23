@@ -154,7 +154,7 @@ if ( ! class_exists( 'Themehunk_Library_Load' ) ) :
 		 * @since  1.0.0
 		 */
 		private function includes() {
-
+			if(isset($_GET['post_type']) && $_GET['post_type'] == 'product') return;
 			require_once THEMEHUNK_SITE_LIBRARY_DIR . 'inc/import-log.php';
 			require_once THEMEHUNK_SITE_LIBRARY_DIR . 'inc/helper.php';
 			require_once THEMEHUNK_SITE_LIBRARY_DIR . 'importer/wxr-importer.php';
