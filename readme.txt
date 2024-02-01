@@ -2,8 +2,8 @@
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, gogo, Testimonial, Team, service
-Tested up to: 6.4
-Stable tag: 1.7.6
+Tested up to: 6.4.2
+Stable tag: 1.7.7
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Adds customizer settings and controls to the Gogo Theme.
@@ -58,6 +58,9 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 2. screenshot-2.png
 
 == Changelog ==
+
+= 1.7.7 =
+* Update : Text Domain updated.
 
 = 1.7.6 =
 * Update : Theme Compatibility added for custom user child theme.

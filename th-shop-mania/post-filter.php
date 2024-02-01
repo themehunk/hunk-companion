@@ -19,7 +19,7 @@ if (!class_exists('Th_Simple_Post_filter')) {
                 $returnArray = [];
                 $returnArray['all'] = __('All', 'elemento-addons');
                 foreach ($all_categories as $cateValue) {
-                    $returnArray[$cateValue->slug] = __($cateValue->name, 'elemento-addons');
+                    $returnArray[$cateValue->slug] = __($cateValue->name, 'hunk-companion');
                 }
             }
             return $returnArray;
@@ -170,7 +170,7 @@ if (!class_exists('Th_Simple_Post_filter')) {
             $ps_sale = '';
             if ($checkSale) {
                 $salePrice = $regularPrice - $currentPrice;
-                // $saleText = __('Sale', 'elemento-addons');
+                // $saleText = __('Sale', 'hunk-companion');
                 $currency_ = get_woocommerce_currency_symbol();
                 $ps_sale = '<div class="elemento-addons-sale">
                         <span class="elemento-addons-sale-tag">-' . $currency_ . $salePrice . '</span>
@@ -199,7 +199,7 @@ if (!class_exists('Th_Simple_Post_filter')) {
             $productHtml = '<div class="elemento-product-simple-inner-wrap">'; //inner rap
             // quick view 
             if (function_exists('th_elemento_addon_quickView_enable')) {
-                $productHtml .= '<a href="#" data-product="' . $productId . '" class="elemento-addons-quickview-simple">' . __('Quick View') . '</a>';
+                $productHtml .= '<a href="#" data-product="' . $productId . '" class="elemento-addons-quickview-simple">' . __('Quick View','hunk-companion') . '</a>';
             }
             $productHtml .= $ps_sale;
             $productHtml .= '<a class="img_" href="' . get_permalink($productId) . '">
