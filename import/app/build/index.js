@@ -22311,10 +22311,20 @@ function getThemeData(type) {
   switch (type) {
     case "th-shop-mania":
       return themeList[0].shopmania[0];
-    case "vayu-x":
-      return themeList[0].vayu[0];
+    case "openshop-pro":
+      return themeList[0].openshop[0];
+    case "top-store-pro":
+      return themeList[0].topstore[0];
+    case "open-mart":
+      return themeList[0].openmart[0];
+    case "portfolioline":
+      return themeList[0].portfolioline[0];
+    case "almaira":
+      return themeList[0].almaira[0];
+    case "gogo":
+      return themeList[0].gogo[0];
     default:
-      return themeList[0].vayu[0];
+      return themeList[0].shopmania[0];
   }
 }
 function installStart(props) {
@@ -22359,7 +22369,9 @@ function installStart(props) {
           builder: props.templateData.builder_theme,
           themeSlug: getThemeName(),
           proThemePlugin: getPluginName('free'),
-          tmplFreePro: getPluginName()
+          tmplFreePro: getPluginName(),
+          wpUrl: 'https://downloads.wordpress.org/',
+          thUrl: 'https://themehunk.com/wp/data/'
         }
       }).then(function (response) {
         dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_9__.tmplLodaing)('Importing Server Data..'));
