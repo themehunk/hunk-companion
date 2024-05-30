@@ -1,6 +1,5 @@
 <?php
-
-/**
+/***
  Plugin Name: Hunk Companion
  Plugin URI: https://themehunk.com/hunk-companion/
  Description: Hunk companion plugin is an essential plugin to add features of Front page sections in your site. An easy to use plugin with ThemeHunk WordPress themes.
@@ -8,7 +7,8 @@
  Author: ThemeHunk
  Text Domain: hunk-companion
  Author URI: https://themehunk.com/
- */
+ **/
+
 if (!defined('ABSPATH')) exit;
 // Version constant for easy CSS refreshes
 define('HUNK_COMPANION', '1.7.7');
@@ -33,42 +33,51 @@ function hunk_companion_gogolite_body_classes($classes){
 }
 
 function hunk_companion_load_plugin(){
+
 $theme = hunk_companion_text_domain(); 
 	if(in_array("almaira-shop", $theme)){
+		require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
+
 	require_once HUNK_COMPANION_DIR_PATH .'almaira-shop/almaira-shop-admin/init.php';
 	require_once HUNK_COMPANION_DIR_PATH .'almaira-shop/demo/import-data.php';
 	add_action( 'wp_enqueue_scripts', 'hunk_companion_almaira_shop_scripts' );
+	
 	}
 	elseif(in_array("gogo", $theme)){
+	require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
     require_once HUNK_COMPANION_DIR_PATH . 'gogolite/admin/gogo-function.php';
     require_once HUNK_COMPANION_DIR_PATH . 'gogolite/admin/init.php';
     add_filter('body_class', 'hunk_companion_gogolite_body_classes');
     add_action( 'wp_enqueue_scripts', 'hunk_companion_gogolite_scripts' );
 	}
 	elseif(in_array("open-shop", $theme)){
+	require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
      require_once HUNK_COMPANION_DIR_PATH . 'open-shop/open-shop-admin/init.php';
      require_once HUNK_COMPANION_DIR_PATH .'open-shop/demo/import-data.php';
       add_action( 'wp_enqueue_scripts', 'hunk_companion_open_shop_scripts' );
 	}
 	elseif(in_array("top-store", $theme)){
+	require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
      require_once HUNK_COMPANION_DIR_PATH . 'top-store/top-store-admin/init.php';
      require_once HUNK_COMPANION_DIR_PATH .'top-store/demo/import-data.php';
       add_action( 'wp_enqueue_scripts', 'hunk_companion_top_store_scripts' );
 	}
 	elseif(in_array("portfoliolite", $theme)){
+	require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
      require_once HUNK_COMPANION_DIR_PATH . 'portfoliolite/admin/init.php';
       add_action( 'wp_enqueue_scripts', 'hunk_companion_portfoliolite_scripts' );
       add_action('customize_controls_enqueue_scripts', 'hunk_companion_portfoliolite_customizer_scripts' );
 	}
 	elseif(in_array("open-mart", $theme) && !function_exists( 'open_mart_load_plugin' )){
+	require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
      require_once HUNK_COMPANION_DIR_PATH . 'open-mart/open-mart-admin/init.php';
      require_once HUNK_COMPANION_DIR_PATH .'open-mart/demo/import-data.php';
       add_action( 'wp_enqueue_scripts', 'hunk_companion_open_mart_scripts' );
 	}
 	elseif(in_array("th-shop-mania", $theme)){
 	if ( !function_exists('th_shop_mania_pro_load_plugin' ) && !function_exists('mania_companion_load_plugin' ) ) {
+		require_once( HUNK_COMPANION_DIR_PATH . '/import/import.php' );
      require_once HUNK_COMPANION_DIR_PATH . 'th-shop-mania/init.php';
-	 require_once( HUNK_COMPANION_DIR_PATH . '/import/themehunk.php' );
 	 add_action('admin_enqueue_scripts', 'hunk_companion_thsm_admin_scripts');
 	}
 	
