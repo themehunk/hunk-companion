@@ -2,7 +2,6 @@ import { useState  } from '@wordpress/element';
 import { FormFileUpload } from '@wordpress/components';
 
 import SkeletonLoader from './skeleton-loader';
-import SidebarCategory from './sidebarcategory';
 import SiteTemplate from './sitetemplate';
 import IframeTemplate from './IframeTemplate';
 import { useSelector, useDispatch } from 'react-redux';
@@ -13,7 +12,6 @@ import Success from './success';
 import { Icon, chevronDown,chevronUp } from '@wordpress/icons';
 
 export default function AiBuilder(props) {
-  const myState = useSelector((state)=>state.templateSelect);
   const pageStep = useSelector((state)=>state.stepLoad);
   const dispatch = useDispatch();
   const [ templateData, setTemplateData ] = useState(null);
@@ -72,11 +70,8 @@ export default function AiBuilder(props) {
         const iframe = document.getElementById('iframetmpl');      
           const iframeCallData = {class:'custom-logo',src:'https://zitademo.wpzita.com/physiotherapy/wp-content/uploads/sites/105/2023/06/physiotherapy-32.png',
           call: 'satrtUploadData',
-      };
-          console.log(iframeCallData);
-      
+      };      
               iframe.contentWindow.postMessage(iframeCallData, '*');
-
       }
 
 

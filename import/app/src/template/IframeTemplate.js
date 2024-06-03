@@ -1,6 +1,6 @@
 import { useState } from '@wordpress/element';
 import { Button, Flex, FlexBlock, FlexItem } from '@wordpress/components';
-import { Icon, arrowRight,chevronLeftSmall } from '@wordpress/icons';
+import { Icon, arrowRight } from '@wordpress/icons';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { useSelector, useDispatch } from 'react-redux';

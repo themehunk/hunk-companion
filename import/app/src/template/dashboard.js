@@ -1,11 +1,7 @@
-import { createRoot, render, createElement,useState,useEffect } from '@wordpress/element';
+import { useState } from '@wordpress/element';
 import { Flex, FlexBlock, FlexItem,Button } from '@wordpress/components';
-import { Icon, arrowRight,chevronLeftSmall, color } from '@wordpress/icons';
 import { Logo, Upgrade } from '../aisb';
 import { __ } from '@wordpress/i18n';
-import Header from './header';
-import BuilderIcon from './buildericon';
-import AiBuilder from './aibuilder';
 
 export default function dashboard(props){
 
@@ -16,9 +12,24 @@ export default function dashboard(props){
   const builderHide = (builder_rs) => {
     setBuilder(builder_rs);
   }
+
   const handleClick = (active,url='')=>{
+    //thunk_started
     setActiveTab(active);
-    window.location.href = AISB.baseurl+'wp-admin/themes.php?page=th_shop_mania_thunk_started'+url;
+    let welcomeSlug = 'thunk_started';
+    switch(HCLOCAL.themeName){
+
+      case 'th-shop-mania':
+        welcomeSlug = 'th_shop_mania_thunk_started';
+      break;
+
+      default:
+         welcomeSlug = 'thunk_started';
+        break;
+
+    }
+
+    window.location.href = HCLOCAL.baseurl+'wp-admin/themes.php?page='+welcomeSlug;
   }
 
   const btnStyle= { color:"#fff", 
@@ -58,7 +69,7 @@ return(<div className='aisb-dashboard'>
 
   <a href={window.location.href+'&template=step'}>
   <h2 className='create-website'>
-  <img src={AISB.pluginpath+'admin/assets/svg/create-site.svg'} />
+  <img src={HCLOCAL.pluginpath+'admin/assets/svg/create-site.svg'} />
     Create My Website
   </h2></a>
   </div>

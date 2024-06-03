@@ -8,16 +8,15 @@ import almairashop from '../../assets/json/almaira.json';
 import portfoliolite from '../../assets/json/portfolioline.json';
 
 
-
 const gutenbergtmpl = ['th-shop-mania','gutenberg'];
-const customizer = ['top-store', 'top-store-pro', 'gogolite','openshop-pro','open-shop', 'royal-shop','big-store','jotshop','open-mart','m-shop','shopline-pro','amaz-store','almaira','almaira-shop','gogo','novelpro','oneline','portfoliolite','portfolioline','featured'];
+const customizer = ['top-store', 'top-store-pro', 'gogo','openshop-pro','open-shop', 'royal-shop','big-store','jotshop','open-mart','m-shop','shopline-pro','amaz-store','almaira','almaira-shop','novelpro','oneline','portfoliolite','portfolioline','featured'];
 const elementor = ['th-shop-mania','elementor'];
 
-//let jsonTheme = AISB.themeName.replace(/-/g, "");
-//AISB.themeName - current theme name
-// builderHandel(AISB.themeName) - builder name like elementor, customizer or gutenberg
+//let jsonTheme = HCLOCAL.themeName.replace(/-/g, "");
+//HCLOCAL.themeName - current theme name
+// builderHandel(HCLOCAL.themeName) - builder name like elementor, customizer or gutenberg
 let  jsonData = '';
-switch(AISB.themeName) {
+switch(HCLOCAL.themeName) {
     case 'th-shop-mania':
          jsonData = gutenberg.concat(thshopmania);
         break;
@@ -28,7 +27,7 @@ switch(AISB.themeName) {
             jsonData = gutenberg.concat(openshop);
            break;
     case 'gogo':
-            jsonData = gutenberg.concat(gogolite);
+            jsonData = gogolite.concat();
            break;
     case 'open-mart':
             jsonData = gutenberg.concat(openmart);
@@ -38,9 +37,6 @@ switch(AISB.themeName) {
            break;
     case 'portfoliolite':
             jsonData = portfoliolite.concat();
-
-            console.log(jsonData);
-
            break;
     default:
          jsonData = gutenberg.concat(thshopmania);
@@ -58,7 +54,7 @@ const builderHandel = (builder) => {
 }
 
 
-const defaultJsonData = jsonData.filter(template => builderHandel(template.builder_theme) === builderHandel(AISB.themeName) && template.category.includes('all'));
+const defaultJsonData = jsonData.filter(template => builderHandel(template.builder_theme) === builderHandel(HCLOCAL.themeName) && template.category.includes('all'));
 
 const templateData = ( state = defaultJsonData, action) =>{
 
@@ -70,7 +66,7 @@ const templateData = ( state = defaultJsonData, action) =>{
 
 }
 
-const reduxBuildrName = ( state = builderHandel(AISB.themeName), action) =>{
+const reduxBuildrName = ( state = builderHandel(HCLOCAL.themeName), action) =>{
     switch(action.type){
         case "BUILDER_NAME" : return action.payload;
         default: return state;
@@ -78,7 +74,7 @@ const reduxBuildrName = ( state = builderHandel(AISB.themeName), action) =>{
 
 }
 
-const templateSelect = ( state = {cate:'all',builder:builderHandel(AISB.themeName)}, action) =>{
+const templateSelect = ( state = {cate:'all',builder:builderHandel(HCLOCAL.themeName)}, action) =>{
 
     switch(action.type){
         case "CATE_BUILDER" : return {cate:action.payload,builder:action.builderload};

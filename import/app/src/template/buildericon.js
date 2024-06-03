@@ -8,11 +8,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import {addCateBuilder,templateData} from '../actions';
 
 export default function BuilderIcon(props) {
-  const jsonData = useSelector((state)=>state.templateData);
 
   const reduxBuildrName = useSelector((state)=>state.reduxBuildrName);
   
-  const getCate = useSelector((state)=>state.templateSelect);
   const dispatch = useDispatch();
 
   const [ bulderType, setbulderType ] = useState(null);
@@ -121,20 +119,20 @@ const processString = (str) => {
           
          { reduxBuildrName==='elementor' && <MenuItem value='elementor' onClick={()=>handelIconClick('elementor')}>
           <div className={`column-icon ${bulderType=='elementor'?'active':'icon'}`} id="elementor" >
-        <img src={`${AISB.pluginpath}admin/assets/svg/elementor.png`} alt="Elementor Template" />
+        <img src={`${HCLOCAL.pluginpath}admin/assets/svg/elementor.png`} alt="Elementor Template" />
         <div className="image-text-builder-icon">Elementor</div>
         </div>
           </MenuItem>}
 
           { reduxBuildrName==='elementor' && <MenuItem value={'gutenberg'} onClick={()=>handelIconClick('gutenberg')}>
           <div className={`column-icon ${bulderType=='gutenberg'?'active':'icon'}`} id="gutenberg" >
-        <img src={`${AISB.pluginpath}admin/assets/svg/block.png`}  alt="Block Templates" />
+        <img src={`${HCLOCAL.pluginpath}admin/assets/images/block.png`}  alt="Block Templates" />
         <div className="image-text-builder-icon" >Gutenberg</div>
         </div>
           </MenuItem> }
           { reduxBuildrName==='customizer' && <MenuItem value={'customizer'} onClick={()=>handelIconClick('customizer')}><div className={`column-icon ${bulderType=='customizer'?'active':'icon'}`} id="customizer" >
-        <img src={`${AISB.pluginpath}admin/assets/svg/customizer.png`} alt="Customizer Template" />
-        <div className="image-text-builder-icon">{processString(AISB.themeName)}</div>
+        <img src={`${HCLOCAL.pluginpath}admin/assets/images/wp.png`} alt="Customizer Template" />
+        <div className="image-text-builder-icon">{processString(HCLOCAL.themeName)}</div>
         </div></MenuItem> }
         </Select>
       </FormControl>

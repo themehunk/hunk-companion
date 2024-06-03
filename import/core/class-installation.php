@@ -13,6 +13,8 @@ if ( ! function_exists( 'get_plugins' ) || ! function_exists( 'is_plugin_active'
         function __construct($params)
         {
 
+         //   wp_send_json_success( $params );
+
          self::init_admin_settings($params);
            
         }
@@ -35,10 +37,10 @@ if ( ! function_exists( 'get_plugins' ) || ! function_exists( 'is_plugin_active'
             $proThemePlugin     = $params['proThemePlugin'];    //  free or pro theme plugin name
             $templateType       = $params['templateType'];      //  template type free or pro
             $tmplFreePro        = $params['tmplFreePro'];       // pro template type theme or plugin
-
+            $wpDownloadUrl      = $params['wpUrl'];
             $localPlugin = $localTheme = true;
            if($templateType==='free'){
-            $installplugin[$proThemePlugin]= esc_html('Themehunk Plugins');
+           // $installplugin[$proThemePlugin]= esc_html('Themehunk Plugins');
 
            }elseif($templateType==='paid' && $tmplFreePro==='theme'){
                 $theme_slug = $proThemePlugin;
@@ -51,7 +53,7 @@ if ( ! function_exists( 'get_plugins' ) || ! function_exists( 'is_plugin_active'
            }
 
 
-           self::theme_install($theme_slug,$localTheme);
+          // self::theme_install($theme_slug,$localTheme,$wpDownloadUrl);
            self::plugin_install($installplugin,$allplugins,$localPlugin);
 
         }
@@ -82,7 +84,7 @@ if ( ! function_exists( 'get_plugins' ) || ! function_exists( 'is_plugin_active'
 
         }
 
-        static public function theme_install($theme_slug,$localTheme){
+        static public function theme_install($theme_slug,$localTheme,$wpDownloadUrl){
 
             if(get_option( 'template' )===$theme_slug) return 1;
             $installed_themes = wp_get_themes();
@@ -148,14 +150,14 @@ if ( ! function_exists( 'get_plugins' ) || ! function_exists( 'is_plugin_active'
         /**
 		 * Theme init
 		 */
-		static public function init_theme($theme_slug,$localTheme) {
+		static public function init_theme($theme_slug,$localTheme,$wpDownloadUrl) {
                 
                 self::getFileUrl();
                 
              
                 WP_Filesystem();
 
-                $downloadUrl = 'https://downloads.wordpress.org/theme/'.$theme_slug.'.zip';
+                $downloadUrl = $wpDownloadUrl.'/theme/'.$theme_slug.'.zip';
 
                 $temp_file = download_url($downloadUrl); 
 

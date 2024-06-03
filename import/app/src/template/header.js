@@ -1,4 +1,3 @@
-import { Icon} from '@wordpress/icons';
 import { Upgrade,HomeLink, Logo } from '../aisb';
 export default function Header() {
   const currentURL = window.location.href;

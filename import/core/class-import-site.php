@@ -91,22 +91,22 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_IMPORT' ) ) {
 			//	Themehunk_Importer_Log::add( 'Importing from XML ' . $xml_url );
 
 				// Download XML file.
-				$xml_path = VAYU_BLOCKS_SITES_HELPER::download_file( $xml_url );
+				$xml_path = HUNK_COMPANION_SITES_HELPER::download_file( $xml_url );
 				if ( $xml_path['success'] ) {
 
 					if ( isset( $xml_path['data']['file'] ) ) {
 						$data        = HUNK_COMPAION_WXR_IMPORTER::instance()->get_xml_data( $xml_path['data']['file'] );
 						$data['xml'] = $xml_path['data'];
-						$data['update'] = __( 'xml file download completed.', 'vayu-blocks' ) ;
+						$data['update'] = __( 'xml file download completed.', 'hunk-companion' ) ;
 						wp_send_json_success( $data );
 					} else {
-						wp_send_json_error( __( 'There was an error downloading the XML file.', 'vayu-blocks' ) );
+						wp_send_json_error( __( 'There was an error downloading the XML file.', 'hunk-companion' ) );
 					}
 				} else {
 					wp_send_json_error( $xml_path['data'] );
 				}
 			} else {
-				wp_send_json_error( __( 'Invalid site XML file!', 'vayu-blocks' ) );
+				wp_send_json_error( __( 'Invalid site XML file!', 'hunk-companion' ) );
 			}
 		}
 
@@ -121,11 +121,11 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_IMPORT' ) ) {
 			if ( isset( $customizer_data ) ) {
 				//Themehunk_Importer_Log::add( 'Imported Customizer Settings ' . json_encode( $customizer_data ) );
 
-				$return = VAYU_BLOCKS_SITES_HELPER::import( $customizer_data );
+				$return = HUNK_COMPANION_SITES_HELPER::import( $customizer_data );
 				wp_send_json_success( array('success'=>$return) );
 
 			} else {
-				wp_send_json_error( __( 'Customizer data is empty!', 'vayu-blocks' ) );
+				wp_send_json_error( __( 'Customizer data is empty!', 'hunk-companion' ) );
 			}
 
 		}
@@ -138,9 +138,9 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_IMPORT' ) ) {
 			 //	Themehunk_Importer_Log::add( 'Imported - Site Options ' . json_encode( $options_data ) );
 				$options_importer = HUNK_COMPAION_OPTIONS_IMPORT::instance();
 				$options_importer->import_options_data( $options_data );
-				wp_send_json_success( __( 'Site options data is update successfully.', 'vayu-blocks' ) );
+				wp_send_json_success( __( 'Site options data is update successfully.', 'hunk-companion' ) );
 			 } else {
-			 	wp_send_json_error( __( 'Site options are empty!', 'vayu-blocks' ) );
+			 	wp_send_json_error( __( 'Site options are empty!', 'hunk-companion' ) );
 			 }
 
 
@@ -161,9 +161,9 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_IMPORT' ) ) {
 
 				$status  = $widgets_importer->import_widgets_data( $widgets_data );
 
-				wp_send_json_success( __( 'Widget data is update successfully.', 'vayu-blocks' ) );
+				wp_send_json_success( __( 'Widget data is update successfully.', 'hunk-companion' ) );
 			} else {
-				wp_send_json_error( __( 'Widget data is empty!', 'vayu-blocks' ) );
+				wp_send_json_error( __( 'Widget data is empty!', 'hunk-companion' ) );
 			}
 
 		}

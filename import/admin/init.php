@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'HUNK_COMPANION_SITES_BUILDER_MENU' ) ) {
 
     /**
-	 * vayu block sites Admin Menu Settings
+	 * hunk-companion sites Admin Menu Settings
 	 */
     class HUNK_COMPANION_SITES_BUILDER_MENU {
 
@@ -142,9 +142,9 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_BUILDER_MENU' ) ) {
                             "slug"=>'open-shop',
                             "version"=>''
                         ),
-                        'gogolite'=> array(
+                        'gogo'=> array(
                             "pro"=>'/product/gogo-amazing-wordpress-theme',
-                            "slug"=>'gogolite',
+                            "slug"=>'gogo',
                             "version"=>''
                         ),
                         'almaira-shop'=> array(
@@ -199,18 +199,19 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_BUILDER_MENU' ) ) {
 
             }
 
-			wp_enqueue_style( 'vayu-blocks-sites-admin', HUNK_COMPANION_WEBSITE_URL . 'admin/assets/css/admin.css', 1.0, 'true' );
-            wp_enqueue_script( 'vayu-blocks-sites-block-admin', HUNK_COMPANION_WEBSITE_URL . 'app/build/index.js', array( 'wp-element','wp-components', 'wp-i18n','wp-api-fetch','wp-url' ), '1.0', true );
+			wp_enqueue_style( 'hunk-companion-admin', HUNK_COMPANION_WEBSITE_URL . 'admin/assets/css/admin.css', 1.0, 'true' );
+            wp_enqueue_script( 'hunk-companion-block-admin', HUNK_COMPANION_WEBSITE_URL . 'app/build/index.js', array( 'wp-element','wp-components', 'wp-i18n','wp-api-fetch','wp-url' ), '1.0', true );
            //$theme = wp_get_theme();
 
            $site = self::upgrade_to_pro();
-            wp_localize_script( 'vayu-blocks-sites-block-admin', 'AISB',
+            wp_localize_script( 'hunk-companion-block-admin', 'HCLOCAL',
             array( 
                 'ajaxurl' => admin_url( 'admin-ajax.php' ),
                 'baseurl' => site_url( '/' ),
                 'pluginpath'=>HUNK_COMPANION_WEBSITE_URL,
                 'rootPath' => HUNK_COMPANION_PLUGIN_DIR_URL,
                 'themeName' => $site['slug'],
+                'security' => wp_create_nonce( 'hc_import_nonce' ),
                 'upgrade'=> esc_url('https://themehunk.com'.$site['pro'])           
                  )
         );

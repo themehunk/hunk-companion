@@ -57,7 +57,7 @@
 } 
 /*** Dashboard Desing **/
 
-.vayu-blocks_page_vayu-sites #wpcontent {
+.vayu-blocks_page_vayu-sites #wpcontent, .appearance_page_themehunk-site-library  #wpcontent {
   padding-left: 0;
 }
 
@@ -377,13 +377,24 @@ header {
   
   .aisb-builder-icon .column-icon img,  .MuiInputBase-input .column-icon img{
     width: 23px;
+    background: var(--aisb-bg-color);
+    border-radius: 15px;
+    padding: 3px;
+
   }
 
  
  .MuiMenu-list .column-icon img {
-  width: 26px;
-  padding-right: 15px;
+  width: 23px;
+  margin-right: 10px;
+  background: var(--aisb-bg-color);
+  border-radius: 15px;
+  padding: 3px;
   }
+
+  .aisb-catelist .MuiInputBase-input{
+    padding: 12px !important;
+}
   
   .aisb-builder-icon .image-text-builder-icon {
     margin-left: 10px;
@@ -907,7 +918,7 @@ iframe{
 
 
 .aisb-site-build-wrap .aisb-site-form h1 {
-  font-size: 3em;
+  font-size: 30px;
   font-weight: 700;
   text-align: center;
 }
@@ -921,11 +932,11 @@ iframe{
 
 .aisb-site-build-wrap .aisb-site-main {
     width: 30%;
-    margin-left: 30%;
+    margin-left: 35%;
     background: #ffffff;
     padding: 20px 50px;
     margin-top: 5%;
-    border-radius: 10px;
+    border-radius: 6px;
     box-shadow: -0.035px 2px 6px 0px #c0c6cd;
 }
 
@@ -992,13 +1003,13 @@ input[type=text]:focus{
 
   .aisb-site-form .aisb-border-btn {
     font-size: 16px;
-    color: #8929e2;
-    border-radius: 25px;
+    color: var(--aisb-txt-color);
+    border-radius: 4px;
     padding: 12px 50px 5px 50px;
-    border: 1px solid #8929e2;
+    border: 1px solid var(--aisb-txt-color);
     cursor: pointer;
     display: flex;
-    fill:  #8929e2;
+    fill:  var(--aisb-txt-color);
     font-weight: 500;
     background: var(--aisb-bg-color);
     -webkit-background-clip: text;
@@ -1031,10 +1042,9 @@ input[type=text]:focus{
 .aisb-site-options label {
   position: relative;
 }
-
 .aisb-site-options label::before {
   content: "";
-  background: url("../../../app/assets/svg/check-circle.svg");
+  background: url("../../../admin/assets/svg/check-circle.svg");
   background-position: center;
   background-size: contain;
   width: 20px;
@@ -1092,10 +1102,7 @@ input[type=text]:focus{
 
 }
 
-@media screen and (max-width: 1100px) {
-  .aisb-site-form .aisb-border-btn {
-    padding: 0 !important;
-}
+@media screen and (max-width: 1180px) {
 
 .success-btn {
     display: block !important;

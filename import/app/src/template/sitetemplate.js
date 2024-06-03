@@ -50,7 +50,7 @@ const tmplStyleShow = {
 const customizer = ['topstore','top-store-pro','big-store','openshop-pro','jotshop','open-mart','m-shop','shopline-pro','amaz-store','almaira','almaira-shop','gogo','novelpro','oneline','portfolioline','portfoliolite','featured'];
 const elementor = ['th-shop-mania','elementor','royal-shop'];
 
-const gutenbergtmpl = ['vayu-x','th-shop-mania','blockline','blockline-pro','blur','blur-pro','gutenberg'];
+const gutenbergtmpl = ['th-shop-mania','blockline','blockline-pro','blur','blur-pro','gutenberg'];
 
 const builderHandel = (builder) => {
   if (customizer.includes(builder)) {
@@ -95,7 +95,7 @@ return (
 
   <div className='asib-tmpl-footer'>
     <h3>{template.title}</h3>
-    {template.free_paid =="paid" && <a className='aisb-pro' data-pro='Premium' ><img src={`${AISB.rootPath}import/admin/assets/images/pro.png`}  alt="Premium" /></a>}
+    {template.free_paid =="paid" && <a className='aisb-pro' data-pro='Premium' ><img src={`${HCLOCAL.rootPath}import/admin/assets/images/pro.png`}  alt="Premium" /></a>}
   </div>
 </div>
 </div>);

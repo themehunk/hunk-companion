@@ -64,7 +64,7 @@ export default function ImportAPI(props) {
   const [apiUrl, setApiUrl] = useState(props.apiurl);
   const [apiData, setApiData] = useState(null);
   const [updateStart, setupdateStart] = useState(false);
-  const [ajaxUrl, setAjaxUrl] = useState(AISB.ajaxurl);
+  const [ajaxUrl, setAjaxUrl] = useState(HCLOCAL.ajaxurl);
 
 
     /*** All Import data
@@ -74,8 +74,12 @@ export default function ImportAPI(props) {
           const dataToSend = { data: apiUrl }; // Customize the data to send
            const response = await fetch(ajaxUrl, {
             method: 'POST',
+            headers: {
+              'X-WP-Nonce': HCLOCAL.security,
+          },
             body: new URLSearchParams({
-                action: 'vayu_blocks_sites_ajax_handler_data', // Specify the WordPress AJAX action
+                action: 'hunk_companion_handler_data', // Specify the WordPress AJAX action
+                security: HCLOCAL.security,
                 data: JSON.stringify(dataToSend), // Convert the data to JSON and send it
             }),
         });
@@ -129,12 +133,15 @@ const hendelXmlImport = async (xml_data) => {
   
 const importXml = async (xml_url) =>{
         try {
-      
           const dataToSend = { data: xml_url }; // Customize the data to send
           const response = await fetch(ajaxUrl, {
             method: 'POST',
+            headers: {
+              'X-WP-Nonce': HCLOCAL.security,
+          },
             body: new URLSearchParams({
-                action: 'vayu_blocks_sites_ajax_import_xml', // Specify the WordPress AJAX action
+                action: 'hunk_companion_import_xml', // Specify the WordPress AJAX action
+                security: HCLOCAL.security,
                 data: JSON.stringify(dataToSend), // Convert the data to JSON and send it
             }),
         }).then(response => response.json())
@@ -164,8 +171,12 @@ const importCustomizer = async () =>{
       const dataToSend = { data: apiData.customizer }; // Customize the data to send
       const response = await fetch(ajaxUrl, {
         method: 'POST',
+        headers: {
+          'X-WP-Nonce': HCLOCAL.security,
+        },
         body: new URLSearchParams({
-            action: 'vayu_blocks_sites_ajax_cutomizer', // Specify the WordPress AJAX action
+            action: 'hunk_companion_import_cutomizer', // Specify the WordPress AJAX action
+            security: HCLOCAL.security,
             data: JSON.stringify(dataToSend), // Convert the data to JSON and send it
         }),
     })
@@ -201,8 +212,12 @@ const importOptions = async () =>{
     const dataToSend = { data: apiData.option }; // Customize the data to send
    await fetch(ajaxUrl, {
       method: 'POST',
+      headers: {
+        'X-WP-Nonce': HCLOCAL.security,
+    },
       body: new URLSearchParams({
-          action: 'vayu_blocks_sites_aimport_options', // Specify the WordPress AJAX action
+          action: 'hunk_companion_mport_options', // Specify the WordPress AJAX action
+          security: HCLOCAL.security,
           data: JSON.stringify(dataToSend), // Convert the data to JSON and send it
       }),
   }).then(response => response.json())
@@ -239,8 +254,12 @@ const importOptions = async () =>{
           const dataToSend = { data: apiData.widgets }; // Customize the data to send
          await fetch(ajaxUrl, {
             method: 'POST',
+            headers: {
+              'X-WP-Nonce': HCLOCAL.security,
+          },
             body: new URLSearchParams({
-                action: 'vayu_blocks_sites_import_widgets', // Specify the WordPress AJAX action
+                action: 'hunk_companion_import_widgets', // Specify the WordPress AJAX action
+                security: HCLOCAL.security,
                 data: JSON.stringify(dataToSend), // Convert the data to JSON and send it
             }),
         }).then(response => response.json())

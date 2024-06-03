@@ -14,18 +14,18 @@ class HUNK_COMPANION_SITES_APP{
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
 
-    add_action( 'wp_ajax_vayu_blocks_sites_ajax_handler_data', array( $this, 'import_data') );
-    add_action( 'wp_ajax_vayu_blocks_sites_ajax_import_xml', array( $this, 'import_xml') );	
-    add_action( 'wp_ajax_vayu_blocks_sites_ajax_cutomizer', array( $this, 'init_cutomizer') );
-    add_action( 'wp_ajax_vayu_blocks_sites_aimport_options', array( $this, 'init_options') );
-    add_action( 'wp_ajax_vayu_blocks_sites_import_widgets', array( $this, 'init_widgets' ) );
-    add_action( 'wp_ajax_vayu_blocks_sites_core', array( $this, 'init_site_url' ) );
+    add_action( 'wp_ajax_hunk_companion_handler_data', array( $this, 'import_data') );
+    add_action( 'wp_ajax_hunk_companion_import_xml', array( $this, 'import_xml') );	
+    add_action( 'wp_ajax_hunk_companion_import_cutomizer', array( $this, 'init_cutomizer') );
+    add_action( 'wp_ajax_hunk_companion_mport_options', array( $this, 'init_options') );
+    add_action( 'wp_ajax_hunk_companion_import_widgets', array( $this, 'init_widgets' ) );
+    add_action( 'wp_ajax_hunk_companion_sites_core', array( $this, 'init_site_url' ) );
 
   }
 
     public function register_routes() {
 
-        register_rest_route( 'ai/v1', 'ai-site-builder', array(
+        register_rest_route( 'hc/v1', 'themehunk-import', array(
           'methods' => 'POST',
           'callback' => array( $this, 'tp_install' ),
           'permission_callback' => '__return_true',
@@ -46,9 +46,7 @@ class HUNK_COMPANION_SITES_APP{
   public function tp_install(WP_REST_Request $request){
       $request = $request->get_params();
       $params  = $request['params'];
-    
       new HUNK_COMPANION_SITES_BUILDER_SETUP($params);
-    
       return json_encode( site_url());
   }
 
@@ -67,7 +65,12 @@ class HUNK_COMPANION_SITES_APP{
 
   public function import_data() {
 
-          if(isset( $_POST['data'] )){
+    if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'hc_import_nonce' ) ) {
+      wp_send_json_error( array( 'message' => 'Invalid nonce.' ) );
+      wp_die();
+  }
+
+    if(isset( $_POST['data'] ) && current_user_can('manage_options')){
 
             $return = sanitize_url(  json_decode( wp_unslash( $_POST['data'] ))->data );
             HUNK_COMPANION_SITES_IMPORT::instance()->get_import_data($return);
@@ -80,7 +83,13 @@ class HUNK_COMPANION_SITES_APP{
 
 
   public function import_xml() {
-        if(isset( $_POST['data'] )){
+
+    if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'hc_import_nonce' ) ) {
+      wp_send_json_error( array( 'message' => 'Invalid nonce.' ) );
+      wp_die();
+  }
+
+    if(isset( $_POST['data'] ) && current_user_can('manage_options')){
 
           $return = sanitize_url(  json_decode( wp_unslash( $_POST['data'] ))->data );
 
@@ -93,9 +102,14 @@ class HUNK_COMPANION_SITES_APP{
   }
 
   public  function init_cutomizer() {
-    
-        if(isset( $_POST['data'] )){
 
+    if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'hc_import_nonce' ) ) {
+      wp_send_json_error( array( 'message' => 'Invalid nonce.' ) );
+      wp_die();
+  }
+
+    if(isset( $_POST['data'] ) && current_user_can('manage_options')){
+    
             $data = wp_unslash( $_POST['data']);
             $data = json_decode($data)->data;
           HUNK_COMPANION_SITES_IMPORT::instance()->import_customizer($data);
@@ -105,7 +119,13 @@ class HUNK_COMPANION_SITES_APP{
 
   public function init_options() {
 
-    if(isset( $_POST['data'] )){
+    if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'hc_import_nonce' ) ) {
+      wp_send_json_error( array( 'message' => 'Invalid nonce.' ) );
+      wp_die();
+  }
+
+    if(isset( $_POST['data'] ) && current_user_can('manage_options')){
+
           $data = wp_unslash( $_POST['data']);
           $data = json_decode($data)->data;
         HUNK_COMPANION_SITES_IMPORT::instance()->import_options($data);
@@ -115,7 +135,12 @@ class HUNK_COMPANION_SITES_APP{
 
   public function init_widgets() {
 
-      if(isset( $_POST['data'] )){
+    if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'hc_import_nonce' ) ) {
+      wp_send_json_error( array( 'message' => 'Invalid nonce.' ) );
+      wp_die();
+  }
+
+    if(isset( $_POST['data'] ) && current_user_can('manage_options')){
 
             $data = stripslashes( $_POST['data']);
               $data = json_decode($data)->data;
@@ -125,7 +150,13 @@ class HUNK_COMPANION_SITES_APP{
  }
 
   public function init_site_url(){
-        if(isset( $_POST['data'] )){
+
+    if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'hc_import_nonce' ) ) {
+      wp_send_json_error( array( 'message' => 'Invalid nonce.' ) );
+      wp_die();
+  }
+
+    if(isset( $_POST['data'] ) && current_user_can('manage_options')){
 
             $data = stripslashes( $_POST['data']);
 

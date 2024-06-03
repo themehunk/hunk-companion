@@ -1,5 +1,4 @@
 import { useState  } from '@wordpress/element';
-
 import { Button, Flex, FlexBlock, FlexItem, CheckboxControl  } from '@wordpress/components';
 import { Icon, arrowRight } from '@wordpress/icons';
 import TextField from '@mui/material/TextField';
@@ -37,7 +36,7 @@ return( <div className='aisb-site-build-wrap'>
                     </FlexItem>
 
                     <FlexItem>  
-                        <div className="header-text"><Upgrade/></div>
+                        <div className="header-text"><Upgrade version={false}/></div>
                  </FlexItem>
                 </Flex>
             </div>
@@ -48,10 +47,10 @@ return( <div className='aisb-site-build-wrap'>
                     <div className='aisb-site-options'>
                     
 
-                        <div class="group"><input type="checkbox" id="delete" checked={checkboxes.delete} onChange={() => handleCheckboxChange('delete')}/> <label for="delete">Delete Pervious Import Demo </label></div>
+                        {/* <div class="group"><input type="checkbox" id="delete" checked={checkboxes.delete} /> <label for="delete">Delete Pervious Import Demo </label></div> */}
                         <div class="group"><input type="checkbox" id="themes" checked={checkboxes.themes} /> <label for="themes">Install & Activate Theme </label></div>
                         <div class="group"><input type="checkbox" id="plugins" checked={checkboxes.plugins} /> <label for="plugins">Install Required Plugins </label></div>
-                        <div class="group"><input type="checkbox" id="content" checked={checkboxes.content} onChange={() => handleCheckboxChange('content')}/> <label for="content">Install Demo content </label></div>
+                        <div class="group"><input type="checkbox" id="content" checked={checkboxes.content} /> <label for="content">Install Demo content </label></div>
 
                 
                     </div>

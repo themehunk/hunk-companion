@@ -1,5 +1,5 @@
 import { useState,useEffect } from '@wordpress/element';
-import { Button, Flex, FlexBlock, FlexItem } from '@wordpress/components';
+import {  Flex, FlexItem } from '@wordpress/components';
 import axios from 'axios';
 import wpPlugins from '../../assets/json/plugins.json';
 import animationLoading  from '../../assets/lottie/loading';
@@ -109,19 +109,19 @@ export default function installStart(props){
   // plugin and theme install
         const process = async () =>{
 
-          const params =  {
-            templateType: props.templateData.free_paid,
-            plugin: props.templateData.plugin,
-            allPlugins:wpPlugins,
-            builder:props.templateData.builder_theme,
-            themeSlug:getThemeName(),
-            proThemePlugin:getPluginName('free'),
-            tmplFreePro:getPluginName()
-          }      
+          // const params =  {
+          //   templateType: props.templateData.free_paid, //template tpye check free or pro demo
+          //   plugin: props.templateData.plugin,
+          //   allPlugins:wpPlugins,
+          //   builder:props.templateData.builder_theme,
+          //   themeSlug:getThemeName(),
+          //   proThemePlugin:getPluginName('free'),
+          //   tmplFreePro:getPluginName()
+          // }      
             try {
-                await axios.post(AISB.baseurl+'wp-json/ai/v1/ai-site-builder', {
+                await axios.post(HCLOCAL.baseurl+'wp-json/hc/v1/themehunk-import', {
                     params: {
-                      templateType: props.templateData.free_paid,
+                      templateType: "free",
                       plugin: props.templateData.plugin,
                       allPlugins:wpPlugins,
                       builder:props.templateData.builder_theme,
@@ -134,7 +134,6 @@ export default function installStart(props){
                   })
                   .then(function (response) {
                     dispatch(tmplLodaing('Importing Server Data..'));
-                    // console.log(response.data);
                     setApiUrl(props.templateData.api_url);
                   })
                   .catch(function (error) {
@@ -182,7 +181,7 @@ return(<div className='aisb-site-build-wrap'>
                     </FlexItem>
 
                     <FlexItem> <div className="header-text">
-            <Upgrade/>
+                    <Upgrade version={false}/>
             </div></FlexItem>
                 </Flex>
             </div>
