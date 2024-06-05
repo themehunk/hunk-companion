@@ -85,7 +85,7 @@ return (
 {/* {loader==false && <SkeletonTemplate/>} */}
 
 {<div class="image-container">
-      { jsonData.sort((a, b) => a.name > b.name ? -1 : 1).map((template,index) => {    
+      { jsonData.sort((a, b) => a.free_paid < b.free_paid ? -1 : 1).map((template,index) => {    
   return (<div key={index} className={`column builder-${builderHandel(template.builder_theme)}` }  onClick={() => imageHandel(JSON.stringify(template))} >
 <div className='asib-tmpl-column'><div class="aisb-tmpl-item" data-id={template.id}>
 </div>
@@ -95,7 +95,7 @@ return (
 
   <div className='asib-tmpl-footer'>
     <h3>{template.title}</h3>
-    {template.free_paid =="paid" && <a className='aisb-pro' data-pro='Premium' ><img src={`${HCLOCAL.rootPath}import/admin/assets/images/pro.png`}  alt="Premium" /></a>}
+    {template.free_paid =="paid" && <a className='aisb-pro' data-pro='Premium' ><img src={`${HCLOCAL.rootPath}import/admin/assets/images/pro.svg`}  alt="Premium" /></a>}
   </div>
 </div>
 </div>);

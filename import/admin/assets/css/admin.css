@@ -148,12 +148,19 @@ max-width: 1230px;
 
 .aisb-dashboard .aisb-left-content {
   background: #fff;
-  padding: 35px;
+  padding:6% 20%;
   border-radius: 10px;
   text-align: center;
-  margin-bottom: 55px;
 }
 
+
+.aisb-dashboard .aisb-left-content p{
+  font-size: 16px;
+}
+.aisb-dashboard .aisb-left-content h1{
+  font-size: 38px;
+  line-height: 60px;
+}
 
 .aisb-dashboard .aisb-left-content h2{
   background: var(--aisb-bg-color);
@@ -272,8 +279,9 @@ header {
     align-items: center;
   }
 
-  .heading h1{
+  .aisb-app-wrap .heading h1{
     color: #ffffff;
+    font-size: 34px;
   }
   
   .aisb-logo {
@@ -307,7 +315,6 @@ header {
 
 .header-text.center {
   flex-grow: 1;
-  text-align: center;
 }
   
   .header-text {
@@ -378,7 +385,7 @@ header {
   .aisb-builder-icon .column-icon img,  .MuiInputBase-input .column-icon img{
     width: 23px;
     background: var(--aisb-bg-color);
-    border-radius: 15px;
+    border-radius: 4px;
     padding: 3px;
 
   }
@@ -388,7 +395,7 @@ header {
   width: 23px;
   margin-right: 10px;
   background: var(--aisb-bg-color);
-  border-radius: 15px;
+  border-radius: 4px;
   padding: 3px;
   }
 
@@ -445,6 +452,10 @@ header {
       font-size: 10px;
       box-shadow: 0 1px 4px rgba(43,135,218,.2);
   }
+
+  .aisb-container-main-tmpl .asib-tmpl-footer .aisb-pro img {
+    width: 18px;
+}
            
   .asib-tmpl-footer .aisb-pro {
     text-align: center;
@@ -455,7 +466,8 @@ header {
     /* box-shadow: 0 0 20px #eee; */
     border-radius: 3px;
     display: block;
-    width: 10%;
+    background: linear-gradient(135deg, #0070ff, #0035c9 100%);
+    padding: 3px 2px 0px 2px;
 
   }
 

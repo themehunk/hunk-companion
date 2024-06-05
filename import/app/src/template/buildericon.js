@@ -119,14 +119,14 @@ const processString = (str) => {
           
          { reduxBuildrName==='elementor' && <MenuItem value='elementor' onClick={()=>handelIconClick('elementor')}>
           <div className={`column-icon ${bulderType=='elementor'?'active':'icon'}`} id="elementor" >
-        <img src={`${HCLOCAL.pluginpath}admin/assets/svg/elementor.png`} alt="Elementor Template" />
+        <img src={`${HCLOCAL.pluginpath}admin/assets/images/elementor.png`} alt="Elementor Template" />
         <div className="image-text-builder-icon">Elementor</div>
         </div>
           </MenuItem>}
 
           { reduxBuildrName==='elementor' && <MenuItem value={'gutenberg'} onClick={()=>handelIconClick('gutenberg')}>
           <div className={`column-icon ${bulderType=='gutenberg'?'active':'icon'}`} id="gutenberg" >
-        <img src={`${HCLOCAL.pluginpath}admin/assets/images/block.png`}  alt="Block Templates" />
+        <img src={`${HCLOCAL.pluginpath}admin/assets/images/gutenberg.png`}  alt="Block Templates" />
         <div className="image-text-builder-icon" >Gutenberg</div>
         </div>
           </MenuItem> }

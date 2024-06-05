@@ -39,7 +39,7 @@ export default function App() {
     
             <Header/>
         <div className='heading'>
-        <h1 >Select Gutenberg Template to Build Your Website ! </h1>
+        <h1 >Ready To Import Website Templates </h1>
         </div>
         <BuilderIcon builderclick = {(builder_rs)=>builderHide(builder_rs)}/>
 
