@@ -85,9 +85,24 @@ const MenuProps = {
   },
 };
 
+const getCategory = () =>{
+  switch(HCLOCAL.themeName) {
+      case 'th-shop-mania':
+           return ['all','free','latest',"woocommerce",'multivendor','multipurpose'];
+          break;
+      case 'gogo':
+        return ['all','free','pro'];
+             break;
+      case 'portfoliolite':
+        return ['all','free'];
+             break;
+      default:
+        return ['all','free',"pro","woocommerce"];
+      }
+}
+//'latest','woocommmerce'
 
 
-    const category = ['all','free','woocommmerce','multipurpose','business'];
 //'multipurpose','business','portfolio','music','landing-page','sports'
 
 
@@ -149,7 +164,7 @@ const processString = (str) => {
           input={<BootstrapInput />}
 
         >
-          {category.map((cate,index) => 
+          {getCategory().map((cate,index) => 
           <MenuItem  value={cate}> {cate} </MenuItem>
 
           )}

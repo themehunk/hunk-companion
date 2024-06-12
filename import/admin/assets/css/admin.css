@@ -170,6 +170,7 @@ max-width: 1230px;
   display: inline;
   font-size: 1.6em;
   display: inline-flex;
+  margin-bottom: 40px;
 }
 
 .aisb-dashboard .aisb-left-content .create-website img{

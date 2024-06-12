@@ -68,7 +68,7 @@ return(<div className='aisb-dashboard'>
   <h1>    Ready To Import Websites</h1>
 
   <p>
-  Our themes and plugins are made to be easy to use, but it’s a good idea to learn how they work. You can do this by checking out our detailed instructions on documentation or by watching the video below.
+  Our themes and plugins are made to be easy to use, but it’s a good idea to learn how they work. You can do this by checking out our detailed instructions on documentation.
 
   </p>
 
@@ -77,15 +77,13 @@ return(<div className='aisb-dashboard'>
   <img src={HCLOCAL.pluginpath+'admin/assets/svg/create-site.svg'} />
     Create My Website
   </h2></a>
+
+  {HCLOCAL.themeName==='th-shop-mania' && <iframe width="600" height="315" src="https://www.youtube.com/embed/MjVBKQblHW0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>}
+
+
   </div>
-
-  {/* <div className='aisb-left-content'>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/buuvC61uD9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div> */}
-
 </div>
 </div>
-
 
 </div>);
 }
