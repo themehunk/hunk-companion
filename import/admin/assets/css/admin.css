@@ -1115,9 +1115,11 @@ input[type=text]:focus{
 
 }
 
-@media screen and (max-width: 1180px) {
 
-.success-btn {
-    display: block !important;
-}
-}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media screen and (min-width: 850px) and (max-width: 1280px) {
+  .aisb-site-build-wrap .aisb-site-main {
+              width: 46%;
+          margin-left: 28%;
+  }
+   }
