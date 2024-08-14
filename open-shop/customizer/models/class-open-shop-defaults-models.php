@@ -53,5 +53,21 @@ class Open_Shop_Defaults_Models extends Open_Shop_Singleton{
 				)
 			)
 		);
+	}
+
+	public function get_top_slider_default() {
+		return apply_filters(
+			'open_shop_top_slider_default_content', json_encode(
+				array(
+					array(
+						
+					),
+					array(
+						
+					),
+
+				)
+			)
+		);
 	}	
 }

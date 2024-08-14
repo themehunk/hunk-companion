@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'open_shop_disable_category_slide_sec', array(
                 'sanitize_callback'     => 'open_shop_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_shop_disable_category_slide_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-shop'),
+                'label'                 => esc_html__('Disable Section (Pro)', 'open-shop'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_shop_cat_slide_section',
                 'settings'              => 'open_shop_disable_category_slide_sec',
