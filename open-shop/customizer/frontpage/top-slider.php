@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'open_shop_disable_top_slider_sec', array(
                 'sanitize_callback'     => 'open_shop_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'open_shop_disable_top_slider_sec', array(
-                'label'                 => esc_html__('Disable Section', 'open-shop'),
+                'label'                 => esc_html__('Disable Section (Pro)', 'open-shop'),
                 'type'                  => 'checkbox',
                 'section'               => 'open_shop_top_slider_section',
                 'settings'              => 'open_shop_disable_top_slider_sec',
@@ -51,7 +51,7 @@ $wp_customize->add_control(
             $wp_customize->add_setting(
              'open_shop_top_slide_content', array(
              'sanitize_callback' => 'open_shop_repeater_sanitize',  
-             'default'           => '',
+             'default'           => Open_Shop_Defaults_Models::instance()->get_top_slider_default(),
                 )
             );
             $wp_customize->add_control(
@@ -110,7 +110,7 @@ $wp_customize->add_control(
     'sanitize_callback' => 'open_shop_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new Open_Shop_Toggle_Control( $wp_customize, 'open_shop_top_slider_optn', array(
-    'label'       => esc_html__( 'Slide Auto Play', 'open-shop' ),
+    'label'       => esc_html__( 'Slide Auto Play (Pro)', 'open-shop' ),
     'section'     => 'open_shop_top_slider_section',
     'type'        => 'toggle',
     'settings'    => 'open_shop_top_slider_optn',
@@ -126,7 +126,7 @@ $wp_customize->add_setting('open_shop_top_slider_speed', array(
     $wp_customize->add_control('open_shop_top_slider_speed', array(
             'type'        => 'number',
             'section'     => 'open_shop_top_slider_section',
-            'label'       => __( 'Slider Speed', 'open-shop' ),
+            'label'       => __( 'Slider Speed (Pro)', 'open-shop' ),
             'input_attrs' => array(
                 'min'  => 100,
                 'step' => 1,
