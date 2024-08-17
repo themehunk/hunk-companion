@@ -61,6 +61,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 1.8.1 =
 * New : Theme limitation added.
+* New : Added new shop mania templates.
 
 = 1.8.0 =
 * New : New demo added in shop mania theme.
