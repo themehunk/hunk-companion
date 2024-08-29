@@ -126,7 +126,14 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_BUILDER_MENU' ) ) {
          public function upgrade_to_pro() {
 
             // print_r(wp_get_theme(get_option('stylesheet')));
-                    $slug = get_option('stylesheet');
+                    $theme = wp_get_theme(get_option('stylesheet')); // Get the current theme
+                    if ($theme->parent()) {
+                        $parent_theme = $theme->parent(); // Get the parent theme object
+                        $slug = $parent_theme->get('TextDomain'); // Get the parent theme's text domain
+                    } else {
+                        $slug = get_option('stylesheet');
+                    }
+
             $upgrade = array('top-store'=> array(
                                     "pro"=>'/product/top-store-pro',
                                     "slug"=>'top-store',
