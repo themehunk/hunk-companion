@@ -131,7 +131,7 @@ if ( ! class_exists( 'HUNK_COMPANION_SITES_BUILDER_MENU' ) ) {
                         $parent_theme = $theme->parent(); // Get the parent theme object
                         $slug = $parent_theme->get('TextDomain'); // Get the parent theme's text domain
                     } else {
-                        $slug = get_option('stylesheet');
+                        $slug = $theme->get('TextDomain');
                     }
 
             $upgrade = array('top-store'=> array(
