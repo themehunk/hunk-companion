@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'top_store_disable_product_list_sec', array(
                 'sanitize_callback'     => 'top_store_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_store_disable_product_list_sec', array(
-                'label'                 => esc_html__('Disable Section', 'top-store'),
+                'label'                 => esc_html__('Disable Section (Pro)', 'top-store'),
                 'type'                  => 'checkbox',
                 'section'               => 'top_store_product_slide_list',
                 'settings'              => 'top_store_disable_product_list_sec',
@@ -45,8 +45,8 @@ $wp_customize->add_control('top_store_product_list_optn', array(
         'type'    => 'select',
         'choices'    => array(
         'recent'     => __('Recent','top-store'),
-        'featured'   => __('Featured','top-store'),
-        'random'     => __('Random','top-store'),   
+        'featured'   => __('Featured (Pro)','top-store'),
+        'random'     => __('Random (Pro)','top-store'),   
         ),
     ));
 
@@ -55,7 +55,7 @@ $wp_customize->add_setting( 'top_store_single_row_prdct_list', array(
                 'sanitize_callback'     => 'top_store_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_store_single_row_prdct_list', array(
-                'label'                 => esc_html__('Enable Single Row Slide', 'top-store'),
+                'label'                 => esc_html__('Enable Single Row Slide (Pro)', 'top-store'),
                 'type'                  => 'checkbox',
                 'section'               => 'top_store_product_slide_list',
                 'settings'              => 'top_store_single_row_prdct_list',
@@ -68,7 +68,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_store_
     'sanitize_callback' => 'top_store_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new top_store_Toggle_Control( $wp_customize, 'top_store_product_list_slide_optn', array(
-    'label'       => esc_html__( 'Slide Auto Play', 'top-store' ),
+    'label'       => esc_html__( 'Slide Auto Play (Pro)', 'top-store' ),
     'section'     => 'top_store_product_slide_list',
     'type'        => 'toggle',
     'settings'    => 'top_store_product_list_slide_optn',

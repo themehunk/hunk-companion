@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'top_store_disable_banner_sec', array(
                 'sanitize_callback'     => 'top_store_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_store_disable_banner_sec', array(
-                'label'                 => esc_html__('Disable Section', 'top-store'),
+                'label'                 => esc_html__('Disable Section (Pro)', 'top-store'),
                 'type'                  => 'checkbox',
                 'section'               => 'top_store_banner',
                 'settings'              => 'top_store_disable_banner_sec',

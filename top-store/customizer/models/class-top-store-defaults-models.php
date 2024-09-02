@@ -45,11 +45,7 @@ public function get_brand_default() {
 					array(
 						'image_url' => '',
 						'link'       => '#',
-					),
-					array(
-						'image_url' => '',
-						'link'       => '#',
-					),
+					)
 				)
 			)
 		);
@@ -95,6 +91,22 @@ public function get_brand_default() {
 						'subtitle'   => esc_html__( 'On all order over ', 'top-store' ),
 						
 					),
+				)
+			)
+		);
+	}
+
+	public function get_top_slider_default() {
+		return apply_filters(
+			'top_store_top_slider_default_content', json_encode(
+				array(
+					array(
+						
+					),
+					array(
+						
+					),
+
 				)
 			)
 		);
