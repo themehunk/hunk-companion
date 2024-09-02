@@ -64,8 +64,8 @@ $wp_customize->add_control( 'top_store_category_optn', array(
         'type'    => 'select',
         'choices'    => array(
         'recent'     => __('Recent','top-store'),
-        'featured'   => __('Featured (Pro)','top-store'),
-        'random'     => __('Random (Pro)','top-store'),
+        'featured'   => __('Featured','top-store'),
+        'random'     => __('Random','top-store'),
             
         ),
     ));
@@ -75,7 +75,7 @@ $wp_customize->add_setting( 'top_store_single_row_slide_cat', array(
                 'sanitize_callback'     => 'top_store_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_store_single_row_slide_cat', array(
-                'label'                 => esc_html__('Enable Single Row Slide (Pro)', 'top-store'),
+                'label'                 => esc_html__('Enable Single Row Slide', 'top-store'),
                 'type'                  => 'checkbox',
                 'section'               => 'top_store_category_tab_section',
                 'settings'              => 'top_store_single_row_slide_cat',
@@ -105,3 +105,20 @@ $wp_customize->add_control(new top_store_Misc_Control( $wp_customize, 'top_store
         'description' => esc_html__( 'To know more go with this', 'top-store' ),
         'priority'   =>100,
     )));
+
+//= Choose All Category  =   
+    if (class_exists( 'top_store_Customize_Control_Checkbox_Multiple')) {
+   $wp_customize->add_setting('top_store_sidebar_category_list', array(
+        'default'           => '',
+        'sanitize_callback' => 'top_store_checkbox_explode'
+    ));
+    $wp_customize->add_control(new top_store_Customize_Control_Checkbox_Multiple(
+            $wp_customize,'top_store_sidebar_category_list', array(
+        'settings'=> 'top_store_sidebar_category_list',
+        'label'   => __( 'Choose Categories To Show', 'top-store' ),
+        'section' => 'top-store-section-sidebar-group',
+        'choices' => top_store_get_category_list(array('taxonomy' =>'product_cat'),false),
+        ) 
+    ));
+
+} 
