@@ -50,7 +50,7 @@ export default function AiBuilder(props) {
          setTimeout(function() {
           setLoaderl(false);
           setIframeDisplay({display:"block"});
-        }, 2000);
+        }, 1000);
        
        }
 
@@ -97,8 +97,8 @@ export default function AiBuilder(props) {
               </div>
               <div class="right-column-demo modal-content wp-full-overlay-main" id="iframeModel">
               {loader && <SkeletonLoader/>}
-              
-                <iframe onLoad={frameload} id="iframetmpl" src={iframeurl} height="100%" width="100%" frameborder="0" style={iframeDisplay}></iframe>
+              {/* style={iframeDisplay} */}
+                <iframe onLoad={frameload} id="iframetmpl" src={iframeurl} height="100%" width="100%" frameborder="0" ></iframe>
                 {/* {<FormFileUpload
             accept="image/*"
             onChange={ ( event ) => console.log( event.currentTarget.files ) }
