@@ -4,7 +4,7 @@ $wp_customize->add_setting( 'top_store_disable_brand_sec', array(
                 'sanitize_callback'     => 'top_store_sanitize_checkbox',
             ) );
 $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_store_disable_brand_sec', array(
-                'label'                 => esc_html__('Disable Section', 'top-store'),
+                'label'                 => esc_html__('Disable Section (Pro)', 'top-store'),
                 'type'                  => 'checkbox',
                 'section'               => 'top_store_brand',
                 'settings'              => 'top_store_disable_brand_sec',
@@ -14,7 +14,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_store_
             $wp_customize->add_setting(
              'top_store_brand_content', array(
              'sanitize_callback' => 'top_store_repeater_sanitize',  
-             'default'           => '',
+             'default'           => Top_Store_Defaults_Models::instance()->get_brand_default(),
                 )
             );
             $wp_customize->add_control(
@@ -47,7 +47,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'top_store_
     'sanitize_callback' => 'top_store_sanitize_checkbox',
   ) );
   $wp_customize->add_control( new Top_Store_Toggle_Control( $wp_customize, 'top_store_brand_slider_optn', array(
-    'label'       => esc_html__( 'Slide Auto Play', 'top-store' ),
+    'label'       => esc_html__( 'Slide Auto Play (Pro)', 'top-store' ),
     'section'     => 'top_store_brand',
     'type'        => 'toggle',
     'settings'    => 'top_store_brand_slider_optn',
