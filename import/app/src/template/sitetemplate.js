@@ -80,12 +80,31 @@ useEffect(() => {
   
 }, []);
 
+
+const [searchTerm, setSearchTerm] = useState('');
+
+
+const filteredUsers = jsonData.filter(template =>
+  template.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
+
 return (
         <div class="asib-main-tmpl">
 {/* {loader==false && <SkeletonTemplate/>} */}
 
+<div className='th-searchbar'>
+<input 
+        type="text"
+        placeholder="Search by Name..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      {Object.keys(filteredUsers).length === 0 && <div className='th-not-found-list'>No result found..</div> }
+
+</div>
 {<div class="image-container">
-      { jsonData.sort((a, b) => a.free_paid < b.free_paid ? -1 : 1).map((template,index) => {    
+      { filteredUsers.sort((a, b) => a.free_paid < b.free_paid ? -1 : 1).map((template,index) => {    
   return (<div key={index} className={`column builder-${builderHandel(template.builder_theme)}` }  onClick={() => imageHandel(JSON.stringify(template))} >
 <div className='asib-tmpl-column'><div class="aisb-tmpl-item" data-id={template.id}>
 </div>
