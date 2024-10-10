@@ -24,6 +24,7 @@ class HUNK_COMPANION_SITES_APP{
   }
 
     public function register_routes() {
+      if(current_user_can('manage_options')){
 
         register_rest_route( 'hc/v1', 'themehunk-import', array(
           'methods' => 'POST',
@@ -38,7 +39,7 @@ class HUNK_COMPANION_SITES_APP{
           'login_user_id' => get_current_user_id(),
           'permission_callback' => '__return_true',
       ) );
-
+      }
 
     }
 
