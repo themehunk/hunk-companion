@@ -1,21 +1,21 @@
 <?php
 //  Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+  exit;
 }
 
 class HUNK_COMPANION_SITES_APP{
 
-	/**
-	 * Constructor
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct() {
-		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+  /**
+   * Constructor
+   *
+   * @since 1.0.0
+   */
+  public function __construct() {
+    add_action( 'rest_api_init', array( $this, 'register_routes' ) );
 
     add_action( 'wp_ajax_hunk_companion_handler_data', array( $this, 'import_data') );
-    add_action( 'wp_ajax_hunk_companion_import_xml', array( $this, 'import_xml') );	
+    add_action( 'wp_ajax_hunk_companion_import_xml', array( $this, 'import_xml') ); 
     add_action( 'wp_ajax_hunk_companion_import_cutomizer', array( $this, 'init_cutomizer') );
     add_action( 'wp_ajax_hunk_companion_mport_options', array( $this, 'init_options') );
     add_action( 'wp_ajax_hunk_companion_import_widgets', array( $this, 'init_widgets' ) );
@@ -24,12 +24,30 @@ class HUNK_COMPANION_SITES_APP{
   }
 
     public function register_routes() {
-      if(current_user_can('manage_options')){
 
         register_rest_route( 'hc/v1', 'themehunk-import', array(
           'methods' => 'POST',
           'callback' => array( $this, 'tp_install' ),
-          'permission_callback' => '__return_true',
+          'permission_callback' => function () {
+    // Check if the user is logged in
+    if ( ! is_user_logged_in() ) {
+        return new WP_REST_Response( 'Unauthorized: User not logged in', 401 );
+    }
+
+    // Debug: Log the user role and capabilities to see what they have
+    $current_user = wp_get_current_user();
+    error_log( 'Current user: ' . $current_user->user_login );
+    error_log( 'User roles: ' . implode( ', ', $current_user->roles ) );
+    error_log( 'User capabilities: ' . print_r( $current_user->allcaps, true ) );
+
+    // Ensure the user has the 'install_plugins' capability
+    if ( ! current_user_can( 'install_plugins' ) ) {
+        return new WP_REST_Response( 'Unauthorized: Insufficient capabilities', 401 );
+    }
+
+    return true; // Permission granted
+},
+
       ) );
 
 
@@ -37,9 +55,28 @@ class HUNK_COMPANION_SITES_APP{
           'methods' => 'POST',
           'callback' =>  array( $this, 'data_import' ),
           'login_user_id' => get_current_user_id(),
-          'permission_callback' => '__return_true',
+          'permission_callback' => function () {
+    // Check if the user is logged in
+    if ( ! is_user_logged_in() ) {
+        return new WP_REST_Response( 'Unauthorized: User not logged in', 401 );
+    }
+
+    // Debug: Log the user role and capabilities to see what they have
+    $current_user = wp_get_current_user();
+    error_log( 'Current user: ' . $current_user->user_login );
+    error_log( 'User roles: ' . implode( ', ', $current_user->roles ) );
+    error_log( 'User capabilities: ' . print_r( $current_user->allcaps, true ) );
+
+    // Ensure the user has the 'install_plugins' capability
+    if ( ! current_user_can( 'install_plugins' ) ) {
+        return new WP_REST_Response( 'Unauthorized: Insufficient capabilities', 401 );
+    }
+
+    return true; // Permission granted
+},
+
       ) );
-      }
+
 
     }
 
