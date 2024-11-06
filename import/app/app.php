@@ -36,14 +36,22 @@ class HUNK_COMPANION_SITES_APP{
 
     // Debug: Log the user role and capabilities to see what they have
     $current_user = wp_get_current_user();
-    error_log( 'Current user: ' . $current_user->user_login );
-    error_log( 'User roles: ' . implode( ', ', $current_user->roles ) );
-    error_log( 'User capabilities: ' . print_r( $current_user->allcaps, true ) );
+    // error_log( 'Current user: ' . $current_user->user_login );
+    // error_log( 'User roles: ' . implode( ', ', $current_user->roles ) );
+    // error_log( 'User capabilities: ' . print_r( $current_user->allcaps, true ) );
 
     // Ensure the user has the 'install_plugins' capability
     if ( ! current_user_can( 'install_plugins' ) ) {
         return new WP_REST_Response( 'Unauthorized: Insufficient capabilities', 401 );
     }
+
+      // Get the nonce from the request header
+            $nonce = $request->get_header('X-WP-Nonce');
+
+            // Verify the nonce
+            if ( ! wp_verify_nonce( $nonce, 'hc_import_nonce' ) ) {
+                return new WP_REST_Response( 'Unauthorized: Invalid nonce', 401 );
+            }
 
     return true; // Permission granted
 },
@@ -63,16 +71,24 @@ class HUNK_COMPANION_SITES_APP{
 
     // Debug: Log the user role and capabilities to see what they have
     $current_user = wp_get_current_user();
-    error_log( 'Current user: ' . $current_user->user_login );
-    error_log( 'User roles: ' . implode( ', ', $current_user->roles ) );
-    error_log( 'User capabilities: ' . print_r( $current_user->allcaps, true ) );
+    // error_log( 'Current user: ' . $current_user->user_login );
+    // error_log( 'User roles: ' . implode( ', ', $current_user->roles ) );
+    // error_log( 'User capabilities: ' . print_r( $current_user->allcaps, true ) );
 
     // Ensure the user has the 'install_plugins' capability
     if ( ! current_user_can( 'install_plugins' ) ) {
         return new WP_REST_Response( 'Unauthorized: Insufficient capabilities', 401 );
     }
 
-    return true; // Permission granted
+            // Get the nonce from the request header
+            $nonce = $request->get_header('X-WP-Nonce');
+
+            // Verify the nonce
+            if ( ! wp_verify_nonce( $nonce, 'hc_import_nonce' ) ) {
+                return new WP_REST_Response( 'Unauthorized: Invalid nonce', 401 );
+            }
+
+          return true; // Permission granted
 },
 
       ) );
