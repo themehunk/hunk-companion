@@ -10,6 +10,7 @@ export default function SiteTemplate(props) {
 
   const loader = useSelector((state)=>state.trueFalse);
   const jsonData = useSelector((state)=>state.templateData);
+  const templateSelect = useSelector((state)=>state.templateSelect);  
   const dispatch = useDispatch();
 
 const imageHandel = (template)=> {
@@ -104,7 +105,13 @@ return (
 
 </div>
 {<div class="image-container">
-      { filteredUsers.sort((a, b) => a.free_paid < b.free_paid ? -1 : 1).map((template,index) => {    
+      { filteredUsers.sort((a, b) => {
+    if (templateSelect.cate === "latest") {
+      return a.id > b.id ? -1 : 1;
+    } else {
+      return a.free_paid > b.free_paid ? -1 : 1;
+    }
+  }).map((template,index) => {    
   return (<div key={index} className={`column builder-${builderHandel(template.builder_theme)}` }  onClick={() => imageHandel(JSON.stringify(template))} >
 <div className='asib-tmpl-column'><div class="aisb-tmpl-item" data-id={template.id}>
 </div>
