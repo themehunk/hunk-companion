@@ -130,7 +130,10 @@ export default function installStart(props){
                       tmplFreePro:getPluginName(),
                       wpUrl:'https://downloads.wordpress.org/',
                       thUrl:'https://themehunk.com/wp/data/'   
-                    }
+                    },
+                    headers: {
+                    'X-WP-Nonce': HCLOCAL.security // Pass the nonce in the request header
+                  }
                   })
                   .then(function (response) {
                     dispatch(tmplLodaing('Importing Server Data..'));

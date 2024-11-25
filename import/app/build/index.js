@@ -20127,6 +20127,12 @@ function installStart(props) {
           tmplFreePro: getPluginName(),
           wpUrl: 'https://downloads.wordpress.org/',
           thUrl: 'https://themehunk.com/wp/data/'
+<<<<<<< HEAD
+=======
+        },
+        headers: {
+          'X-WP-Nonce': HCLOCAL.security // Pass the nonce in the request header
+>>>>>>> 2a92b35e43bbf54051a6b0f5b8762c046d65b02a
         }
       }).then(function (response) {
         dispatch((0,_actions__WEBPACK_IMPORTED_MODULE_9__.tmplLodaing)('Importing Server Data..'));
