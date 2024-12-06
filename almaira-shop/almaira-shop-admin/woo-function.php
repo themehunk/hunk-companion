@@ -309,6 +309,14 @@ add_action('wp_ajax_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_aj
 add_action('wp_ajax_nopriv_almaira_shop_sort_filter_ajax', 'almaira_shop_sort_filter_ajax');
 //new aproch to set filter
 function almaira_shop_sort_filter_ajax(){
+
+  if ( ! current_user_can( 'administrator' ) ) {
+  
+    wp_die( - 1, 403 );
+    
+  } 
+  check_ajax_referer('almaira_nonce','nonce');
+
      $posts_per_page = get_theme_mod('almaira_shop_prd_shw','10');
      $term_id = $_POST['cat_slug'];   
      $radio = $_POST['radio_slug'];
@@ -417,6 +425,14 @@ function almaira_shop_sort_filter_ajax(){
 add_action('wp_ajax_almaira_shop_product_section_filter_product_ajax', 'almaira_shop_product_section_filter_product_ajax');
 add_action('wp_ajax_nopriv_almaira_shop_product_section_filter_product_ajax', 'almaira_shop_product_section_filter_product_ajax');
 function almaira_shop_product_section_filter_product_ajax(){
+
+  if ( ! current_user_can( 'administrator' ) ) {
+  
+    wp_die( - 1, 403 );
+    
+  } 
+  check_ajax_referer('almaira_nonce','nonce');
+  
    if( taxonomy_exists( 'product_cat' ) ){
       $perpage  = get_theme_mod('almaira_shop_cate_prd_shw',8);
       if ( empty($_POST["paged"]) ){
