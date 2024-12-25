@@ -108,19 +108,8 @@ export default function installStart(props){
   
   // plugin and theme install
         const process = async () =>{
-
-          // const params =  {
-          //   templateType: props.templateData.free_paid, //template tpye check free or pro demo
-          //   plugin: props.templateData.plugin,
-          //   allPlugins:wpPlugins,
-          //   builder:props.templateData.builder_theme,
-          //   themeSlug:getThemeName(),
-          //   proThemePlugin:getPluginName('free'),
-          //   tmplFreePro:getPluginName()
-          // }      
-            try {
-                await axios.post(HCLOCAL.baseurl+'wp-json/hc/v1/themehunk-import', {
-                    params: {
+          try {
+           const params =  {
                       templateType: "free",
                       plugin: props.templateData.plugin,
                       allPlugins:wpPlugins,
@@ -130,25 +119,35 @@ export default function installStart(props){
                       tmplFreePro:getPluginName(),
                       wpUrl:'https://downloads.wordpress.org/',
                       thUrl:'https://themehunk.com/wp/data/'   
-                    },
-                    headers: {
-                    'X-WP-Nonce': HCLOCAL.security // Pass the nonce in the request header
-                  }
-                  })
-                  .then(function (response) {
-                    dispatch(tmplLodaing('Importing Server Data..'));
-                    setApiUrl(props.templateData.api_url);
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  })
-                  .finally(function () {
-                    // always executed
-                  });
+                    }      
 
-            } catch (error) {
-                console.error('Error fetching data:', error);
-              }
+
+                    const dataToSend = { data: params }; // Customize the data to send
+
+   const response = await fetch(HCLOCAL.ajaxurl, {
+        method: 'POST',
+        headers: {
+          'X-WP-Nonce': HCLOCAL.security,
+      },
+        body: new URLSearchParams({
+            action: 'hunk_companion_import_process', // Specify the WordPress AJAX action
+            vsecurity: HCLOCAL.security,
+            data: JSON.stringify(dataToSend), // Convert the data to JSON and send it
+        }),
+    }).then(response => response.json())
+        .then(data => {
+           // console.log('ajax Theme Plugin Install ...');
+           dispatch(tmplLodaing('Importing Server Data..'));
+           setApiUrl(props.templateData.api_url);
+
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error in AJAX request:', error);
+        });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+      }    
         }
 
 
