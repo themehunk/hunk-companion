@@ -105,11 +105,13 @@ return (
 
 </div>
 {<div class="image-container">
+  
       { filteredUsers.sort((a, b) => {
     if (templateSelect.cate === "latest") {
+      
       return a.id > b.id ? -1 : 1;
     } else {
-      return a.free_paid > b.free_paid ? -1 : 1;
+      return a.free_paid < b.free_paid ? -1 : 1;
     }
   }).map((template,index) => {    
   return (<div key={index} className={`column builder-${builderHandel(template.builder_theme)}` }  onClick={() => imageHandel(JSON.stringify(template))} >
@@ -121,6 +123,7 @@ return (
 
   <div className='asib-tmpl-footer'>
     <h3>{template.title}</h3>
+    {template.free_paid =="free" && <b className='freetag'>Free</b>}
     {template.free_paid =="paid" && <a className='aisb-pro' data-pro='Premium' ><img src={`${HCLOCAL.rootPath}import/admin/assets/images/pro.svg`}  alt="Premium" /></a>}
   </div>
 </div>
