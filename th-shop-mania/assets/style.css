@@ -246,7 +246,12 @@
   font-weight: 500;
   min-width: unset;
 }
-
+.ea-simple-product-slider .elemento-product-outer-wrap .buttons_ .th-product-compare-btn span.th-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+}
 .ea-simple-product-slider
   .elemento-product-outer-wrap
   .buttons_
