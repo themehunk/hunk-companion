@@ -78,7 +78,21 @@ if (!function_exists('elemento_addons_simple_addons')) {
 if (!function_exists('elemento_addons_wishlist_wpc')) {
     function elemento_addons_wishlist_wpc($productId)
     {
-        if (intval($productId) && shortcode_exists('yith_wcwl_add_to_wishlist')) {
+         if (intval($productId) && shortcode_exists('thwl_add_to_wishlist')) {
+          $html = '<div class="elemento-wishlist">';
+          $html .= do_shortcode('[thwl_add_to_wishlist 
+                      product_id="' . esc_attr($productId) . '" 
+                      add_icon=" " 
+                      add_text="' . esc_attr__('Wishlist', 'th-shop-mania') . '" 
+                      add_browse_icon=" "
+                      browse_text="' . esc_attr__('Added', 'th-shop-mania') . '"
+                      theme_style="yes"
+                      custom_class="th-wishlist-integrated"
+                    ]');
+          $html .= '</div>';
+            return $html;
+      }
+        elseif (intval($productId) && shortcode_exists('yith_wcwl_add_to_wishlist')) {
             $html = '<div class="elemento-wishlist">';
             $html .= do_shortcode('[yith_wcwl_add_to_wishlist product_id="' . esc_attr($productId). '" already_in_wishslist_text="<span>already added</span>"]');
             $html .= '</div>';
