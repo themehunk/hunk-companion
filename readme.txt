@@ -59,9 +59,9 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 == Changelog ==
 
-
 = 1.9.11 =
 TH Shop Mania :import issue fixed.
+Top Store :TH Wishlist added in importer.
 
 = 1.9.10 =
 TH Shop Mania :New plugin wishlist added.
