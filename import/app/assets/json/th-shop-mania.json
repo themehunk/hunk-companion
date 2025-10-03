@@ -39,12 +39,12 @@
     },
     {
         "id": "207",
-        "title": "Fashion store",
-        "free_paid": "free",
+        "title": "Fashion",
+        "free_paid": "paid",
         "slug": "fashion-store",
         "thumb": "https://themehunk.com/wp-content/uploads/2022/01/demo1.png",
-        "demo_url": "https://wpthemes.themehunk.com/fashion-store/",
-        "api_url": "https://wpthemes.themehunk.com/fashion-store/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "demo_url": "https://wpthemes.themehunk.com/fashion-store-shop/",
+        "api_url": "https://wpthemes.themehunk.com/fashion-store-shop/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
         "category":
         [
@@ -714,7 +714,7 @@
     },
     {
         "id": "247",
-        "title": "Fashion Store",
+        "title": "Fashion Mania",
         "free_paid": "paid",
         "slug": "fashion-store",
         "thumb": "https://themehunk.com/wp-content/uploads/2022/06/fashion-mania-v2-5.png",
@@ -3179,5 +3179,84 @@
         },
         "tags": ["fashion","skincare","cloth","shop","ecommerce","boutique","trends","women","minimalist","store"]
 
+    },
+      {
+        "id": "352",
+        "title": "Agricultural Machinery",
+        "free_paid": "paid",
+        "slug": "agricultural-machinery",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/08/agro-machinery-38131.png",
+        "demo_url": "https://wpthemes.themehunk.com/agricultural-machinery",
+        "api_url": "https://wpthemes.themehunk.com/agricultural-machinery/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "pro",
+            "ecommerce",
+            "woocommmerce"
+        ],
+        "plugin":
+        {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist"
+        },
+        "tags": [
+            "agricultural-machinery",
+            "agricultural",
+            "agro",
+            "farming",
+            "harvesting",
+            "new"
+        ]
+    },
+        {
+        "id": "353",
+        "title": "Fashion Store",
+        "free_paid": "free",
+        "slug": "fashion-store",
+        "thumb": "https://themehunk.com/wp-content/uploads/2015/07/fashion-store-41414.png",
+        "demo_url": "https://wpthemes.themehunk.com/fashion-store",
+        "api_url": "https://wpthemes.themehunk.com/fashion-store/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "free",
+            "woocommmerce",
+            "ecommerce"
+        ],
+        "plugin":
+        {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist"
+        },
+        "tags":
+        [
+            "store",
+            "shop",
+            "fashion",
+            "clothing",
+            "jewelry",
+            "shopping",
+            "cosmetics",
+            "accessories",
+            "shoes",
+            "glasses",
+            "watch",
+            "gift"
+        ]
     }
 ]
