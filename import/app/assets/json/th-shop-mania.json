@@ -2,7 +2,7 @@
     {
         "id": "206",
         "title": "Fashion shop",
-        "free_paid": "free",
+        "free_paid": "paid",
         "slug": "fashion-shop-mania",
         "thumb": "https://themehunk.com/wp-content/uploads/2022/01/demo2-1.png",
         "demo_url": "https://wpthemes.themehunk.com/fashion-shop/",
@@ -35,6 +35,54 @@
             "dry fruits",
             "food",
             "cafe"
+        ]
+    },
+    {
+        "id": "220",
+        "title": "Electro Mania",
+        "free_paid": "paid",
+        "slug": "electro-mania",
+        "thumb": "https://themehunk.com/wp-content/uploads/2022/01/electro-mania-image.png",
+        "demo_url": "https://wpthemes.themehunk.com/electro-mania/",
+        "api_url": "https://wpthemes.themehunk.com/electro-mania/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "pro",
+            "woocommerce",
+            "ecommerce"
+        ],
+        "plugin":
+        {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "th-wishlist": "TH WooCommerce Wishlist"
+        },
+        "tags":
+        [
+            "store",
+            "shop",
+            "fashion",
+            "clothing",
+            "multivendor",
+            "electronics",
+            "furniture",
+            "jewelry",
+            "shopping",
+            "cosmetics",
+            "accessories",
+            "shoes",
+            "glasses",
+            "food",
+            "grocery",
+            "cake",
+            "watch",
+            "gift"
         ]
     },
     {
@@ -237,54 +285,6 @@
             "dress",
             "fashion suit",
             "fashion-dress"
-        ]
-    },
-    {
-        "id": "220",
-        "title": "Electro Mania",
-        "free_paid": "free",
-        "slug": "electro-mania",
-        "thumb": "https://themehunk.com/wp-content/uploads/2022/01/electro-mania-image.png",
-        "demo_url": "https://wpthemes.themehunk.com/electro-mania/",
-        "api_url": "https://wpthemes.themehunk.com/electro-mania/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
-        "builder_theme": "th-shop-mania",
-        "category":
-        [
-            "all",
-            "pro",
-            "woocommerce",
-            "ecommerce"
-        ],
-        "plugin":
-        {
-            "woocommerce": "Woocommerce",
-            "elementor": "Elementor",
-            "th-advance-product-search": "TH Product Search",
-            "th-all-in-one-woo-cart": "TH Woo Cart",
-            "th-product-compare": "TH Product Compare",
-            "lead-form-builder": "Lead Form Builder",
-            "th-wishlist": "TH WooCommerce Wishlist"
-        },
-        "tags":
-        [
-            "store",
-            "shop",
-            "fashion",
-            "clothing",
-            "multivendor",
-            "electronics",
-            "furniture",
-            "jewelry",
-            "shopping",
-            "cosmetics",
-            "accessories",
-            "shoes",
-            "glasses",
-            "food",
-            "grocery",
-            "cake",
-            "watch",
-            "gift"
         ]
     },
     {
