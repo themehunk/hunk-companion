@@ -2,7 +2,7 @@
     {
         "id": "206",
         "title": "Fashion shop",
-        "free_paid": "paid",
+        "free_paid": "free",
         "slug": "fashion-shop-mania",
         "thumb": "https://themehunk.com/wp-content/uploads/2022/01/demo2-1.png",
         "demo_url": "https://wpthemes.themehunk.com/fashion-shop/",
@@ -35,54 +35,6 @@
             "dry fruits",
             "food",
             "cafe"
-        ]
-    },
-    {
-        "id": "220",
-        "title": "Electro Mania",
-        "free_paid": "paid",
-        "slug": "electro-mania",
-        "thumb": "https://themehunk.com/wp-content/uploads/2022/01/electro-mania-image.png",
-        "demo_url": "https://wpthemes.themehunk.com/electro-mania/",
-        "api_url": "https://wpthemes.themehunk.com/electro-mania/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
-        "builder_theme": "th-shop-mania",
-        "category":
-        [
-            "all",
-            "pro",
-            "woocommerce",
-            "ecommerce"
-        ],
-        "plugin":
-        {
-            "woocommerce": "Woocommerce",
-            "elementor": "Elementor",
-            "th-advance-product-search": "TH Product Search",
-            "th-all-in-one-woo-cart": "TH Woo Cart",
-            "th-product-compare": "TH Product Compare",
-            "lead-form-builder": "Lead Form Builder",
-            "th-wishlist": "TH WooCommerce Wishlist"
-        },
-        "tags":
-        [
-            "store",
-            "shop",
-            "fashion",
-            "clothing",
-            "multivendor",
-            "electronics",
-            "furniture",
-            "jewelry",
-            "shopping",
-            "cosmetics",
-            "accessories",
-            "shoes",
-            "glasses",
-            "food",
-            "grocery",
-            "cake",
-            "watch",
-            "gift"
         ]
     },
     {
@@ -206,49 +158,6 @@
         ]
     },
     {
-        "id": "353",
-        "title": "Fashion Store",
-        "free_paid": "free",
-        "slug": "fashion-store",
-        "thumb": "https://themehunk.com/wp-content/uploads/2015/07/fashion-store-41414.png",
-        "demo_url": "https://wpthemes.themehunk.com/fashion-store",
-        "api_url": "https://wpthemes.themehunk.com/fashion-store/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
-        "builder_theme": "th-shop-mania",
-        "category":
-        [
-            "all",
-            "free",
-            "woocommmerce",
-            "ecommerce"
-        ],
-        "plugin":
-        {
-            "woocommerce": "Woocommerce",
-            "elementor": "Elementor",
-            "th-advance-product-search": "TH Product Search",
-            "th-all-in-one-woo-cart": "TH Woo Cart",
-            "th-product-compare": "TH Product Compare",
-            "lead-form-builder": "Lead Form Builder",
-            "vayu-blocks": "Vayu Blocks",
-            "th-wishlist": "TH Wishlist"
-        },
-        "tags":
-        [
-            "store",
-            "shop",
-            "fashion",
-            "clothing",
-            "jewelry",
-            "shopping",
-            "cosmetics",
-            "accessories",
-            "shoes",
-            "glasses",
-            "watch",
-            "gift"
-        ]
-    },
-    {
         "id": "212",
         "title": "Cosmetic Mania",
         "free_paid": "free",
@@ -328,6 +237,54 @@
             "dress",
             "fashion suit",
             "fashion-dress"
+        ]
+    },
+    {
+        "id": "220",
+        "title": "Electro Mania",
+        "free_paid": "free",
+        "slug": "electro-mania",
+        "thumb": "https://themehunk.com/wp-content/uploads/2022/01/electro-mania-image.png",
+        "demo_url": "https://wpthemes.themehunk.com/electro-mania/",
+        "api_url": "https://wpthemes.themehunk.com/electro-mania/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "pro",
+            "woocommerce",
+            "ecommerce"
+        ],
+        "plugin":
+        {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "th-wishlist": "TH WooCommerce Wishlist"
+        },
+        "tags":
+        [
+            "store",
+            "shop",
+            "fashion",
+            "clothing",
+            "multivendor",
+            "electronics",
+            "furniture",
+            "jewelry",
+            "shopping",
+            "cosmetics",
+            "accessories",
+            "shoes",
+            "glasses",
+            "food",
+            "grocery",
+            "cake",
+            "watch",
+            "gift"
         ]
     },
     {
@@ -675,7 +632,7 @@
         "title": "Single Product",
         "free_paid": "paid",
         "slug": "single-product",
-        "thumb": "https://themehunk.com/wp-content/uploads/2015/07/demo-single-product-cmp.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/05/single-product-7921.webp",
         "demo_url": "https://wpthemes.themehunk.com/single-product/",
         "api_url": "https://wpthemes.themehunk.com/single-product/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -840,7 +797,7 @@
         "title": "Book Store Mania",
         "free_paid": "paid",
         "slug": "bookstore-mania",
-        "thumb": "https://themehunk.com/wp-content/uploads/2022/07/book-store-maina-314.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/03/book-storemore-mania-323.png",
         "demo_url": "https://wpthemes.themehunk.com/bookstore-mania",
         "api_url": "https://wpthemes.themehunk.com/bookstore-mania/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -1063,7 +1020,7 @@
         "title": "Charity Mania",
         "free_paid": "paid",
         "slug": "charity-mania",
-        "thumb": "https://themehunk.com/wp-content/uploads/2022/11/charity-313.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/10/Charity-Mania-2.jpg",
         "demo_url": "https://wpthemes.themehunk.com/charity-mania/",
         "api_url": "https://wpthemes.themehunk.com/charity-mania/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -1084,7 +1041,8 @@
             "th-wishlist": "TH WooCommerce Wishlist",
             "th-product-compare": "TH Product Compare",
             "lead-form-builder": "Lead Form Builder",
-            "charitable": "Charitable"
+            "charitable": "Charitable",
+            "give": "Give"
         },
         "tags":
         [
@@ -1144,7 +1102,7 @@
         "title": "Christmas Shop",
         "free_paid": "paid",
         "slug": "christmas-shop",
-        "thumb": "https://themehunk.com/wp-content/uploads/2022/12/christmas-shop-7392.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/09/Christmas-Shop_-demo.png",
         "demo_url": "https://wpthemes.themehunk.com/christmas-shop/",
         "api_url": "https://wpthemes.themehunk.com/christmas-shop/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -1896,7 +1854,7 @@
         "title": "Wallmart",
         "free_paid": "paid",
         "slug": "wallmart",
-        "thumb": "https://themehunk.com/wp-content/uploads/2024/06/walmart-temp-814.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/05/Wallmart_-More-Demos.png",
         "demo_url": "https://wpthemes.themehunk.com/wallmart",
         "api_url": "https://wpthemes.themehunk.com/wallmart//wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -2228,7 +2186,7 @@
         "title": "Timu",
         "free_paid": "paid",
         "slug": "timu",
-        "thumb": "https://themehunk.com/wp-content/uploads/2024/08/timu-721.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/06/timu-803233.png",
         "demo_url": "https://wpthemes.themehunk.com/timu",
         "api_url": "https://wpthemes.themehunk.com/timu/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -2341,7 +2299,7 @@
         "title": "Phone Cases",
         "free_paid": "paid",
         "slug": "phone-cases",
-        "thumb": "https://themehunk.com/wp-content/uploads/2024/10/phone-case-323-3.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/03/phone-cases-template-0323.png",
         "demo_url": "https://wpthemes.themehunk.com/phone-cases",
         "api_url": "https://wpthemes.themehunk.com/phone-cases/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -3257,6 +3215,82 @@
             "farming",
             "harvesting",
             "new"
+        ]
+    },
+        {
+        "id": "353",
+        "title": "Fashion Store",
+        "free_paid": "free",
+        "slug": "fashion-store",
+        "thumb": "https://themehunk.com/wp-content/uploads/2015/07/fashion-store-41414.png",
+        "demo_url": "https://wpthemes.themehunk.com/fashion-store",
+        "api_url": "https://wpthemes.themehunk.com/fashion-store/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "free",
+            "woocommmerce",
+            "ecommerce"
+        ],
+        "plugin":
+        {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist"
+        },
+        "tags":
+        [
+            "store",
+            "shop",
+            "fashion",
+            "clothing",
+            "jewelry",
+            "shopping",
+            "cosmetics",
+            "accessories",
+            "shoes",
+            "glasses",
+            "watch",
+            "gift"
+        ]
+    },
+    {
+        "id": "355",
+        "title": "Essential Oil Elementor",
+        "free_paid": "paid",
+        "slug": "essential-oil-elementor",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/09/single-page-essential-oil-332.png",
+        "demo_url": "https://wpthemes.themehunk.com/essential-oil-elementor/",
+        "api_url": "https://wpthemes.themehunk.com/essential-oil-elementor/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "free",
+            "woocommmerce",
+            "ecommerce"
+        ],
+        "plugin": {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist"
+        },
+        "tags": [
+            "store",
+            "shop",
+            "oil shop",
+            "single"
         ]
     }
 ]
