@@ -3292,5 +3292,39 @@
             "oil shop",
             "single"
         ]
+    },
+    {
+        "id": "356",
+        "title": "Pet Groomer",
+        "free_paid": "paid",
+        "slug": "pet-groomer",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/12/pet-groomer-70311.png",
+        "demo_url": "https://wpthemes.themehunk.com/pet-groomer/",
+        "api_url": "https://wpthemes.themehunk.com/pet-groomer/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "free",
+            "woocommmerce",
+            "ecommerce"
+        ],
+        "plugin": {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist"
+        },
+        "tags": [
+            "pet",
+            "pet care",
+            "cat",
+            "groomer",
+            "dog"
+        ]
     }
 ]

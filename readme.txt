@@ -2,7 +2,7 @@
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, Testimonial, Team, service
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 1.9.16
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -61,6 +61,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 1.9.16 =
 TH Shop Mania : Demo thumbnail updated.
+TH Shop Mania:  Pet Groomer demo added.
 
 = 1.9.15 =
 Almaira : TH Wishlist integrated.
