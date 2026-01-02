@@ -2075,7 +2075,7 @@
         "title": "Air Purifier",
         "free_paid": "paid",
         "slug": "drone",
-        "thumb": "https://themehunk.com/wp-content/uploads/2024/07/air-purifier-392.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/06/Air-Purifier_-more-demos.jpg",
         "demo_url": "https://wpthemes.themehunk.com/air-purifier",
         "api_url": "https://wpthemes.themehunk.com/air-purifier//wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -2556,7 +2556,7 @@
         "title": "Coffee Store",
         "free_paid": "paid",
         "slug": "coffee-store",
-        "thumb": "https://themehunk.com/wp-content/uploads/2024/12/coffee-store-3132.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/01/Coffee-Store_-More-demos.jpg",
         "demo_url": "https://wpthemes.themehunk.com/coffee-store",
         "api_url": "https://wpthemes.themehunk.com/coffee-store/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -3325,6 +3325,44 @@
             "cat",
             "groomer",
             "dog"
+        ]
+    },
+      {
+        "id": "357",
+        "title": "Agriculture Equipment",
+        "free_paid": "paid",
+        "slug": "agriculture-equipment",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/12/agriculture-equipment-801222.png",
+        "demo_url": "https://wpthemes.themehunk.com/agriculture-equipment/",
+        "api_url": "https://wpthemes.themehunk.com/agriculture-equipment/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+         "category":
+        [
+            "all",
+            "free",
+            "woocommmerce",
+            "ecommerce"
+        ],
+        "plugin": {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist"
+        },
+         "tags":
+        [
+            "store",
+            "fertilizer",
+            "agricultural",
+            "ecommerce",
+            "woocommerce",
+            "organic",
+            "farming",
+            "plant"
         ]
     }
 ]
