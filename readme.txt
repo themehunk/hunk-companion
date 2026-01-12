@@ -62,6 +62,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 = 2.0 =
 TH Shop Mania : Demo thumbnail updated.
 TH Shop Mania:  Agriculture Equipment demo added.
+Top Store: Icon replaced by svg.
 
 = 1.9.17 =
 TH Shop Mania : Shortcode Icon changed.
