@@ -3364,5 +3364,156 @@
             "farming",
             "plant"
         ]
+    },
+    {
+        "id": "358",
+        "title": "Business Consulting",
+        "free_paid": "paid",
+        "slug": "business-consulting",
+        "thumb": "https://themehunk.com/wp-content/uploads/2026/01/business-consulting-8011.webp",
+        "demo_url": "https://wpthemes.themehunk.com/business-consulting/",
+        "api_url": "https://wpthemes.themehunk.com/business-consulting/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "pro",
+            "multipurpose",
+            "business",
+            "woocommerce"
+        ],
+        "plugin": {
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "wp-popup-builder": "WP Popup Builder",
+            "vayu-blocks": "Vayu Blocks"
+        },
+        "tags":
+        [
+            "business",
+            "agency",
+            "startup",
+            "shop",
+            "onepage",
+            "industry",
+            "service",
+            "latest",
+            "consulting",
+            "marketing"
+        ]
+    },
+    {
+        "id": "359",
+        "title": "Business Coach",
+        "free_paid": "paid",
+        "slug": "business-coach",
+        "thumb": "https://themehunk.com/wp-content/uploads/2026/01/business-coach-8031.webp",
+        "demo_url": "https://wpthemes.themehunk.com/business-coach/",
+        "api_url": "https://wpthemes.themehunk.com/business-coach/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "pro",
+            "multipurpose",
+            "business",
+            "woocommerce"
+        ],
+        "plugin": {
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "wp-popup-builder": "WP Popup Builder",
+            "vayu-blocks": "Vayu Blocks"
+        },
+        "tags":
+        [
+            "business",
+            "agency",
+            "startup",
+            "shop",
+            "onepage",
+            "industry",
+            "service",
+            "latest",
+            "consulting",
+            "marketing",
+            "company",
+            "firm",
+            "mentor"
+        ]
+    },
+    {
+        "id": "360",
+        "title": "Law Firm",
+        "free_paid": "paid",
+        "slug": "law-firm",
+        "thumb": "https://themehunk.com/wp-content/uploads/2026/02/law-firm-313.png",
+        "demo_url": "https://wpthemes.themehunk.com/law-firm",
+        "api_url": "https://wpthemes.themehunk.com/law-firm/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category": [
+            "all",
+            "pro",
+            "landing-page",
+            "business",
+            "multipurpose"
+        ],
+        "plugin": {
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "wp-popup-builder": "WP Popup Builder",
+            "vayu-blocks": "Vayu Blocks"
+        },
+        "tags": [
+            "law firm",
+            "agency",
+            "app",
+            "application",
+            "business",
+            "attorneys",
+            "lawyers",
+            "consultants",
+            "legal service"
+        ]
+    },
+     {
+        "id": "361",
+        "title": "Interior Design",
+        "free_paid": "paid",
+        "slug": "interior-design",
+        "thumb": "https://themehunk.com/wp-content/uploads/2026/02/interior-design-111.png",
+        "demo_url": "https://wpthemes.themehunk.com/interior-design",
+        "api_url": "https://wpthemes.themehunk.com/interior-design/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category": [
+            "all",
+            "pro",
+            "landing-page",
+            "business",
+            "multipurpose"
+        ],
+        "plugin": {
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "wp-popup-builder": "WP Popup Builder",
+            "vayu-blocks": "Vayu Blocks"
+        },
+        "tags": [
+            "home decor",
+            "architecture",
+            "luxury",
+            "interiors",
+            "residential",
+            "architecture portfolio",
+            "residential design"
+        ]
     }
 ]
