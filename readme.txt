@@ -61,6 +61,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 2.0.5 =
 TH Sho Mania : Quick View added.
+TH STORE ONE added in json
 
 = 2.0.4 =
 Top Store : top-store-pro.json updated.
