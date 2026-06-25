@@ -61,6 +61,7 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 2.0.6 =
 TH Shop Mania : Elemento Addon quick view color controls added.
+TH Shop Mania: Json updated.
 
 = 2.0.5 =
 TH Shop Mania : Quick View added.
