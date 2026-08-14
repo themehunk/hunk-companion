@@ -3883,5 +3883,112 @@
             "clinic",
             "hospital"
         ]
+    },
+    {
+        "id": "372",
+        "title": "Veloura Fashion",
+        "free_paid": "paid",
+        "slug": "veloura",
+        "thumb": "https://themehunk.com/wp-content/uploads/2026/07/veloura-7907313.png",
+        "demo_url": "https://wpthemes.themehunk.com/veloura",
+        "api_url": "https://wpthemes.themehunk.com/veloura/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+         "category":
+        [
+            "all",
+            "pro",
+            "woocommerce",
+            "ecommerce"
+        ],
+        "plugin": {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "wp-popup-builder": "WP Popup Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist",
+            "th-store-one": "Store One"
+        },
+        "tags": [
+            "fashion",
+            "clothing",
+            "store",
+            "boutique",
+            "women",
+            "apparel"
+        ]
+    },
+    {
+        "id": "373",
+        "title": "Parfum Fleur",
+        "free_paid": "paid",
+        "slug": "parfum-fleur",
+        "thumb": "https://themehunk.com/wp-content/uploads/2026/08/parfum-fleur-0111.png",
+        "demo_url": "https://wpthemes.themehunk.com/parfum-fleur/",
+        "api_url": "https://wpthemes.themehunk.com/parfum-fleur/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "pro",
+            "woocommerce",
+            "ecommerce"
+        ],
+        "plugin": {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "wp-popup-builder": "WP Popup Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist",
+            "th-store-one": "Store One"
+        },
+        "tags": [
+            "perfume",
+            "parfume",
+            "fragrance",
+            "scent"
+        ]
+    },
+    {
+        "id": "374",
+        "title": "B2b Wholesale",
+        "free_paid": "paid",
+        "slug": "b2b-wholesale",
+        "thumb": "https://themehunk.com/wp-content/uploads/2026/08/b2b-wholesale-template-42323.png",
+        "demo_url": "https://wpthemes.themehunk.com/b2b-wholesale/",
+        "api_url": "https://wpthemes.themehunk.com/b2b-wholesale/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "pro",
+            "woocommerce",
+            "ecommerce"
+        ],
+        "plugin": {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "wp-popup-builder": "WP Popup Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist",
+            "th-store-one": "Store One"
+        },
+        "tags": [
+            "b2b",
+            "wholesale",
+            "ecommerce",
+            "woocommerce"
+        ]
     }
 ]
