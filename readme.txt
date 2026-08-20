@@ -2,7 +2,7 @@
 Contributors: themehunk
 Author URI: : https://www.themehunk.com/
 Tags: themehunk, customizer, Testimonial, Team, service
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 2.0.7
 License: GPLv3 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
