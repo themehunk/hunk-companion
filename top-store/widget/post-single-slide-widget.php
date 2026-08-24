@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // register widget
 function top_store_post_slide_widget(){
 register_widget( 'top_store_slide_post' );

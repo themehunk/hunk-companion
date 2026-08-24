@@ -80,6 +80,6 @@ $wp_customize->add_control(new Almaira_Shop_Misc_Control( $wp_customize, 'almair
         'section'     => 'almaira_shop_sortby_section',
         'type'      => 'doc-link',
         'url'       => 'https://themehunk.com/docs/almaira-shop-theme/#home-shop',
-        'description' => esc_html__( 'To know more go with this', 'almaira-shop' ),
+        'description' => esc_html__( 'To know more go with this', 'hunk-companion' ),
         'priority'   =>30,
     )));

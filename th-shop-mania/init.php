@@ -47,6 +47,7 @@ if (!class_exists('ElementoSimpleAddon')) {
                 array(
                 'admin_ajax' => admin_url('admin-ajax.php'),
                 'nonce'      => wp_create_nonce('elemento_quick_view'),
+                'postnonce'      => wp_create_nonce('elemento_simple_post_nonce'),
                 )
             );
         }
