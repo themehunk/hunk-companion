@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 $wp_customize->add_setting( 'open_shop_disable_top_slider_sec', array(
                 'default'               => false,
                 'sanitize_callback'     => 'open_shop_sanitize_checkbox',

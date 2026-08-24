@@ -328,7 +328,7 @@ if ((function_exists('is_multisite') && is_multisite()) || ($single_site = true)
         if (!file_exists($upload_path)) { // Create the directory if it is missing
             wp_mkdir_p($upload_path);
         }
-        $file_path = parse_url($img_url);
+        $file_path = wp_parse_url($img_url);
         if (isset($file_path['host']) && $_SERVER['HTTP_HOST'] != $file_path['host'] && $file_path['host'] != '') {  // The image is not locally hosted
             $remote_file_info = pathinfo($file_path['path']); // Can't use $img_url as the parameter because pathinfo includes the 'query' for the URL
             if (isset($remote_file_info['extension'])) {

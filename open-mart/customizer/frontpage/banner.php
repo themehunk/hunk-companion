@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 $wp_customize->add_setting( 'open_mart_disable_banner_sec', array(
                 'default'               => false,
                 'sanitize_callback'     => 'open_mart_sanitize_checkbox',
