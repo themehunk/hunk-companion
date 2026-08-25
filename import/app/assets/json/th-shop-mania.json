@@ -166,7 +166,7 @@
         "title": "Cosmetic Mania",
         "free_paid": "free",
         "slug": "cosmetic-mania",
-        "thumb": "https://themehunk.com/wp-content/uploads/2022/02/cosmetic-mania.png",
+        "thumb": "https://themehunk.com/wp-content/uploads/2025/03/cosmetic-mania-703232.png",
         "demo_url": "https://wpthemes.themehunk.com/cosmetic-mania/",
         "api_url": "https://wpthemes.themehunk.com/cosmetic-mania/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
         "builder_theme": "th-shop-mania",
@@ -3989,6 +3989,42 @@
             "wholesale",
             "ecommerce",
             "woocommerce"
+        ]
+    },
+    {
+        "id": "376",
+        "title": "Mania eCommerce",
+        "free_paid": "free",
+        "slug": "mania-ecommerce",
+        "thumb": "https://themehunk.com/wp-content/uploads/2015/07/mania-ecommerce-7031.png",
+        "demo_url": "https://wpthemes.themehunk.com/mania-ecommerce/",
+        "api_url": "https://wpthemes.themehunk.com/mania-ecommerce/wp-json/wp/v2/themehunk-site/3245?theme=th-shop-mania",
+        "builder_theme": "th-shop-mania",
+        "category":
+        [
+            "all",
+            "pro",
+            "woocommerce",
+            "ecommerce"
+        ],
+        "plugin": {
+            "woocommerce": "Woocommerce",
+            "elementor": "Elementor",
+            "th-advance-product-search": "TH Product Search",
+            "th-all-in-one-woo-cart": "TH Woo Cart",
+            "th-product-compare": "TH Product Compare",
+            "lead-form-builder": "Lead Form Builder",
+            "wp-popup-builder": "WP Popup Builder",
+            "vayu-blocks": "Vayu Blocks",
+            "th-wishlist": "TH Wishlist",
+            "th-store-one": "Store One"
+        },
+        "tags": [
+            "ecommerce",
+            "fashion",
+            "beauty",
+            "skincare",
+            "cosmetic"
         ]
     }
 ]
