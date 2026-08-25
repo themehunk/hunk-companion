@@ -62,7 +62,10 @@ Yes this plugin is specially make for ThemeHunk themes like Gogo. You can instal
 
 = 2.0.7 =
 TH Shop Mania : B2b demo added.
+TH Shop Mania : Mania Ecommerce demo added.
+TH Shop Mania : Cosmetic Mania thumbnail updated.
 Update: Security isssues resolved.
+
 
 = 2.0.6 =
 TH Shop Mania : Elemento Addon quick view color controls added.
