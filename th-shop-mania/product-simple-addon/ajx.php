@@ -1,5 +1,4 @@
 <?php
-
 if (!class_exists('simple_elemento_addon')) {
     class simple_elemento_addon
     {

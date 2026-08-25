@@ -5,6 +5,8 @@
  Description: Hunk companion plugin is an essential plugin to add features of Front page sections in your site. An easy to use plugin with ThemeHunk WordPress themes.
  Version: 2.0.7
  Author: ThemeHunk
+ License: GNU General Public License v3 or later
+ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
  Text Domain: hunk-companion
  Author URI: https://themehunk.com/
  */

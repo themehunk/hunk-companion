@@ -27,6 +27,7 @@
           let data_ = {
             action: "elemento_simple_post",
             post_data: stringiFy,
+            nonce: elemento_simple_url.nonce,
           };
           $.ajax({
             method: "POST",
