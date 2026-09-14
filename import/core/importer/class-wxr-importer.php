@@ -773,6 +773,11 @@ class WXR_Importer extends WP_Importer {
 			 */
 			do_action( 'wxr_importer.process_already_imported.post', $data );
 
+			// Map the pre-import ID to the matched local post so anything that
+			// references this page later in the file (menu items, child pages,
+			// attachment shortcodes) resolves to it instead of being orphaned.
+			$this->mapping['post'][ $original_id ] = (int) $post_exists;
+
 			// Even though this post already exists, new comments might need importing
 			$this->process_comments( $comments, $original_id, $data, $post_exists );
 
